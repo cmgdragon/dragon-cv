@@ -1,9 +1,9 @@
 import React from 'react';
-import Base from './components/dragon/Base';
+import DragonBase from './components/dragon/DragonBase';
 
 const App = () => {
     return (
-        <Base maxWidth={400} scale={100} top={0} left={0} />
+        <DragonBase maxWidth={400} scale={100} top={0} left={0} />
     )
 }
 

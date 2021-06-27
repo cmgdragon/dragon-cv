@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Pivot = ({ top, left, id, width, layer, root, children }) => {
+const Pivot = ({ top, left, id, width, layer='unset', root, children }) => {
 
     const style = {
         position: 'absolute',
@@ -9,7 +9,7 @@ const Pivot = ({ top, left, id, width, layer, root, children }) => {
         /*backgroundColor: 'rgba(255, 255, 0, .3)',*/
         width: width,
         height: width,
-        zIndex: layer,
+        zIndex: layer === 'unset' ? '' : layer,
         transform: 'rotate(0deg)'
     }
 
