@@ -3,7 +3,7 @@ import Base from './components/dragon/Base';
 
 const App = () => {
     return (
-        <Base />
+        <Base maxWidth={400} />
     )
 }
 
