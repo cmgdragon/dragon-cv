@@ -1,5 +1,4 @@
 node_modules
 .parcel-cache
 dist
-*.svg
-!src/dragon_parts/**/*.svg
+dragonBK.svg
