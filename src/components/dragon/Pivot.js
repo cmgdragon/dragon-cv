@@ -10,7 +10,7 @@ const Pivot = ({ top, left, id, width, layer='unset', root, children }) => {
         width: width,
         height: width,
         zIndex: layer === 'unset' ? '' : layer,
-        transform: 'rotate(0deg)'
+        transform: 'rotate(0turn) translate(0px, 0px)'
     }
 
     return (
