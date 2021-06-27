@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        :root {
+            --diff: 100%;
+        }
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        #dragon {
+            position: absolute;
+            max-width: 600px;
+            max-height: 600px;
+            width: 100%;
+            height: 100%;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+        }
+        main, #dragon {
+            width: inherit;
+            height: inherit;
+        }
+        .pivot-point::before {
+            background-color: blue;
+            position: absolute;
+            border-radius: 50%;
+            margin: 50% 50%;
+            font-size: 1rem;
+            content: '';
+            display: block;
+            width: 10px;
+            z-index: 20;
+            height: 10px;
+        }
+        .caja {
+            max-width: 600px;
+            max-height: 600px;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: rgba(0, 255, 0, .3);
+        }
+        .pivot-cuerpo {
+            position: absolute;
+            top: 0%;
+            left: -25%;
+            width: 100%;
+            height: 100%;
+            transform: rotate(0deg) scale(var(--diff));
+        }
+        .cuerpo {
+            background-image: url(./dragon_parts/cuerpo.svg);
+            /* background-color: rgba(255, 0, 0, .5); */
+            position: absolute;
+            top: 42%;
+            left: 40%;
+            display: block;
+            max-width: 300px;
+            max-height: 300px;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 10;
+        }
+        .pivot-pata {
+            position: absolute;
+            top: -19%;
+            left: 33%;
+            background-color: rgba(255, 255, 0, .3);
+            width: 100%;
+            height: 100%;
+            transform: rotate(0deg) scale(var(--diff));
+        }
+        .pata {
+            background-image: url(./dragon_parts/pierna_frontal/pierna_frontal_cadera.svg);
+            position: absolute;
+            top: 43%;
+            left: 39%;
+            display: block;
+            max-width: 100px;
+            max-height: 100px;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 10;
+        }
+        .pivot-rodilla {
+            position: absolute;
+            top: 23%;
+            left: -26%;
+            background-color: rgba(255, 255, 0, .3);
+            width: 100%;
+            height: 100%;
+            transform: rotate(0deg) scale(var(--diff));
+        }
+        .rodilla {
+            background-image: url(./dragon_parts/pierna_frontal/pierna_frontal_rodilla.svg);
+            position: absolute;
+            top: 43%;
+            left: 39%;
+            display: block;
+            max-width: 100px;
+            max-height: 100px;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 10;
+        }
+    </style>
+    <div id="dragon">
+        
+            <div class="pivot-cuerpo pivot-point">
+                <div class="cuerpo">
+
+                    
+                        <div class="pivot-pata pivot-point">
+                            <div class="pata">
+                                
+
+                                
+                                    <div class="pivot-rodilla pivot-point">
+                                        <div class="rodilla"></div>
+                                    </div>
+                                
+
+
+                            </div>
+                        </div>
+                    
+
+                </div>
+            </div>
+        
+    </div>
+</body>
+</html>
