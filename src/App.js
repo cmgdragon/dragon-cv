@@ -1,9 +1,13 @@
 import React from 'react';
+import addAnimation from './animations/animation_functions/addAnimation';
 import DragonBase from './components/dragon/DragonBase';
 
 const App = () => {
     return (
-        <DragonBase maxWidth={400} scale={100} top={0} left={0} />
+        <>
+        <DragonBase top={0} left={60} />
+        <button onClick={() => addAnimation('sit')}>Add animation</button>
+        </>
     )
 }
 
