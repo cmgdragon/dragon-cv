@@ -6,7 +6,7 @@ const App = () => {
     return (
         <>
         <DragonBase top={0} left={60} />
-        <button onClick={() => addAnimation('sit')}>Add animation</button>
+        <button onClick={() => addAnimation('walk')}>Add animation</button>
         </>
     )
 }

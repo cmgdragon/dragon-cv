@@ -32,14 +32,14 @@ const DragonBase = ({ top, left, scale }) => {
                 </DragonNeck>
 
                 <DragonWing basePivot={{top: '-6%', left: '2%'}} part="ala_frontal" topLayer="1" />
-                <DragonWing basePivot={{top: '-1%', left: '-9%'}} part="ala_trasera" topLayer="-1" />
+                <DragonWing back basePivot={{top: '-1%', left: '-9%'}} part="ala_trasera" topLayer="-1" />
 
                 <DragonArm basePivot={{top: '-5%', left: '1%'}} part="brazo_frontal" topLayer="11" />
-                <DragonArm basePivot={{top: '-7%', left: '-11%'}} part="brazo_trasero" topLayer="-1" />
+                <DragonArm back basePivot={{top: '-7%', left: '-11%'}} part="brazo_trasero" topLayer="-1" />
 
                 <DragonBelly basePivot={{top: '-48.5%', left: '1%'}} width="280px">
                     <DragonLeg basePivot={{top: '2%', left: '59%'}} part="pierna_frontal" topLayer="11" />
-                    <DragonLeg basePivot={{top: '0%', left: '48%'}} part="pierna_trasera" topLayer="-1" />
+                    <DragonLeg back basePivot={{top: '0%', left: '48%'}} part="pierna_trasera" topLayer="-1" />
 
                     <DragonTail basePivot={{top: '-8%', left: '59%'}} />
                 </DragonBelly>

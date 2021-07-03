@@ -1,7 +1,7 @@
 import React from 'react';
 import Pivot from './Pivot';
 
-const BodyPiece = ({ image, width, layer, pos, pivotPos, root=false, children }) => {
+const BodyPiece = ({ image, width, layer, pos, pivotPos, back=false, children }) => {
 
     const id = image.replace('/', '_');
     const dataName = image.includes('/') ? image.substr(image.indexOf("/")+1) : image;
@@ -26,7 +26,7 @@ const BodyPiece = ({ image, width, layer, pos, pivotPos, root=false, children })
          dataName={dataName} 
          width={width} 
          layer={layer} 
-         root={root}
+         back={back}
         >
             <div style={style}>
                 { children }
