@@ -24,7 +24,7 @@ const DragonBase = ({ top, left, scale }) => {
              width="190px">
                  
                 <DragonNeck basePivot={{top: '-8%', left: '-18%'}} part="cuello_bottom" width="150px" layer="1">
-                    <DragonNeck basePivot={{top: '-21%', left: '-27%'}} part="cuello_upper" width={"130px"} layer="-1">
+                    <DragonNeck basePivot={{top: '-21%', left: '-27%'}} part="cuello_upper" width={"127px"} layer="-1">
                         <DragonHead basePivot={{top: '-44%', left: '-31%'}}>
                             <DragonEyes basePivot={{top: '50%', left: '38%'}} />
                         </DragonHead>
