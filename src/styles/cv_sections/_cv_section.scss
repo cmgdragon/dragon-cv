@@ -1,0 +1,57 @@
+.cv-section {
+    position: relative;
+    z-index: 5;
+}
+
+.section-curtain {
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(0,0,0);
+    background: linear-gradient(149deg, rgba(0,0,0,0.8995973389355743) 0%, rgba(0,0,0,0.44021358543417366) 37%, rgba(0,0,0,0.36738445378151263) 62%, rgba(0,0,0,0.9332107843137255) 100%);
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+    transition: 1s ease;
+    transition-property: transform, width, height, opacity;
+}
+
+.section-curtain.expand {
+    box-shadow: 1px 1px 11px 4px #d3d3d3 !important;
+    z-index: 10;
+    border: none;
+
+    &>.section-title {
+        transform: scale(1.3);
+    }
+}
+
+.section-curtain.expanded {
+    border: none;
+    transform: scale(.8) translateY(-10%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.section-title {
+    font-size: 3em;
+    font-weight: 100;
+    transition: all .2s ease;
+    color: white;
+    position: relative;
+    border-radius: 50px;
+    box-shadow: 1px 1px 13px 8px #1d1d1d;
+    background-color: rgba(0, 0, 0, .5);
+    padding: 1rem;
+}
+
+.section-title::first-letter {
+    text-transform: capitalize;
+}
+
+.expanded {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important;
+    z-index: 9;
+}

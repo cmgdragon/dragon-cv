@@ -11,12 +11,12 @@
 .walk-brazo-dedos { animation: brazo_dedos 1.1s linear 0s infinite }
 
 
-.walk-pierna-cadera.back { animation: pierna_cadera 1s linear .6s infinite  }
-.walk-pierna-rodilla.back { animation: pierna_rodilla 1s linear .6s infinite  }
-.walk-pierna-pie.back { animation: pierna_pie 1s linear .6s infinite  }
-.walk-pierna-dedos.back { animation: pierna_dedos 1s linear .6s infinite }
+.walk-pierna-cadera.back { animation: pierna_cadera 1s linear -.45s infinite  }
+.walk-pierna-rodilla.back { animation: pierna_rodilla 1s linear -.45s infinite  }
+.walk-pierna-pie.back { animation: pierna_pie 1s linear -.45s infinite  }
+.walk-pierna-dedos.back { animation: pierna_dedos 1s linear -.45s infinite }
 
-.walk-brazo-hombro.back { animation: brazo_hombro 1.1s linear .6s infinite  }
-.walk-brazo-codo.back { animation: brazo_codo 1.1s linear .6s infinite  }
-.walk-brazo-mano.back { animation: brazo_mano 1.1s linear .6s infinite  }
-.walk-brazo-dedos.back { animation: brazo_dedos 1.1s linear .6s infinite }
+.walk-brazo-hombro.back { animation: brazo_hombro 1.1s linear -.5s infinite  }
+.walk-brazo-codo.back { animation: brazo_codo 1.1s linear -.5s infinite  }
+.walk-brazo-mano.back { animation: brazo_mano 1.1s linear -.5s infinite  }
+.walk-brazo-dedos.back { animation: brazo_dedos 1.1s linear -.5s infinite }

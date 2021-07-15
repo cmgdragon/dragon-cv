@@ -1,15 +1,15 @@
 import React from 'react';
 import DragonBase from './DragonBase';
 
-const DragonArea = () => {
+const DragonArea = ({drag_top, drag_left, pos}) => {
 
-    const style = {
+    /*const style = {
         position: 'relative'
-    }
+    }*/
 
     return (
-        <div style={style}>
-            <DragonBase top={0} left={60} />
+        <div>
+            <DragonBase drag_top={drag_top} drag_left={drag_left} pos={pos} />
         </div>
     )
 }

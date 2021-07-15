@@ -3,7 +3,9 @@ import React from 'react';
 const Education = () => {
 
     return (
-        <h1>Education</h1>
+        <div className="cv-section education-section">
+
+        </div>
     )
 }
 

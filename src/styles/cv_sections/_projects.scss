@@ -1,0 +1,81 @@
+@use 'sass:math';
+
+.projects-section {
+    height: inherit;
+    width: inherit;
+}
+
+.project-box {
+    position: absolute;
+    top: 15%;
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
+    transition: all .5s ease-in;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .project-box__image {
+        max-width: 400px;
+        width: auto;
+        height: auto;
+    }
+    
+    .project-box__text {
+        font-size: 2rem;
+        display: block;
+        margin: .7rem 0 .5rem 0;
+        font-weight: 600;
+        text-align: center;
+        text-decoration-line: none;
+        color: red;
+    }
+
+    .project-box__link {
+        position: absolute;
+        background-color: white;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        top: -30px;
+        left: -30px;
+
+        .project-box__link-icon {
+            font-size: 50rem;
+            width: inherit;
+            height: inherit;
+            background-image: url('http://127.0.0.1:8081/images/icons/external-link.svg');
+        }
+    }
+
+    &::before {
+        content: '';
+        border-radius: 10px;
+        position: absolute;
+        box-shadow: 1px 1px 13px 8px #1d1d1d;
+        background-image: url('http://127.0.0.1:8081/cave_parts/pared.svg');
+        height: 104%;
+        width: 108%;
+        margin: -15px;
+        z-index: -1;
+    }
+    
+    &:hover::before, &:focus::before {
+        box-shadow: 1px 1px 13px 8px #a8a8a8;
+    }
+
+}
+
+$projects: 5;
+$division:  math.div(85%, $projects);
+$left: 0%;
+@for $i from 1 through $projects {
+    $left: $left + $division;
+
+    .project#{$i} {
+        left: $left;
+    }
+}

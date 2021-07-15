@@ -1,6 +1,10 @@
 @use "animations/dragon_walk";
 @use "animations/dragon_sit";
 @use "responsive/dragon";
+@use "styles/dragon/dragon_main";
+@use "styles/cave";
+@use "styles/cv_sections/projects";
+@use "styles/cv_sections/cv_section";
 
 * {
     box-sizing: border-box;
@@ -9,19 +13,32 @@
 }
 
 body {
-    border-bottom: 1px solid black;
-}
-
-body,
-html {
     width: 100%;
     height: 100%;
-    background-color: rgba(142, 62, 113, .3);
+}
+
+html {
+    background: white;
+    font-family: 'Josefin Slab', serif;
 }
 
 main {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+}
+
+#dragon {
+    user-select: none;
+}
+
+#dragon.transition {
+    transition: 1s cubic-bezier(1, 0.99, 0,-0.01);
+    transition-property: top, left;
+}
+
+#dragon.controllable {
+    transition: .1s cubic-bezier(1, 0.99, 0,-0.01);
+    transition-property: top, left;
 }
 
 .pivot-point::before {

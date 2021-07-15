@@ -1,24 +1,24 @@
 @use "./keyframes/sit";
 
-.sit-cuerpo-bottom { animation: sit_cuerpo_bottom 1s linear 0s forwards }
-.sit-cuerpo-upper { animation: sit_cuerpo_upper 1s linear 0s forwards }
+.sit-cuerpo-bottom { animation: sit_cuerpo_bottom .4s linear 0s forwards }
+.sit-cuerpo-upper { animation: sit_cuerpo_upper .4s linear 0s forwards }
 
-.sit-cuello-bottom { animation: sit_cuello_bottom 1s linear 0s forwards }
-.sit-cuello-upper { animation: sit_cuello_upper 1s linear 0s forwards }
+.sit-cuello-bottom { animation: sit_cuello_bottom .4s linear 0s forwards }
+.sit-cuello-upper { animation: sit_cuello_upper .4s linear 0s forwards }
 
-.sit-head-back { animation: sit_head_back 1s linear 0s forwards }
+.sit-head-back { animation: sit_head_back .4s linear 0s forwards }
 
-.sit-ala-espalda { animation: sit_ala_espalda 1s linear 0s forwards }
-.sit-ala-codo { animation: sit_ala_codo 1s linear 0s forwards }
+.sit-ala-espalda { animation: sit_ala_espalda .4s linear 0s forwards }
+.sit-ala-codo { animation: sit_ala_codo .4s linear 0s forwards }
 
-.sit-brazo-hombro { animation: sit_brazo_hombro 1s linear 0s forwards }
-.sit-brazo-codo { animation: sit_brazo_codo 1s linear 0s forwards }
-.sit-brazo-mano { animation: sit_brazo_mano 1s linear 0s forwards }
-.sit-brazo-dedos { animation: sit_brazo_dedos 1s linear 0s forwards }
+.sit-brazo-hombro { animation: sit_brazo_hombro .4s linear 0s forwards }
+.sit-brazo-codo { animation: sit_brazo_codo .4s linear 0s forwards }
+.sit-brazo-mano { animation: sit_brazo_mano .4s linear 0s forwards }
+.sit-brazo-dedos { animation: sit_brazo_dedos .4s linear 0s forwards }
 
-.sit-pierna-cadera { animation: sit_pierna_cadera 1s linear 0s forwards }
-.sit-pierna-rodilla { animation: sit_pierna_rodilla 1s linear 0s forwards }
-.sit-pierna-pie { animation: sit_pierna_pie 1s linear 0s forwards }
-.sit-pierna-dedos { animation: sit_pierna_dedos 1s linear 0s forwards }
+.sit-pierna-cadera { animation: sit_pierna_cadera .4s linear 0s forwards }
+.sit-pierna-rodilla { animation: sit_pierna_rodilla .4s linear 0s forwards }
+.sit-pierna-pie { animation: sit_pierna_pie .4s linear 0s forwards }
+.sit-pierna-dedos { animation: sit_pierna_dedos .4s linear 0s forwards }
 
-.sit-cola1 { animation: sit_cola1 1s linear 0s forwards }
+.sit-cola1 { animation: sit_cola1 .4s linear 0s forwards }

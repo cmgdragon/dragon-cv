@@ -1,0 +1,69 @@
+.speech-bubble__pivot {
+    width: 1px;
+    height: 1px;
+    top: 2em;
+    left: -8em;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease-out;
+    transition-property: opacity, visibility, top;
+    transform: scaleX(-1);
+
+    &.show {
+        top: 2.5em;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &.hidden { display: none; }
+}
+
+.speech-bubble__body {
+
+    width: 600px;
+    @supports (width: max-content)  {
+        width: max-content;
+    }
+    text-align: center;
+    height: auto;
+    display: block;
+    position: absolute;
+    max-width: 600px;
+    z-index: 9;
+    font-size: 3rem;
+    border-radius: 10px;
+    padding: 1rem;
+    font-weight: 600;
+    left: 0;
+    background-color: white;
+
+    &::before {
+        content: '';
+        font-size: 10rem;
+        width: 60px;
+        height: 35px;
+        background-color: white;
+        position: absolute;
+        top: 20%;
+        left: -.25em;
+        transform: rotate(270deg);
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+
+}
+
+.speech-bubble__text {
+    transform: scaleX(-1);
+}
+
+#dragon.reverse .speech-bubble__pivot {
+
+    &.show {
+        left: -7em;
+    }
+}
+
+#dragon.reverse .speech-bubble__text {
+    transform: scaleX(1);
+}

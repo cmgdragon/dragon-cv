@@ -3,7 +3,9 @@ import React from 'react';
 const Experience = () => {
 
     return (
-        <h1>Experience</h1>
+        <div className="cv-section experience-section">
+
+        </div>
     )
 }
 

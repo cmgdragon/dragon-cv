@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import addAnimation from './animations/animation_functions/addAnimation';
-import DragonArea from './components/dragon/DragonArea';
+import replaceAnimation from './animations/animation_functions/replaceAnimation';
+import DragonBase from './components/dragon/DragonBase';
 import About from './components/cv_sections/About';
 import Projects from './components/cv_sections/Projects';
 import Education from './components/cv_sections/Education';
@@ -10,38 +11,100 @@ import HomeSection from './components/HomeSection';
 
 const App = () => {
 
+    const [debounce, setDebounce] = useState(false);
+    const [pos, setPos] = useState({top: 0, left: 0});
+    const [isDragging, setDragging] = useState(false);
+    const [selectedSection, setSection] = useState(undefined);
+    const [dragonText, setDragonText] = useState('Welcome');
+    const initDragonPos = { top: '2%', left: '78%'};
+
+    const selectSection = event => {
+        //console.log(event)
+        if (selectedSection !== 'dragon-home') {
+            if (!isDragging) return;
+            selectedSection.classList.add('expanded');
+            selectedSection.classList.add('cave__background');
+            selectedSection.previousElementSibling.classList.add('expanded');
+        }
+    }
+
+    const dragDragon = event => {
+        if (debounce) return;
+        setDebounce(true);
+        setTimeout(() => {
+            setPos({top: event.clientY, left: event.clientX});
+            setDebounce(false);
+
+            if (isDragging) {
+                [...document.querySelectorAll('[data-section]')].forEach(s => 
+                    s.previousElementSibling.classList.remove('expand'));
+
+                const section = document.elementsFromPoint(event.clientX, event.clientY)
+                                    .find(e => e.getAttribute('data-section'))
+                
+                if (section) {
+                    section.previousElementSibling.classList.add('expand');
+                    setSection(section);
+                } else {
+                    setSection('dragon-home');
+                }
+            }
+        }, 10)
+    }
+
     const style = {
         position: 'relative',
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr'
+        height: '100%',
+        gridTemplateColumns: '1fr 1fr',
+        gridTemplateRows: 'auto'
     }
 
     return (
         <>
-        <div style={style}>
-            <HomeSection>
+        <div style={style} onMouseMove={dragDragon}>
+
+            <HomeSection id="about">
                 <About />
             </HomeSection>
 
-            <HomeSection>
-                <Projects />
+            <div id="dragon-home">
+                <div>
+                <DragonBase
+                    selectSection={selectSection}
+                    selectedSection={selectedSection}
+                    setDragging={setDragging}
+                    drag_top={pos.top} 
+                    drag_left={pos.left}
+                    dragonText={dragonText}
+                    initDragonPos={initDragonPos}
+                    pos={{top: initDragonPos.top, left: initDragonPos.left}}
+                />
+                    <div  className="dragon-home__floor">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+
+            <HomeSection width="3500px" id="projects">
+                <Projects setDragonText={setDragonText} />
             </HomeSection>
 
-            <HomeSection>
-                <Education />
+            <HomeSection id="education">
+                <Education setDragonText={setDragonText} />
             </HomeSection>
 
-            <HomeSection>
-                <Experience />
+            <HomeSection id="experience">
+                <Experience setDragonText={setDragonText} />
             </HomeSection>
 
-            <HomeSection>
-                <Contact />
+            <HomeSection id="contact">
+                <Contact setDragonText={setDragonText} />
             </HomeSection>
 
-            {/*<button onClick={() => addAnimation('walk')}>Add animation</button>*/}
+            {/*<button onClick={() => replaceAnimation('walk')}>Add animation</button>*/}
         </div>
-        <DragonArea />
+        
         </>
     )
 }
