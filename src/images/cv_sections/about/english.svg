@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="142.79mm" height="78.891mm" version="1.1" viewBox="0 0 142.79 78.891" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-53.903 -98.524)" stroke-linecap="round" stroke-linejoin="bevel">
+  <g fill="#1a70fb" stroke-width=".065">
+   <rect x="50.621" y="150.52" width="60.075" height="30.542" style="paint-order:stroke fill markers"/>
+   <rect x="49.864" y="95.747" width="61.59" height="34.329" style="paint-order:stroke fill markers"/>
+   <rect x="140.99" y="95.747" width="60.328" height="33.067" style="paint-order:stroke fill markers"/>
+   <rect x="142.75" y="152.29" width="58.561" height="30.038" style="paint-order:stroke fill markers"/>
+  </g>
+  <rect x="105.91" y="93.476" width="39.619" height="100.46" fill="#fff" stroke-width=".052052" style="paint-order:stroke fill markers"/>
+  <rect x="48.097" y="125.19" width="155.85" height="29.329" fill="#fff" stroke-width=".046864" style="paint-order:stroke fill markers"/>
+  <g fill="#e44">
+   <rect x="116.19" y="81.84" width="19.676" height="126.74" stroke-width=".070397" style="paint-order:stroke fill markers"/>
+   <rect transform="matrix(.50362 .86392 -.8681 .49639 0 0)" x="178.69" y="-183.78" width="9.2464" height="259.17" stroke-width=".06901" style="paint-order:stroke fill markers"/>
+   <rect transform="rotate(-60)" x="-61.62" y="50.72" width="8.7562" height="244.25" stroke-width=".065194" style="paint-order:stroke fill markers"/>
+   <rect transform="rotate(-90)" x="-148.38" y="36.474" width="18.426" height="182.02" stroke-width=".081642" style="paint-order:stroke fill markers"/>
+  </g>
+ </g>
+</svg>

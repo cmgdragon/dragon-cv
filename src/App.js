@@ -65,7 +65,7 @@ const App = () => {
         <div style={style} onMouseMove={dragDragon}>
 
             <HomeSection id="about">
-                <About />
+                <About setDragonText={setDragonText} />
             </HomeSection>
 
             <div id="dragon-home">
@@ -86,7 +86,7 @@ const App = () => {
                 </div>
             </div>
 
-            <HomeSection width="3500px" id="projects">
+            <HomeSection id="projects">
                 <Projects setDragonText={setDragonText} />
             </HomeSection>
 

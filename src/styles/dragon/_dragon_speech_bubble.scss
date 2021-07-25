@@ -6,7 +6,7 @@
     position: absolute;
     opacity: 0;
     visibility: hidden;
-    transition: all .5s ease-out;
+    transition: all .2s ease-out;
     transition-property: opacity, visibility, top;
     transform: scaleX(-1);
 
@@ -17,6 +17,13 @@
     }
 
     &.hidden { display: none; }
+}
+
+.speech-bubble__pivot.top {
+    &.show {
+        top: -3.5em;
+        left: -4em !important;
+    }
 }
 
 .speech-bubble__body {
@@ -58,7 +65,7 @@
 }
 
 #dragon.reverse .speech-bubble__pivot {
-
+    
     &.show {
         left: -7em;
     }
@@ -66,4 +73,23 @@
 
 #dragon.reverse .speech-bubble__text {
     transform: scaleX(1);
+}
+
+.speech-bubble__pivot.top .speech-bubble__body::before {
+    top: -.2em;
+    left: .5em;
+    transform: rotate(0deg);
+}
+
+#speech-bubble.top,
+#dragon.reverse #speech-bubble.top {
+    transform: scaleY(-1);
+}
+
+#speech-bubble.top .speech-bubble__text {
+    transform: scaleY(-1);
+}
+
+#dragon.reverse #speech-bubble.top .speech-bubble__text {
+    transform: scale(-1);
 }

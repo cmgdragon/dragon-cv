@@ -1,6 +1,22 @@
 {
     "project1": {
+        "es": "Trabajo final para el Máster en desarrollo de sitios y aplicaciones web. Una aplicación para facilitar a los investigadores difundir su trabajo",
+        "en": "Final project of my Master's degree in Web App and Website Development. An app to ease researchers share their production"
+    },
+    "project2": {
         "es": "Mi primer projecto. Cuando todavía no sabía diferenciar entre 'frontend' y 'backend'. Una página para crear y compartir cuentos.",
         "en": "My first project. When I still didn't know the difference between 'frontend' and 'backend'. An app for creating and sharing tales."
+    },
+    "project3": {
+        "es": "Una app para controlar tu dieta que he diseñado para llevar el seguimiento de <s>quién</s> qué como",
+        "en": "An app to control and share your diet that I designed to keep track of <s>who</s> what I eat"
+    },
+    "project4": {
+        "es": "Esta misma página también cuenta como proyecto.. supongo. ¿Verdad?",
+        "en": "This same page also counts as a project, I guess... right?"
+    },
+    "project5": {
+        "es": "!Puedes visitar mi Github! Allí tengo más cositas publicadas",
+        "en": "Visit my Github! There I have more things published"
     }
 }

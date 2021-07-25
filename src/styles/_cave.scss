@@ -4,7 +4,6 @@
     height: inherit;
     z-index: $zIndex;
     position: absolute;
-    background-size: contain;
     background-repeat: repeat-x;
   }
 
@@ -36,9 +35,22 @@
     background-color: rgba(0,0,0,.4);
 }
 
-.cave__background .cave__background-depth1 {
+#projects .cave__background-depth1 {
     @include background-depth("columnas2", 5);
+    background-size: contain;
     background-position: right 400px bottom 0px;
+}
+
+#about .cave__background-depth1 {
+    @include background-depth("saliente-izquierda", 5);
+    background-size: cover;
+    background-position: right 0px bottom 0px;
+}
+
+#experience .cave__background-depth1 {
+    @include background-depth("saliente-izquierda", 5);
+    background-size: cover;
+    background-position: right 0px bottom 0px;
 }
 
 .cave__background .cave__background-depth2 {
@@ -53,4 +65,5 @@
 
 .cave__background .cave__background-depth4 {
     @include background-depth("depth4", 2);
+    background-size: cover;
 }

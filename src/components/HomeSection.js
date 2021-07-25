@@ -1,10 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 const HomeSection = ({width='100vw', id, children}) => {
 
     const [clipPath, setClipPath] = useState('');
+    const [expanded, setExpanded] = useState(false);
+    const curtain = useRef(undefined);
     useEffect(() => {
         setClipPath(getclipPath());
+
+        //observe section
+        const observer = new MutationObserver(mutations => {
+            mutations.forEach(({target}) => {
+              if (target.classList.contains('expanded')) {
+                setExpanded(true);
+              }
+            });
+        });
+        const config = { attributes: true, childList: false, characterData: true };
+        observer.observe(curtain.current, config);
+        return () => observer.disconnect();
     }, []);
 
     const getclipPath = () => {
@@ -27,17 +41,17 @@ const HomeSection = ({width='100vw', id, children}) => {
 
     return (
         <>
-        <div data-curtain={id} className="section-curtain">
+        <div ref={curtain} data-curtain={id} className="section-curtain">
             <h1 className="section-title">
                 <span>{id}</span>
             </h1>
         </div>
         <section data-section id={id} style={style} className="cave__background">
-            <div style={background_1} className="cave__background-depth1"></div>
+            <div data-fixed style={background_1} className="cave__background-depth1"></div>
             <div data-fixed className="cave__background-depth2"></div>
             <div data-fixed className="cave__background-depth3"></div>
             <div data-fixed className="cave__background-depth4"></div>
-            {React.cloneElement(children, { width, id })}
+            {React.cloneElement(children, { width, id, expanded })}
         </section>
         </>
     )

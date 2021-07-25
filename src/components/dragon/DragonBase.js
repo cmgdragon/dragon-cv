@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import replaceAnimation from '../../animations/animation_functions/replaceAnimation';
 import removeAnimation from '../../animations/animation_functions/removeAnimation';
-import SpeechBubble from './SpeechBubble';
+import SpeechBubble from '../speech_bubble/SpeechBubble';
 import DragonLeg from './body_parts/DragonLeg';
 import DragonArm from './body_parts/DragonArm';
 import DragonWing from './body_parts/DragonWing';
@@ -25,13 +25,23 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
 
     const releaseDragonIntoSection = () => {
         if (!selectedSection) return;
+        const bubble = document.getElementById('speech-bubble');
         const section = selectedSection.id ?? selectedSection;
         switch (section) {
             case 'dragon-home':
                 setPos(initDragonPos);
+                bubble.classList.remove('top');
                 break;
             case 'projects':
-                walkToPosition('65%', '5%', true);
+                walkToPosition('65%', '35%', true);
+                bubble.classList.remove('top');
+                break;
+            case 'about':
+                walkToPosition('51%', '3%', true);
+                bubble.classList.add('top');
+            case 'experience':
+                walkToPosition('51%', '3%', true);
+                bubble.classList.add('top');
         }
     }
 

@@ -2,10 +2,10 @@
   "name": "dev-cv",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.html",
   "scripts": {
     "dev": "parcel src/index.html -p 8080 --open --no-cache",
-    "build": "parcel build src/index.html --public-url ./ --out-dir dist --no-source-maps --no-cache"
+    "build": "parcel build src/index.html --public-url ./ --no-source-maps --no-cache"
   },
   "keywords": [],
   "author": "",

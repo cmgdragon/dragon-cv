@@ -1,53 +1,77 @@
 @use 'sass:math';
 
 .projects-section {
-    height: inherit;
-    width: inherit;
+    width: 100vw;
+    padding-left: 40%;
+    height: 100vh;
+    float: right;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    z-index: 5;
+    padding-top: 4%;
 }
 
 .project-box {
-    position: absolute;
-    top: 15%;
-    visibility: hidden;
-    opacity: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
     cursor: pointer;
-    transition: all .5s ease-in;
 
     &.show {
-        opacity: 1;
-        visibility: visible;
+        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     }
 
     .project-box__image {
-        max-width: 400px;
-        width: auto;
+        width: 350px;
+        max-height: 330px;
         height: auto;
+        object-fit: contain;
+        width: auto;
     }
     
-    .project-box__text {
-        font-size: 2rem;
-        display: block;
+    .project-box__tech {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .project-box__tech-img {
+        width: 45px;
+        height: 45px;
         margin: .7rem 0 .5rem 0;
-        font-weight: 600;
-        text-align: center;
-        text-decoration-line: none;
-        color: red;
+        background-color: white;
+        object-fit: contain;
+        border-radius: 50%;
+        padding: .1rem;
     }
 
     .project-box__link {
         position: absolute;
         background-color: white;
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         top: -30px;
         left: -30px;
+        text-decoration: none;
+
+        &:hover {
+            background-color: yellow;
+        }
 
         .project-box__link-icon {
-            font-size: 50rem;
-            width: inherit;
-            height: inherit;
+            font-size: 3em;
+            width: 25px;
+            height: 25px;
             background-image: url('http://127.0.0.1:8081/images/icons/external-link.svg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
         }
     }
 
@@ -56,7 +80,7 @@
         border-radius: 10px;
         position: absolute;
         box-shadow: 1px 1px 13px 8px #1d1d1d;
-        background-image: url('http://127.0.0.1:8081/cave_parts/pared.svg');
+        background-color: #5a5a5a85;
         height: 104%;
         width: 108%;
         margin: -15px;
@@ -64,10 +88,20 @@
     }
     
     &:hover::before, &:focus::before {
-        box-shadow: 1px 1px 13px 8px #a8a8a8;
+        box-shadow: 1px 1px 10px 7px #fefefe;
     }
 
 }
+
+@keyframes scale-up-center {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+  }
+  
 
 $projects: 5;
 $division:  math.div(85%, $projects);
@@ -78,4 +112,13 @@ $left: 0%;
     .project#{$i} {
         left: $left;
     }
+
+    .project-box-activator#{$i} {
+        position: absolute;
+        background-color: blue;
+        width: 5px;
+        height: 5px;
+        left: $left;
+    }
+
 }

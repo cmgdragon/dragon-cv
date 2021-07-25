@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 const SpeechBubble = ({ text }) => {
 
     useEffect(() => {
-        showBubble();
-    }, [text])
-
-    const showBubble = () => {
+        document.querySelector(".speech-bubble__text").innerHTML = text;
         document.getElementById("speech-bubble").classList.add('show');
-    }
+    }, [text])
 
     return (
         <div id="speech-bubble" className="speech-bubble__pivot">

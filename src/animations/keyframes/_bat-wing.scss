@@ -1,0 +1,44 @@
+@keyframes bat-wing-flutter {
+    0% {
+        transform: rotate(30deg) translate(10px, -9px) scaleX(1.2);
+    }
+    20% {
+        transform: rotate(322deg-360deg) translate(-26px, -9px) scaleX(0.8);
+    }
+    60% {
+        transform: rotate(0deg) translate(0px, 0px);
+    }
+    100% {
+        transform: rotate(30deg) translate(10px, -9px) scaleX(1.2);
+    }   
+}
+
+@keyframes bat-wing-flutter-reverse {
+    0% {
+        transform: rotate(322deg-360deg) translate(-26px, -9px) scaleX(-1.2);
+    }
+    20% {
+        transform: rotate(30deg) translate(10px, -9px) scaleX(-0.8);
+    }
+    60% {
+        transform: rotate(0deg) translate(0px, 0px) scaleX(-1);
+    }
+    100% {
+        transform: rotate(322deg-360deg) translate(-26px, -9px) scaleX(-1.2);
+    }   
+}
+
+@keyframes bat-wing-floating {
+    0% {
+        transform: translateY(0px);
+        z-index: 15;
+    }
+    25% {
+        transform: translateY(-1rem);
+        z-index: 15;
+    }
+    100% {
+        transform: translateY(0px);
+        z-index: 15;
+    }
+}

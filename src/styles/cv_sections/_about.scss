@@ -1,0 +1,134 @@
+@use "../../animations/bat-wing-flutter";
+
+.about-section {
+    height: 100vh;
+    width: 75vw;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    z-index: 4;
+}
+
+#info {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 25vh;
+    justify-content: space-between;
+
+    .info__box {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        position: absolute;
+        z-index: 4;
+        transition: 1s ease-in;
+        transition-property: top, left;
+    }
+
+    .info__panel {
+        font-size: 2rem;
+        color: white;
+        font-weight: 600;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -.5rem;
+            box-shadow: 1px 1px 5px black;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(61, 61, 61, 0.623);
+            padding-bottom: 1rem;
+        }
+        
+        .info__text {
+            padding: .5rem;
+            position: relative;
+        }
+
+        .info__img {
+            position: absolute;
+            max-width: 45px;
+            width: 100%;
+            z-index: 10;
+            padding: .1rem;
+            background-color: white;
+            box-shadow: 1px 0px 3px white;
+            border-radius: 5px;
+        }
+    }
+
+}
+
+.bat-wing {
+    background-image: url('http://127.0.0.1:8081/images/cv_sections/about/bat-wing.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform-origin: top right;
+    max-width: 100px;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    left: -6.5rem;
+    top: -1rem;
+
+    &.reverse {
+        left: 82%;
+        transform: scaleX(-1);
+        top: -1rem;
+    }
+}
+
+#technologies {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: hidden;
+    margin: 0 auto;
+    width: 50vw;
+
+    .technology {
+        object-fit: contain;
+    }
+
+
+}
+
+#languages {
+    display: flex;
+    justify-content: space-evenly;
+
+    @mixin lang($lang) {
+        background-image: url('http://127.0.0.1:8081/images/cv_sections/about/#{$lang}.svg');
+        background-size: cover;
+        width: 5vw;
+        height: 6vh;
+        border-radius: 10px;
+    }
+    
+    .languages__lang-es {
+        @include lang("spanish");
+        background-position-y: 1px;
+    }
+    .languages__lang-ca {
+        @include lang("catalan");
+    }
+    .languages__lang-en {
+        @include lang("english");
+        background-position-x: -3px;
+    }
+
+}
+
+#social {
+    display: flex;
+    justify-content: space-evenly;
+
+    .social__img {
+        width: 50px;
+        object-fit: contain;
+    }
+}

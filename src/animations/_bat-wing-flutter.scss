@@ -1,0 +1,5 @@
+@use "./keyframes/bat-wing";
+
+.bat-wing-flutter { animation: bat-wing-flutter .9s linear 0s infinite }
+.bat-wing-flutter-reverse { animation: bat-wing-flutter-reverse .9s linear 0s infinite }
+.bat-wing-floating { animation: bat-wing-floating .9s linear 0s infinite }
