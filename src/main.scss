@@ -1,5 +1,5 @@
-@use "animations/dragon_walk";
-@use "animations/dragon_sit";
+@use "animations/dragon/dragon_walk";
+@use "animations/dragon/dragon_sit";
 @use "responsive/dragon";
 @use "styles/dragon/dragon_main";
 @use "styles/cave";
@@ -29,20 +29,6 @@ html {
 main {
     width: 100vw;
     height: 100vh;
-}
-
-#dragon {
-    user-select: none;
-}
-
-#dragon.transition {
-    transition: 1s cubic-bezier(1, 0.99, 0,-0.01);
-    transition-property: top, left;
-}
-
-#dragon.controllable {
-    transition: .1s cubic-bezier(1, 0.99, 0,-0.01);
-    transition-property: top, left;
 }
 
 .pivot-point::before {

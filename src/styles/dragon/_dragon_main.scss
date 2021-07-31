@@ -3,6 +3,7 @@
 
 #dragon {
     transform: scale(.55) translate(0, 0) !important;
+    user-select: none;
 }
 
 #dragon.reverse {
@@ -11,4 +12,18 @@
 
 #dragon:hover {
     cursor: grab;
+}
+
+#dragon.transition {
+    transition: 1s cubic-bezier(1, 0.99, 0,-0.01);
+    transition-property: top, left;
+
+    &.fast {
+        transition: .2s cubic-bezier(1, 0.99, 0,-0.01);
+    }
+}
+
+#dragon.controllable {
+    transition: .1s cubic-bezier(1, 0.99, 0,-0.01);
+    transition-property: top, left;
 }

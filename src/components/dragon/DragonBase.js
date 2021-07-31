@@ -33,28 +33,34 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
                 bubble.classList.remove('top');
                 break;
             case 'projects':
-                walkToPosition('65%', '35%', true);
+                walkToProjectPosition('65%', '35%');
                 bubble.classList.remove('top');
                 break;
             case 'about':
-                walkToPosition('51%', '3%', true);
+                walkToPosition('51%', '3%', true, false);
                 bubble.classList.add('top');
+                break;
             case 'experience':
-                walkToPosition('51%', '3%', true);
+                walkToPosition('51%', '3%', true, false);
                 bubble.classList.add('top');
+                break;
+            case 'education':
+                walkToPosition('51%', '80%', false, true);
+                bubble.classList.add('top');
+                break;
         }
     }
 
-    const walkToPosition = (top, left, forward) => {
+    const walkToProjectPosition = (top, left) => {
+
         setPos({top: drag_top, left: drag_left});
         const dragon = document.getElementById('dragon');
 
-        if (!forward) dragon.classList.add('reverse');
-        dragon.classList.add('transition');
+        dragon.classList.add('reverse', 'transition');
+
         replaceAnimation('walk');
         setPos({top, left});
-        if (!forward) dragon.classList.remove('reverse');
-        else dragon.classList.add('reverse');
+
         setTimeout(() => {
             removeAnimation('walk');
             dragon.classList.remove('transition');
@@ -64,6 +70,41 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
                 left: getPositionInPixels(left.replace('%', ''))
             })
         }, 1000);
+            
+    }
+
+    const walkToPosition = (top, left, forward, sit) => {
+        //setPos({top: drag_top, left: `${forward ? '40vh' : '-40vh'}`});
+        //setPos({top: drag_top, left: drag_left});
+        const dragon = document.getElementById('dragon');
+
+        
+        dragon.classList.add('transition', 'fast');
+        
+        setPos({top, left: `${forward ? '-40vh' : '110vw'}`});
+        
+        setTimeout(() => {
+            replaceAnimation('walk');
+            dragon.classList.remove('fast');
+            
+            if (!forward) dragon.classList.remove('reverse');
+            else dragon.classList.add('reverse');
+
+            setPos({top, left});
+
+            setTimeout(() => {
+                removeAnimation('walk');
+                dragon.classList.remove('transition');
+                dragon.classList.add('controllable');
+                if (sit) replaceAnimation('sit');
+                setPos({
+                    top: dragon.getBoundingClientRect().top+'px',
+                    left: getPositionInPixels(left.replace('%', ''))
+                })
+            }, 1000);
+            
+        }, 400);
+
 
     }
 
