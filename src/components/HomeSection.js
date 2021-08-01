@@ -13,6 +13,8 @@ const HomeSection = ({width='100vw', id, children}) => {
             mutations.forEach(({target}) => {
               if (target.classList.contains('expanded')) {
                 setExpanded(true);
+              } else {
+                  setExpanded(false);
               }
             });
         });

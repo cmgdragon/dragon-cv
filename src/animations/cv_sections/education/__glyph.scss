@@ -1,0 +1,6 @@
+@use "./keyframes/_floating_glyph";
+
+.floating-glyph-d1 { animation: floating-glyph 2.5s linear 0s infinite }
+.floating-glyph-d2 { animation: floating-glyph 2.5s linear .4s infinite }
+.floating-glyph-d3 { animation: floating-glyph 2.5s linear .9s infinite }
+.trembling-glyph { animation: trembling-glyph .2s linear 0s infinite !important }
