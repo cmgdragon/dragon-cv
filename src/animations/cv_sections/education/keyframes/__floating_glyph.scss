@@ -25,3 +25,49 @@
     }   
 
 }
+
+@keyframes glyph-container-shadow {
+    0% {
+        box-shadow: 0px 0px 5px 5px white;
+    }
+    50% {
+        box-shadow: 0px 0px 10px 8px white;
+    }
+    100% {
+        box-shadow: 0px 0px 5px 5px white;
+    } 
+}
+
+@keyframes glyph-image-autonomous {
+    0% {
+        background-image: url('http://127.0.0.1:8081/images/technologies/github.png');
+        transform: scale(1);
+    }
+    15% {
+        background-image: url('http://127.0.0.1:8081/images/cv_sections/education/js.png');
+    }
+    30% {
+        background-image: url('http://127.0.0.1:8081/images/technologies/docker.png');
+        transform: scale(.8);
+    }
+    45% {
+        background-image: url('http://127.0.0.1:8081/images/technologies/react.png');
+        transform: scale(1);
+    }
+    60% {
+        background-image: url('http://127.0.0.1:8081/images/technologies/mongodb.png');
+        transform: scale(1);
+    }
+    75% {
+        background-image: url('http://127.0.0.1:8081/images/technologies/gcp.svg');
+        transform: scale(1);
+    }
+    88% {
+        background-image: url('http://127.0.0.1:8081/images/cv_sections/education/css3.png');
+        transform: scale(1);
+    }
+    100% {
+        background-image: url('http://127.0.0.1:8081/images/technologies/github.png');
+        transform: scale(1);
+    }
+}
