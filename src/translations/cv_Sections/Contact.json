@@ -31,22 +31,18 @@
         "init": {
             "en": [
                 "So... do you plan to do something?",
-                "You can use the form. I won't bite",
+                "You can use the form. I won't bite <span style='font-size:2rem'>for now</span>",
                 "Are you still there?"
             ],
             "es": [
                 "¿Piensas hacer algo?",
-                "Puedes utilizar el formulario. No voy a morderte",
+                "Puedes utilizar el formulario. No voy a morderte <span style='font-size:2rem'>por ahora</span>",
                 "¿Aún estás ahí?"
             ]
         },
-        "started": {
-            "en": [
-                "Why have you stopped?"
-            ],
-            "es": [
-                "¿Por qué te has detenido?"
-            ]
+        "stopped": {
+            "en": "Why have you stopped?",
+            "es": "¿Por qué te has detenido?"
         }
     }
 }

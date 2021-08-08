@@ -33,17 +33,17 @@
         border-bottom-right-radius: 100px;
     }
 
-    .glyph:hover + .rune__text-container {
+    .glyph:focus + .rune__text-container {
         @extend .glyph-container-show;
         transform: translateX(0px) scaleX(1);
         opacity: 1;
     }
 
-    .glyph:hover .glyph__container::before {
+    .glyph:focus .glyph__container::before {
         @extend .glyph-container-show;
     }
 
-    .glyph:hover + .rune__text-container .rune__text-box {
+    .glyph:focus + .rune__text-container .rune__text-box {
         opacity: 1;
     }
 }
@@ -159,7 +159,8 @@
 
 }
 
-.glyph:hover {
+.glyph:hover,
+.glyph:focus {
     @extend .trembling-glyph;
     cursor: pointer;
 

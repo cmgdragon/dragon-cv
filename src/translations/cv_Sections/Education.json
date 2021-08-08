@@ -1,0 +1,44 @@
+{
+    "degree": {
+        "template": {
+            "en": "Bachelor's degree in Library and Information Sciences",
+            "es": "Grado en Información y documentación"
+        },
+        "year": {
+            "en": "2015–2019",
+            "es": "2015–2019"
+        },
+        "dragon": {
+            "en": "In college I learned to organize information, select the most relevant and use it to solve information needs",
+            "es": "En la facultad aprendí a organizar la información, seleccionar aquella relevante y utilizarla para resolver necesidades"
+        }
+    },
+    "master": {
+        "template": {
+            "en": "Master's degree in Web App and Website Development",
+            "es": "Máster de Desarrollo de Sitios y Aplicaciones Web"
+        },
+        "year": {
+            "en": "2019–2021",
+            "es": "2019–2021"
+        },
+        "dragon": {
+            "en": "With the master's degree I have obtained the knowledge about modern web development mostly with JS and Angular, TDD/DDD, Agile, etc.",
+            "es": "Con el máster he obtenido el conocimiento sobre desarrollo web moderno principalmente con JS y Angular, TDD/DDD, Agile, etc."
+        }
+    },
+    "autonomous": {
+        "template": {
+            "en": "Autonomous formation",
+            "es": "Formación autónoma"
+        },
+        "year": {
+            "en": "Always...",
+            "es": "Siempre..."
+        },
+        "dragon": {
+            "en": "I'm always in movement, expanding my knowledge about IT, learning new technologies and starting new projects",
+            "es": "Estoy siempre en movimiento, expandiendo mi conocimientos sobre TI, aprendiendo nuevas tecnologías y empezando nuevos proyectos"
+        }
+    }
+}

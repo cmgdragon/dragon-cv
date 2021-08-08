@@ -6,7 +6,6 @@ const SpeechBubble = ({ text, lang }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [currentLang, setCurrentLang] = useState(lang);
     useEffect(() => {
-        document.getElementById("speech-bubble").classList.add('show');
         
         const selectedTextLang = text[lang];
 

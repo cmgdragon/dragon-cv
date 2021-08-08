@@ -29,14 +29,28 @@
             "es": "Básicamente solo juego a títulos VR. Y a League of Legends..."
         }
     },
+    "languages": {
+        "spanish": {
+            "en": "Spanish is my main language. I rarely make typos <span style='font-size:2rem'>not like others</span>",
+            "es": "El español es mi lengua nativa. Nunca suelo cometer faltas de ortografía <span style='font-size:2rem'>a diferencia de otros</span>"
+        },
+        "catalan": {
+            "en": "I also speak catalan because I was born in Catalonia. That makes sense I guess",
+            "es": "También hablo catalán porque nací en Cataluña. Eso tendría sentido"
+        },
+        "english": {
+            "en": "I have an intermediate level of english. Enough to browse through Stackoverflow and watch Youtube tutorials",
+            "es": "Tengo un nivel medio de inglés. Lo suficiente para navegar por Stackoverflow y mirar tutoriales de Youtube"
+        }
+    },
     "social_media": {
         "linkedin": {
             "en": "",
             "es": ""
         },
         "github": {
-            "en": "",
-            "es": ""
+            "en": "Visit my Github and give me some starts! If you want 😏",
+            "es": "¡Visita mi Github y dame alguna estrella! Si quieres 😏"
         },
         "twitter": {
             "en": "",

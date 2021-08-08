@@ -73,8 +73,8 @@
                 }
             },
         "dragon": {
-            "en": "Actual job",
-            "es": ""
+            "en": "This is my actual job",
+            "es": "Este es mi actual trabajo"
         }
     },
 
@@ -112,8 +112,8 @@
                 }
             },
             "dragon": {
-                "en": "",
-                "es": ""
+                "en": "This was my first experience working with a real development team as front-end",
+                "es": "Esta fue mi primera experiencia trabajando con un equipo real de desarrollo como front-end"
             }
     },
 

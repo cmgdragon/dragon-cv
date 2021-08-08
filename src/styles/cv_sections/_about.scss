@@ -34,6 +34,7 @@
         color: white;
         font-weight: 600;
         position: relative;
+        text-align: center;
     
         &::before {
             content: '';
@@ -110,9 +111,15 @@
     @mixin lang($lang) {
         background-image: url('http://127.0.0.1:8081/images/cv_sections/about/#{$lang}.svg');
         background-size: cover;
-        width: 5vw;
-        height: 6vh;
+        width: 100%;
+        max-width: 80px;
+        height: 45px;
         border-radius: 10px;
+        cursor: pointer;
+
+        &:hover, &:focus {
+            filter: drop-shadow(0px 0px 5px white);
+        }
     }
     
     .languages__lang-es {
@@ -124,7 +131,6 @@
     }
     .languages__lang-en {
         @include lang("english");
-        background-position-x: -3px;
     }
 
 }
@@ -171,7 +177,8 @@
         &:visited, :active { color: initial }
     }
 
-    &:focus .social__link {
+    &:focus .social__link,
+    .social__link:focus {
         left: 110%;
         opacity: 1;
     }

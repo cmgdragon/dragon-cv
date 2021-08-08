@@ -68,7 +68,7 @@ const Contact = ({expanded, setDragonText, lang}) => {
 
         if (!randomWordShown.init) {
             clearInterval(intervalFn);
-            initWaitingInterval(randomWordShown.timeout, dragonText.waiting_interval.started, true);
+            initWaitingInterval(randomWordShown.timeout, dragonText.waiting_interval.stopped, true);
             hideBubble();
             //setTimeout(() => {
                 setRandomWord({...randomWordShown, init: true});
@@ -80,7 +80,7 @@ const Contact = ({expanded, setDragonText, lang}) => {
             clearInterval(intervalFn);
             setRandomWord({...randomWordShown, timeout: true});
             showBubble(dragonText.random_typing, setDragonText);
-            initWaitingInterval(randomWordShown.timeout, dragonText.waiting_interval.started, true);
+            initWaitingInterval(randomWordShown.timeout, dragonText.waiting_interval.stopped, true);
             setTimeout(() => {
                 setRandomWord({init: false, timeout: false});
             }, interval*500);

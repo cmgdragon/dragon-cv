@@ -10,7 +10,7 @@ import Contact from './components/cv_sections/Contact';
 import HomeSection from './components/HomeSection';
 import Language from './components/Language';
 import * as dragonWelcome from './translations/Welcome.json';
-import { showBubble } from './components/speech_bubble/ShowBubble';
+import { hideBubble } from './components/speech_bubble/hideBubble';
 
 const App = () => {
 
@@ -22,9 +22,25 @@ const App = () => {
     const [lang, setLang] = useState('en');
     const [dragonText, setDragonText] = useState(dragonWelcome);
 
-   /* useEffect(() => {
+   useEffect(() => {
 
-    }, []);*/
+        window.addEventListener('keydown', ({code}) => {
+            if (code === 'Tab') {
+                hideBubble();
+            }
+        });
+
+        document.querySelectorAll('[data-clickable]').forEach(el => {
+            console.log('MIERDA')
+            el.addEventListener('keydown', event => {
+                event.stopPropagation();
+                if (event.code === 'Enter') {
+                    event.target.click();
+                }
+            })
+        });
+
+    }, []);
 
     const selectSection = event => {
         //console.log(event)

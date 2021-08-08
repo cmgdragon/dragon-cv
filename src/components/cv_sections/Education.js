@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { showBubble } from '../speech_bubble/ShowBubble';
+import * as dragonText from '../../translations/cv_Sections/Education.json';
 
-const Education = ({expanded, setDragonText}) => {
+const Education = ({expanded, setDragonText, lang}) => {
 
     useEffect(() => {
         if (!expanded) return;
@@ -20,7 +22,7 @@ const Education = ({expanded, setDragonText}) => {
     return (
         <div className="cv-section education-section">
             <div className="rune">
-                <div className="glyph floating-glyph-d1">
+                <div className="glyph floating-glyph-d1" tabIndex={0} data-clickable onFocus={() => showBubble(dragonText.degree.dragon, setDragonText, true)}>
                     <div className="glyph__container">
                         <GlyphLine expanded={expanded} width="50%" />
                         <GlyphLine expanded={expanded} height="50%" sHeight="calc(100% - 10px)" sBottom="0" />
@@ -30,19 +32,19 @@ const Education = ({expanded, setDragonText}) => {
                 </div>
                 <div className="rune__text-container">
                     <div className="rune__text-box">
-                        <span className="rune__text">Grado en Información y documentación</span>
+                        <span className="rune__text">{dragonText.degree.template[lang]}</span>
                         <div className="rune__logo">
                             <div className="rune__logo-img" style={{
                                 backgroundImage:`url('http://127.0.0.1:8081/images/${'cv_sections/experience/ub.png'}')`
                             }}></div>
-                            <span className="rune__logo-year">2015–2019</span>
+                            <span className="rune__logo-year">{dragonText.degree.year[lang]}</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div className="rune start">
-                <div className="glyph floating-glyph-d2 left">
+                <div className="glyph floating-glyph-d2 left" tabIndex={0} data-clickable onFocus={() => showBubble(dragonText.master.dragon, setDragonText, true)}>
                     <div className="glyph__container">
                         <GlyphLine expanded={expanded} height="100%" left="calc(80% - 10px)" />
                         <GlyphLine expanded={expanded} width="45%" right="20%" sWidth="calc(100% - 10px)" sLeft="0" />
@@ -52,19 +54,19 @@ const Education = ({expanded, setDragonText}) => {
                 </div>
                 <div className="rune__text-container">
                 <div className="rune__text-box">
-                        <span className="rune__text">Máster de Desarrollode de Sitios y Aplicaciones Web</span>
+                        <span className="rune__text">{dragonText.master.template[lang]}</span>
                         <div className="rune__logo">
                             <div className="rune__logo-img" style={{
                                 backgroundImage:`url('http://127.0.0.1:8081/images/${'cv_sections/education/uoc.png'}')`
                             }}></div>
-                            <span className="rune__logo-year">2019–2021</span>
+                            <span className="rune__logo-year">{dragonText.master.year[lang]}</span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div className="rune">
-                <div className="glyph floating-glyph-d3">
+                <div className="glyph floating-glyph-d3" tabIndex={0} data-clickable onFocus={() => showBubble(dragonText.autonomous.dragon, setDragonText, true)}>
                     <div className="glyph__container">
                         <GlyphLine expanded={expanded} height="100%" right="0" sHeight="calc(100% - 20px)" sBottom="10px" />
                         <GlyphLine expanded={expanded} height="100%" right="40%" sHeight="calc(100% - 20px)" sBottom="10px" />
@@ -74,10 +76,10 @@ const Education = ({expanded, setDragonText}) => {
                 </div>
                 <div className="rune__text-container">
                 <div className="rune__text-box">
-                        <span className="rune__text">Formación autónoma</span>
+                        <span className="rune__text">{dragonText.autonomous.template[lang]}</span>
                         <div className="rune__logo">
                             <div className="rune__logo-img glyph-image-autonomous"></div>
-                            <span className="rune__logo-year">always...</span>
+                            <span className="rune__logo-year">{dragonText.autonomous.year[lang]}</span>
                         </div>
                     </div>
                 </div>

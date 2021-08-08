@@ -105,7 +105,7 @@ const Project = ({ expanded, id, setDragonText, lang }) => {
 
     }
 
-    const showProjectBubble = number => {
+    const showProjectBubble = (event, number) => {
         document.getElementById("speech-bubble").classList.remove('hidden');
         const dragon = document.getElementById("dragon");
         const bubbleWidth = document.querySelector('.speech-bubble__body').offsetWidth;
@@ -126,7 +126,7 @@ const Project = ({ expanded, id, setDragonText, lang }) => {
     return (
         <div id="project-carousel" className="cv-section projects-section">
 
-        <div tabIndex="1" className="project-box project1" onMouseUp={() => showProjectBubble(1)}>
+        <div tabIndex={0} data-clickable className="project-box project1" onClick={event => showProjectBubble(event, 1)}>
             <a href="https://researcher.zone" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>
@@ -140,7 +140,7 @@ const Project = ({ expanded, id, setDragonText, lang }) => {
         </div>
         <div className="project-box-activator1"></div>
 
-        <div tabIndex="1" className="project-box project2" onMouseUp={() => showProjectBubble(2)}>
+        <div tabIndex={0} data-clickable className="project-box project2" onClick={event => showProjectBubble(event, 2)}>
             <a href="https://you-tales.com" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>
@@ -153,7 +153,7 @@ const Project = ({ expanded, id, setDragonText, lang }) => {
         </div>
         <div className="project-box-activator2"></div>
 
-        <div tabIndex="1" className="project-box project3" onMouseUp={() => showProjectBubble(3)}>
+        <div tabIndex={0} data-clickable className="project-box project3" onClick={event => showProjectBubble(event, 3)}>
             <a href="https://udiet.page" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>
@@ -166,7 +166,7 @@ const Project = ({ expanded, id, setDragonText, lang }) => {
         </div>
         <div className="project-box-activator3"></div>
 
-        <div tabIndex="1" className="project-box project4" onMouseUp={() => showProjectBubble(4)}>
+        <div tabIndex={0} data-clickable className="project-box project4" onClick={event => showProjectBubble(event, 4)}>
             <a href="https://github.com/cmgdragon/dragon-cv" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>
@@ -178,7 +178,7 @@ const Project = ({ expanded, id, setDragonText, lang }) => {
         </div>
         <div className="project-box-activator4"></div>
 
-        <div tabIndex="1" className="project-box project5" onMouseUp={() => showProjectBubble(5)}>
+        <div tabIndex={0} data-clickable className="project-box project5" onClick={event => showProjectBubble(event, 5)}>
             <a href="https://github.com/cmgdragon" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>

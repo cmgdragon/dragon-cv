@@ -10,7 +10,7 @@ const About = ({ expanded, setDragonText, lang }) => {
             <div id="info">
                 <InfoBox 
                     lang={lang}
-                    boxPos={{top: "15%", left:"10%"}}
+                    boxPos={{top: "15%", left:"-10%"}}
                     img="sagrada-familia"
                     imgPos={{top: "2.5rem", left:"75%"}}
                     expanded={expanded}
@@ -20,7 +20,7 @@ const About = ({ expanded, setDragonText, lang }) => {
                 />
                 <InfoBox 
                     lang={lang}
-                    boxPos={{top: "30%", left:"65%"}}
+                    boxPos={{top: "80%", left:"25%"}}
                     img="base-jumping"
                     imgPos={{top: "2.5rem", left:"25%"}}
                     expanded={expanded}
@@ -30,7 +30,7 @@ const About = ({ expanded, setDragonText, lang }) => {
                 />
                 <InfoBox 
                     lang={lang}
-                    boxPos={{top: "75%", left:"35%"}}
+                    boxPos={{top: "15%", left:"55%"}}
                     img="vr-glasses"
                     imgPos={{top: "2.5rem", left:"15%"}}
                     expanded={expanded}
@@ -56,20 +56,20 @@ const About = ({ expanded, setDragonText, lang }) => {
                 />
             </div>
             <div id="languages">
-                <div className="languages__lang-es"></div>
-                <div className="languages__lang-ca"></div>
-                <div className="languages__lang-en"></div>
+                <div tabIndex={0} data-clickable className="languages__lang-es" onClick={() => showBubble(dragonText.languages.spanish, setDragonText, true)}></div>
+                <div tabIndex={0} data-clickable className="languages__lang-ca" onClick={() => showBubble(dragonText.languages.catalan, setDragonText, true)}></div>
+                <div tabIndex={0} data-clickable className="languages__lang-en" onClick={() => showBubble(dragonText.languages.english, setDragonText, true)}></div>
             </div>
             <div id="social">
-                <div className="social__box" tabIndex={0} onClick={() => showBubble(dragonText.social_media.linkedin, setDragonText, true)}>
+                <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_media.linkedin, setDragonText, true)}>
                     <img className="social__img" src="http://127.0.0.1:8081/images/cv_sections/about/linkedin.png" />
                     <a href="" target="_blank" className="social__link">Go to</a>
                 </div>
-                <div className="social__box" tabIndex={0} onClick={() => showBubble(dragonText.social_media.github, setDragonText, true)}>
+                <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_media.github, setDragonText, true)}>
                     <img className="social__img" src="http://127.0.0.1:8081/images/technologies/github.png" />
                     <a href="" target="_blank" className="social__link">Go to</a>
                 </div>
-                <div className="social__box" tabIndex={0} onClick={() => showBubble(dragonText.social_media.twitter, setDragonText, true)}>
+                <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_media.twitter, setDragonText, true)}>
                     <img className="social__img" src="http://127.0.0.1:8081/images/cv_sections/about/twitter.png" />
                     <a href="" target="_blank" className="social__link">Go to</a>
                 </div>
@@ -102,8 +102,8 @@ const InfoBox = ({boxPos, imgPos, dragonText, img, expanded, delay, lang, setDra
     }
 
     return (
-        <div ref={infoBox} style={{top: "-100%"}} className="info__box" onMouseUp={() => showBubble(dragonText.dragon, setDragonText, true)}>
-            <div className="info__panel" tabIndex={0}>
+        <div ref={infoBox} style={{top: "-100%"}} className="info__box">
+            <div className="info__panel" tabIndex={0} data-clickable onClick={() => showBubble(dragonText.dragon, setDragonText, true)}>
                 <div className="bat-wing"></div>
                 <span className="info__text">{dragonText.template[lang]}</span>
                 <img style={imgPos} className="info__img" src={`http://127.0.0.1:8081/images/cv_sections/about/${img}.svg`} />
