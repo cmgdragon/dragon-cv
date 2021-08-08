@@ -8,7 +8,7 @@ export const showBubble = (text, setDragonText, preserveBubble=false, cb) => {
 
     document.getElementById("speech-bubble").classList.remove('hidden');
     document.getElementById("speech-bubble").classList.add('show');
-    setDragonText(text);
+    setDragonText({ ...text });
     if (!preserveBubble){ 
         bubbleTimeouts.push(autoHiddeBubbleFn());
     }

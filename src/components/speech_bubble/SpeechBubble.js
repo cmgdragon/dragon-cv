@@ -28,6 +28,10 @@ const SpeechBubble = ({ text, lang }) => {
 
     }, [text, lang])
 
+    useEffect(() => {
+        parseHTMLText();
+    }, [currentText])
+
     const pickRandomMsg = msgs => {
         let index = Math.floor(Math.random() * msgs.length);
         if (index === currentIndex) {
@@ -35,10 +39,14 @@ const SpeechBubble = ({ text, lang }) => {
         } else return index;
     }
 
+    const parseHTMLText = () => {
+        document.querySelector('.speech-bubble__text').innerHTML = currentText;
+    }
+
     return (
         <div id="speech-bubble" className="speech-bubble__pivot">
             <div className="speech-bubble__body">
-                <div className="speech-bubble__text">{currentText}</div>
+                <div className="speech-bubble__text"></div>
             </div>
         </div>
     )
