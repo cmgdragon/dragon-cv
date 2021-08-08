@@ -1,0 +1,35 @@
+{
+    "info_living": {
+        "template": { 
+            "en": "Born and living in Barcelona, Spain",
+            "es": "Nacido y viviendo en Barcelona, España"
+        },
+        "dragon": {
+            "en": "",
+            "es": ""
+        }
+    },
+    "info_air": {
+        "template": { 
+            "en": "Air sports follower",
+            "es": "Amante de los deportes aéreos"
+        },
+        "dragon": {
+            "en": "",
+            "es": ""
+        }
+    },
+    "info_vr": {
+        "template": { 
+            "en": "Passionate about virtual reality",
+            "es": "Apasionado de la realidad virtual"
+        },
+        "dragon": {
+            "en": "I mostly play VR games. And League of Legends...",
+            "es": "Básicamente solo juego a títulos VR. Y a League of Legends..."
+        }
+    },
+    "tech": {
+        
+    }
+}

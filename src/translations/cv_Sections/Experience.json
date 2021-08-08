@@ -1,0 +1,187 @@
+{
+
+    "job1": {
+        "year": "2019",
+        "name": {
+             "en": "Pompeu Fabra University",
+             "es": "Universidad Pompeu Fabra"
+        },
+        "place": {
+            "en": "Development and Operations Unit (IT)",
+            "es": "Unidad de Desarrollo y Operaciones"
+        },
+        "tasks": {
+                "task1": {
+                    "en": {
+                        "name": "Front-end development",
+                        "tech": [
+                            "HTML, CSS/SASS and JS ES6",
+                            "Freemarker",
+                            "Vue.js"
+                        ]
+                    },
+                    "es": {
+                        "name": "Desarollo Front-end",
+                        "tech": [
+                            "HTML, CSS/SASS and JS ES6",
+                            "Freemarker",
+                            "Vue.js"
+                        ]
+                    }
+                },
+                "task2": {
+                    "en": {
+                        "name": "Development and content managment",
+                        "tech": [
+                            "Liferay Cloud PaaS",
+                            "Git – Gitflow workflow",
+                            "CI/CD – Bitbucket + Jenkins",
+                            "Docker + Kubernetes",
+                            "MySQL"
+                        ]
+                    },
+                    "es": {
+                        "name": "Desarollo y gestión de contenidos",
+                        "tech": [
+                            "Liferay Cloud PaaS",
+                            "Git – Gitflow workflow",
+                            "CI/CD – Bitbucket + Jenkins",
+                            "Docker + Kubernetes",
+                            "MySQL"
+                        ]
+                    }
+                },
+                "task3": {
+                    "en": {
+                        "name": "QA Tasks",
+                        "tech": []
+                    },
+                    "es": {
+                        "name": "Tareas de QA",
+                        "tech": []
+                    }
+                },
+                "task4": {
+                    "en": {
+                        "name": "Collaborator in the diaridebarcelona.cat",
+                        "tech": []
+                    },
+                    "es": {
+                        "name": "Collaborador en el diaridebarcelona.cat",
+                        "tech": []
+                    }
+                }
+            },
+        "dragon": {
+            "en": "Actual job",
+            "es": ""
+        }
+    },
+
+
+    "job2": {
+        "year": "2018",
+        "name": {
+            "en": "Pompeu Fabra University",
+            "es": "Universidad Pompeu Fabra"
+        },
+        "place": {
+            "en": "Web Services Unit",
+            "es": "Unidad de Servicios Web"
+        },
+        "tasks": {
+                "task1": {
+                    "en": {
+                        "name": "Front-end development",
+                        "tech": []
+                    },
+                    "es": {
+                        "name": "Desarrollo Front-end",
+                        "tech": []
+                    }
+                },
+                "task2": {
+                    "en": {
+                        "name": "Web architect",
+                        "tech": []
+                    },
+                    "es": {
+                        "name": "Arquitecto web",
+                        "tech": []
+                    }
+                }
+            },
+            "dragon": {
+                "en": "",
+                "es": ""
+            }
+    },
+
+
+    "job3": {
+        "year": "2017",
+        "name": {
+            "en": "Pompeu Fabra University",
+            "es": "Universidad Pompeu Fabra"
+        },
+        "place": {
+            "en": "Mar Campus Library and IT",
+            "es": "Biblioteca e Informática del Campus Mar"
+        },
+        "tasks": {
+                "task1": {
+                    "en": {
+                        "name": "Support for scientific publication",
+                        "tech": []
+                    },
+                    "es": {
+                        "name": "Soporte a la publicación científica",
+                        "tech": []
+                    }
+                },
+                "task2": {
+                    "en": {
+                        "name": "Institutional CRIS maintenance",
+                        "tech": []
+                    },
+                    "es": {
+                        "name": "Mantenimiento del CRIS institucional",
+                        "tech": []
+                    }
+                }
+            },
+            "dragon": {
+                "en": "",
+                "es": ""
+            }
+    },
+
+    "job4": {
+        "year": "2016",
+        "name": {
+            "en": "University of Barcelona",
+            "es": "Universidad de Barcelona"
+        },
+        "place": {
+            "en": "Vice-Chancellor's Research, Innovation and Transfer Office",
+            "es": "Vicerrectorado de Investigación, Innovación y Transferencia"
+        },
+        "tasks": {
+                "task1": {
+                    "en": {
+                        "name": "Documental support",
+                        "tech": []
+                    },
+                    "es": {
+                        "name": "Soporte documental",
+                        "tech": []
+                    }
+                }
+            },
+            "dragon": {
+                "en": "",
+                "es": ""
+            }
+    }
+
+}

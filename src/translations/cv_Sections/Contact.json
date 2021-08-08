@@ -1,0 +1,52 @@
+{
+    "error_name": {
+        "en": "A name would be appreciated",
+        "es": "Se agradecería que indicaras un nombre"
+    },
+    "error_email": {
+        "en": "I will need your email so I can stalk you at night...",
+        "es": "Necesito tu correo para poder espiarte por la noche..."
+    },
+    "error_worngemail": {
+        "en": "This doesn't appear to be a valid email... What are you trying?",
+        "es": "Eso no parece un email válido... ¿Qué intentas?"
+    },
+    "error_msg": {
+        "en": "You can't send a message without the message, genius",
+        "es": "No puedes enviar un mensaje si no pones el mensaje, genio"
+    },
+    "random_typing": {
+        "en": [
+            "That's it... Keep writing...",
+            "Just don't send me fish",
+            "Nice keystroke!"
+        ],
+        "es": [
+            "Eso es... sigue escribiendo...",
+            "Ni se te ocurra enviarme pescado",
+            "¡Buen golpe de tecla!"
+        ]
+    },
+    "waiting_interval": {
+        "init": {
+            "en": [
+                "So... do you plan to do something?",
+                "You can use the form. I won't bite",
+                "Are you still there?"
+            ],
+            "es": [
+                "¿Piensas hacer algo?",
+                "Puedes utilizar el formulario. No voy a morderte",
+                "¿Aún estás ahí?"
+            ]
+        },
+        "started": {
+            "en": [
+                "Why have you stopped?"
+            ],
+            "es": [
+                "¿Por qué te has detenido?"
+            ]
+        }
+    }
+}
