@@ -3,6 +3,7 @@
 @use "responsive/dragon";
 @use "styles/dragon/dragon_main";
 @use "styles/cave";
+@use "styles/language";
 @use "styles/cv_sections/projects";
 @use "styles/cv_sections/about";
 @use "styles/cv_sections/contact";
@@ -29,6 +30,12 @@ html {
 main {
     width: 100vw;
     height: 100vh;
+}
+
+.idiomas {
+    position: absolute;
+    color: white;
+    z-index: 10;
 }
 
 .pivot-point::before {

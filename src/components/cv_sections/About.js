@@ -1,44 +1,44 @@
 import React, { useEffect, useState, useRef } from 'react';
-import * as dragonText from '../../dragon_text/cv_Sections/About.json';
+import * as dragonText from '../../translations/cv_Sections/About.json';
 import { showBubble } from '../speech_bubble/ShowBubble';
 import { hideBubble } from '../speech_bubble/hideBubble';
 
-const About = ({ expanded, setDragonText }) => {
+const About = ({ expanded, setDragonText, lang }) => {
 
     return (
         <div className="cv-section about-section">
             <div id="info">
                 <InfoBox 
+                    lang={lang}
                     boxPos={{top: "15%", left:"10%"}}
-                    infoText="Born and living in Barcelona, Spain"
                     img="sagrada-familia"
                     leftWing="82%"
                     imgPos={{top: "2.5rem", left:"75%"}}
                     expanded={expanded}
                     setDragonText={setDragonText}
-                    dragonText={dragonText.info_living.es}
+                    dragonText={dragonText.info_living}
                     delay={0}
                 />
                 <InfoBox 
+                    lang={lang}
                     boxPos={{top: "30%", left:"65%"}}
-                    infoText="Air sports follower"
                     img="base-jumping"
                     leftWing="66%"
                     imgPos={{top: "2.5rem", left:"25%"}}
                     expanded={expanded}
                     setDragonText={setDragonText}
-                    dragonText={dragonText.info_air.es}
+                    dragonText={dragonText.info_air}
                     delay={550}
                 />
                 <InfoBox 
+                    lang={lang}
                     boxPos={{top: "75%", left:"35%"}}
-                    infoText="Virtual reality gamer"
                     img="vr-glasses"
                     leftWing="70%"
                     imgPos={{top: "2.5rem", left:"15%"}}
                     expanded={expanded}
                     setDragonText={setDragonText}
-                    dragonText={dragonText.info_vr.es}
+                    dragonText={dragonText.info_vr}
                     delay={900}
                 />
             </div>
@@ -49,12 +49,13 @@ const About = ({ expanded, setDragonText }) => {
             </div>
             <div id="technologies">
                 <CarouselItems 
+                    lang={lang}
                     items={10}
                     imageWidth={70} 
                     imageMargin={50} 
                     expanded={expanded}
+                    dragonText={dragonText}
                     setDragonText={setDragonText}
-                    dragonText={dragonText.info_living.es}
                 />
             </div>
             <div id="languages">
@@ -71,7 +72,7 @@ const About = ({ expanded, setDragonText }) => {
     )
 }
 
-const InfoBox = ({boxPos, imgPos, infoText, dragonText, leftWing, img, expanded, delay, setDragonText}) => {
+const InfoBox = ({boxPos, imgPos, dragonText, leftWing, img, expanded, delay, lang, setDragonText}) => {
 
     const infoBox = useRef(null);
     useEffect(() => {
@@ -95,18 +96,18 @@ const InfoBox = ({boxPos, imgPos, infoText, dragonText, leftWing, img, expanded,
     }
 
     return (
-        <div ref={infoBox} style={{top: "-100%"}} className="info__box" onMouseUp={() => showBubble(dragonText, setDragonText)}>
-        <div className="info__panel">
-            <div className="bat-wing"></div>
-            <span className="info__text">{infoText}</span>
-            <img style={imgPos} className="info__img" src={`http://127.0.0.1:8081/images/cv_sections/about/${img}.svg`} />
-            <div style={{left:leftWing}} className="bat-wing"></div>
+        <div ref={infoBox} style={{top: "-100%"}} className="info__box" onMouseUp={() => showBubble(dragonText.dragon, setDragonText, true)}>
+            <div className="info__panel">
+                <div className="bat-wing"></div>
+                <span className="info__text">{dragonText.template[lang]}</span>
+                <img style={imgPos} className="info__img" src={`http://127.0.0.1:8081/images/cv_sections/about/${img}.svg`} />
+                <div style={{left:leftWing}} className="bat-wing"></div>
+            </div>
         </div>
-    </div>
     )
 }
 
-const CarouselItems = ({items, imageWidth, imageMargin, expanded, dragonText, setDragonText}) => {
+const CarouselItems = ({items, imageWidth, imageMargin, expanded, lang, dragonText, setDragonText}) => {
     
     let canScroll = true;
     let lastMove = 0;

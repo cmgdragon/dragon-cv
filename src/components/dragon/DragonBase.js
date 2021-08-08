@@ -13,7 +13,7 @@ import DragonBelly from './body_parts/DragonBelly';
 import DragonBody from './body_parts/DragonBody';
 
 const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
-    selectedSection, initDragonPos, dragonText}) => {
+    selectedSection, initDragonPos, dragonText, lang}) => {
 
     const [isDragged, setDragged] = useState(false);
     const [dragonPos, setPos] = useState(pos);
@@ -48,6 +48,9 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
                 walkToPosition('51%', '80%', false, true);
                 bubble.classList.add('top');
                 break;
+            case 'contact':
+                walkToPosition('51%', '80%', false, true);
+                bubble.classList.add('top');
         }
     }
 
@@ -65,10 +68,10 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
             removeAnimation('walk');
             dragon.classList.remove('transition');
             dragon.classList.add('controllable');
-            setPos({
+            /*setPos({
                 top: dragon.getBoundingClientRect().top+'px',
                 left: getPositionInPixels(left.replace('%', ''))
-            })
+            })*/
         }, 1000);
             
     }
@@ -97,10 +100,10 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
                 dragon.classList.remove('transition');
                 dragon.classList.add('controllable');
                 if (sit) replaceAnimation('sit');
-                setPos({
+                /*setPos({
                     top: dragon.getBoundingClientRect().top+'px',
                     left: getPositionInPixels(left.replace('%', ''))
-                })
+                })*/
             }, 1000);
             
         }, 400);
@@ -175,7 +178,7 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
                 </DragonBelly>
 
             </DragonBody>
-            <SpeechBubble text={dragonText}/>
+            <SpeechBubble text={dragonText} lang={lang} />
         </div>
     )
 }

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import * as dragonText from '../../translations/cv_Sections/Experience.json';
+import { showBubble } from '../speech_bubble/ShowBubble';
+import { hideBubble } from '../speech_bubble/hideBubble';
 
-const Experience = () => {
+const Experience = ({lang, setDragonText}) => {
 
     const [barTranslate, setBarTranslate] = useState(0);
     const [selectedItem, setSelectedItem] = useState(0);
@@ -83,6 +86,14 @@ const Experience = () => {
         changeItem();*/
     }
 
+    const expandTaskTech = ({target}) => {
+        target.parentElement.classList.toggle('expanded');
+    }
+
+    const dragonTextHandler = text => {
+        showBubble(text, setDragonText, true);
+    }
+
     const experienceStyle = {
         //transform: `translateY(${barTranslate}px)`,
         //margin: `20vh 0`
@@ -95,95 +106,220 @@ const Experience = () => {
     return (
         <div className="cv-section experience-section">
             <div style={style} id="experience-bar" onScroll={scrollItem}>
+
+                
                 <div style={experienceStyle} className="experience">
-                    <img className="experience__img" src="http://127.0.0.1:8081/images/cv_sections/experience/ub.png" />
-                    <div className="experience__work">
-                        <div className="experience__info">
-                            <div className="experience__year">1996</div>
-                            <div className="experience__name">Test</div>
+                    <div className="experience__box">
+                        <img className="experience__img"
+                            tabIndex={0}
+                            onClick={() => dragonTextHandler(dragonText.job1.dragon)}
+                            src="http://127.0.0.1:8081/images/cv_sections/experience/upf.png"
+                        />
+                        <div className="experience__work">
+                            <div className="experience__info">
+                                <div className="experience__name">{dragonText.job1.name[lang]}</div>
+                                <div className="experience__place">{dragonText.job1.place[lang]}</div>
+                            </div>
+                            <div className="experience-tasks">
+                                {
+                                    Object.values(dragonText.job1.tasks).map((task, i) => {
+                                        const hasTech = task[lang].tech.length === 0 ? false : true;
+                                        return (
+                                            <div key={i} className="experience-tasks__task" 
+                                                onClick={expandTaskTech}
+                                                style={{ cursor: hasTech ? 'pointer' : 'default' }}
+                                            >
+                                                <div className="experience-tasks__task-box">
+                                                    <span className="experience-tasks__task-name">
+                                                        {task[lang].name}
+                                                    </span>
+                                                    <span 
+                                                        className={`experience-tasks__task-expand ${hasTech ? 'visible' : ''}`}>
+                                                    +</span>
+                                                </div>
+                                                { !hasTech ? undefined : 
+                                                        <div className="experience-tasks__tech">
+                                                            {
+                                                                task[lang].tech.map((tech, i) => 
+                                                                    <div key={`tech${i}`} className="experience-tasks__tech-item">
+                                                                        { tech }
+                                                                    </div>
+                                                                )
+                                                            }
+                                                        </div>
+                                                }
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
                         </div>
-                    <div className="experience-tasks">
-                        <div className="experience-tasks__task">Task1</div>
-                        <div className="experience-tasks__task">Task1</div>
-                        <div className="experience-tasks__task">Task1</div>
                     </div>
+                    <div className="experience__timeline">
+                        <div className="experience__year">{dragonText.job1.year}</div>
                     </div>
                 </div>
+
+
                 <div style={experienceStyle} className="experience">
-                    <img className="experience__img" src="http://127.0.0.1:8081/images/cv_sections/experience/upf.png" />
-                    <div className="experience__work">
-                        <div className="experience__info">
-                            <div className="experience__year">1996</div>
-                            <div className="experience__name">Test</div>
+                    <div className="experience__box">
+                    <img className="experience__img"
+                            tabIndex={0}
+                            onClick={() => dragonTextHandler(dragonText.job2.dragon)}
+                            src="http://127.0.0.1:8081/images/cv_sections/experience/upf.png"
+                        />
+                        <div className="experience__work">
+                            <div className="experience__info">
+                                <div className="experience__name">{dragonText.job2.name[lang]}</div>
+                                <div className="experience__place">{dragonText.job2.place[lang]}</div>
+                            </div>
+                            <div className="experience-tasks">
+                                {
+                                    Object.values(dragonText.job2.tasks).map((task, i) => {
+                                        const hasTech = task[lang].tech.length === 0 ? false : true;
+                                        return (
+                                            <div key={i} className="experience-tasks__task" 
+                                                onClick={expandTaskTech}
+                                                style={{ cursor: hasTech ? 'pointer' : 'default' }}
+                                            >
+                                                <div className="experience-tasks__task-box">
+                                                    <span className="experience-tasks__task-name">
+                                                        {task[lang].name}
+                                                    </span>
+                                                    <span 
+                                                        className={`experience-tasks__task-expand ${hasTech ? 'visible' : ''}`}>
+                                                    +</span>
+                                                </div>
+                                                { !hasTech ? undefined : 
+                                                        <div className="experience-tasks__tech">
+                                                            {
+                                                                task[lang].tech.map((tech, i) => 
+                                                                    <div key={`tech${i}`} className="experience-tasks__tech-item">
+                                                                        { tech }
+                                                                    </div>
+                                                                )
+                                                            }
+                                                        </div>
+                                                }
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
                         </div>
-                    <div className="experience-tasks">
-                        <div className="experience-tasks__task">Task1</div>
-                        <div className="experience-tasks__task">Task1</div>
-                        <div className="experience-tasks__task">Task1</div>
-                        <div className="experience-tasks__task">Task1</div>
                     </div>
+                    <div className="experience__timeline">
+                        <div className="experience__year">{dragonText.job2.year}</div>
                     </div>
                 </div>
+
+
                 <div style={experienceStyle} className="experience">
-                    <img className="experience__img" src="http://127.0.0.1:8081/images/cv_sections/experience/upf.png" />
-                    <div className="experience__work">
-                        <div className="experience__info">
-                            <div className="experience__year">1996</div>
-                            <div className="experience__name">Test</div>
+                    <div className="experience__box">
+                    <img className="experience__img"
+                        tabIndex={0}
+                        onClick={() => dragonTextHandler(dragonText.job3.dragon)}
+                        src="http://127.0.0.1:8081/images/cv_sections/experience/upf.png"
+                    />
+                        <div className="experience__work">
+                            <div className="experience__info">
+                                <div className="experience__name">{dragonText.job3.name[lang]}</div>
+                                <div className="experience__place">{dragonText.job3.place[lang]}</div>
+                            </div>
+                            <div className="experience-tasks">
+                                {
+                                    Object.values(dragonText.job3.tasks).map((task, i) => {
+                                        const hasTech = task[lang].tech.length === 0 ? false : true;
+                                        return (
+                                            <div key={i} className="experience-tasks__task" 
+                                                onClick={expandTaskTech}
+                                                style={{ cursor: hasTech ? 'pointer' : 'default' }}
+                                            >
+                                                <div className="experience-tasks__task-box">
+                                                    <span className="experience-tasks__task-name">
+                                                        {task[lang].name}
+                                                    </span>
+                                                    <span 
+                                                        className={`experience-tasks__task-expand ${hasTech ? 'visible' : ''}`}>
+                                                    +</span>
+                                                </div>
+                                                { !hasTech ? undefined : 
+                                                        <div className="experience-tasks__tech">
+                                                            {
+                                                                task[lang].tech.map((tech, i) => 
+                                                                    <div key={`tech${i}`} className="experience-tasks__tech-item">
+                                                                        { tech }
+                                                                    </div>
+                                                                )
+                                                            }
+                                                        </div>
+                                                }
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
                         </div>
-                    <div className="experience-tasks">
-                        <div className="experience-tasks__task">Task1</div>
-                        <div className="experience-tasks__task">Task1</div>
-                        <div className="experience-tasks__task">Task1</div>
-                        <div className="experience-tasks__task">Task1</div>
                     </div>
+                    <div className="experience__timeline">
+                        <div className="experience__year">{dragonText.job3.year}</div>
                     </div>
                 </div>
+
+
                 <div style={experienceStyle} className="experience">
-                    <img className="experience__img" src="http://127.0.0.1:8081/images/cv_sections/experience/upf.png" />
-                    <div className="experience__work">
-                        <div className="experience__info">
-                            <div className="experience__year">1996</div>
-                            <div className="experience__name">Test</div>
+                    <div className="experience__box">
+                    <img className="experience__img"
+                            tabIndex={0}
+                            onClick={() => dragonTextHandler(dragonText.job4.dragon)}
+                            src="http://127.0.0.1:8081/images/cv_sections/experience/ub.png"
+                        />
+                        <div className="experience__work">
+                            <div className="experience__info">
+                                <div className="experience__name">{dragonText.job4.name[lang]}</div>
+                                <div className="experience__place">{dragonText.job4.place[lang]}</div>
+                            </div>
+                            <div className="experience-tasks">
+                                {
+                                    Object.values(dragonText.job4.tasks).map((task, i) => {
+                                        const hasTech = task[lang].tech.length === 0 ? false : true;
+                                        return (
+                                            <div key={i} className="experience-tasks__task" 
+                                                onClick={expandTaskTech}
+                                                style={{ cursor: hasTech ? 'pointer' : 'default' }}
+                                            >
+                                                <div className="experience-tasks__task-box">
+                                                    <span className="experience-tasks__task-name">
+                                                        {task[lang].name}
+                                                    </span>
+                                                    <span 
+                                                        className={`experience-tasks__task-expand ${hasTech ? 'visible' : ''}`}>
+                                                    +</span>
+                                                </div>
+                                                { !hasTech ? undefined : 
+                                                        <div className="experience-tasks__tech">
+                                                            {
+                                                                task[lang].tech.map((tech, i) => 
+                                                                    <div key={`tech${i}`} className="experience-tasks__tech-item">
+                                                                        { tech }
+                                                                    </div>
+                                                                )
+                                                            }
+                                                        </div>
+                                                }
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
                         </div>
-                    <div className="experience-tasks">
-                        <div className="experience-tasks__task">Task1</div>
-                        <div className="experience-tasks__task">Task1</div>
-                        <div className="experience-tasks__task">Task1</div>
-                        <div className="experience-tasks__task">Task1</div>
                     </div>
+                    <div className="experience__timeline">
+                        <div className="experience__year">{dragonText.job4.year}</div>
                     </div>
                 </div>
-                <div style={experienceStyle} className="experience">
-                    <img className="experience__img" src="http://127.0.0.1:8081/images/cv_sections/experience/upf.png" />
-                    <div className="experience__work">
-                        <div className="experience__info">
-                            <div className="experience__year">1996</div>
-                            <div className="experience__name">Test</div>
-                        </div>
-                    <div className="experience-tasks">
-                        <div className="experience-tasks__task">Task1</div>
-                        <div className="experience-tasks__task">Task1</div>
-                        <div className="experience-tasks__task">Task1</div>
-                        <div className="experience-tasks__task">Task1</div>
-                    </div>
-                    </div>
-                </div>
-                <div style={experienceStyle} className="experience">
-                    <img className="experience__img" src="http://127.0.0.1:8081/images/cv_sections/experience/upf.png" />
-                    <div className="experience__work">
-                        <div className="experience__info">
-                            <div className="experience__year">1996</div>
-                            <div className="experience__name">Test</div>
-                        </div>
-                    <div className="experience-tasks">
-                        <div className="experience-tasks__task">Task1</div>
-                        <div className="experience-tasks__task">Task1</div>
-                        <div className="experience-tasks__task">Task1</div>
-                        <div className="experience-tasks__task">Task1</div>
-                    </div>
-                    </div>
-                </div>
+
+
             </div>
         </div>
     )

@@ -3,29 +3,28 @@ import addAnimation from '../../animations/animation_functions/addAnimation';
 import removeAnimation from '../../animations/animation_functions/removeAnimation';
 import { showBubble } from '../speech_bubble/ShowBubble';
 import { hideBubble } from '../speech_bubble/hideBubble';
-import * as dragonText from '../../dragon_text/cv_Sections/Projects.json';
+import * as dragonText from '../../translations/cv_Sections/Projects.json';
 
-const Project = ({ width, id, setDragonText }) => {
+const Project = ({ expanded, id, setDragonText, lang }) => {
 
     useEffect(() => {
+
         window.addEventListener('keydown', dragonKeyDown);
         window.addEventListener('keyup', dragonKeyUp);
-        document.getElementById('projects').addEventListener('click', ({target}) => {
+
+        /*document.getElementById('projects').addEventListener('click', ({target}) => {
 
             if (target.className.includes('project-box')) return;
                 hideBubble(setTimeout(() => {
                     document.getElementById("speech-bubble").classList.add('hidden');
                 }, 200));
-        } )
-        return () => { 
-            window.removeEventListener('keydown', dragonKeyDown);
-            window.removeEventListener('keyup', dragonKeyUp);
-        };
+        } )*/
     }, []);
 
     let isMoving = false;
 
     const dragonKeyDown = ({code}) => {
+        if (!document.querySelector('#projects.expanded')) return;
         const vel = 3;
         const moveToDirection = vel => {
             if (!isMoving) {
@@ -121,7 +120,7 @@ const Project = ({ width, id, setDragonText }) => {
             }
         }
 
-        showBubble(dragonText[`project${number}`].en, setDragonText);
+        showBubble(dragonText[`project${number}`], setDragonText, true);
     }
 
     return (

@@ -1,0 +1,74 @@
+.language {
+    display: flex;
+    z-index: 20;
+    left: 50%;
+    position: absolute;
+    transition: .2s ease-in;
+    transition-property: opacity, left;
+    opacity: .5;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &.expanded-lang {
+        left: 1%;
+    }
+}
+
+.language__box {
+    position: absolute;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    margin: .7rem;
+    height: 3.5rem;
+    background-image: url('http://127.0.0.1:8081/images/icons/world.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        opacity: .7;
+        box-shadow: 0px 0px 5px 1px white;
+        top: 2%;
+        left: -.3rem;
+        padding: 0 .3rem;
+        border-radius: 50%;
+        position: absolute;
+        background-color: black;
+        z-index: -1;
+    }
+
+    &:hover > .language__lang {
+        @extend .shown;
+    }
+}
+
+.language__lang {
+    width: 4.5rem;
+    border-radius: 100px;
+    transform: translateX(1rem);
+    right: 100%;
+    opacity: 0;
+    transition: .2s ease-in;
+    transition-property: opacity, transform;
+
+    &.shown {
+        opacity: 1;
+        transform: translateX(4rem);
+    }
+
+    &:hover {
+        opacity: .7 !important;
+    }
+
+    &.selected {
+        border: 3px solid white;
+    }
+}
