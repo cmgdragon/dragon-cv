@@ -55,12 +55,10 @@
 
 .cave__background .cave__background-depth2 {
     @include background-depth("depth2", 4);
-    //clip-path: polygon(11% 34%, 18% 30%, 25% 49%, 31% 29%, 38% 29%, 38% 29%, 45% 39%, 50% 29%, 57% 30%, 63% 47%, 69% 29%, 74% 30%, 79% 30%, 83% 48%, 89% 32%, 93% 33%, 98% 35%, 98% 44%, 100% 55%, 100% 0, 78% 0, 43% 0%, 0 0, 0% 34%, 0 55%, 5% 43%);
 }
 
 .cave__background .cave__background-depth3 {
     @include background-depth("depth3", 3);
-    //clip-path: polygon(12% 65%, 18% 56%, 26% 63%, 32% 55%, 37% 56%, 43% 64%, 48% 55%, 54% 54%, 59% 64%, 64% 55%, 68% 51%, 74% 60%, 79% 50%, 81% 55%, 85% 65%, 91% 57%, 95% 59%, 100% 65%, 100% 0, 78% 0, 43% 0%, 0 0, 0% 34%, 0 67%, 6% 58%);
 }
 
 .cave__background .cave__background-depth4 {

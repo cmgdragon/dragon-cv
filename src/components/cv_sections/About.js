@@ -12,7 +12,6 @@ const About = ({ expanded, setDragonText, lang }) => {
                     lang={lang}
                     boxPos={{top: "15%", left:"10%"}}
                     img="sagrada-familia"
-                    leftWing="82%"
                     imgPos={{top: "2.5rem", left:"75%"}}
                     expanded={expanded}
                     setDragonText={setDragonText}
@@ -23,7 +22,6 @@ const About = ({ expanded, setDragonText, lang }) => {
                     lang={lang}
                     boxPos={{top: "30%", left:"65%"}}
                     img="base-jumping"
-                    leftWing="66%"
                     imgPos={{top: "2.5rem", left:"25%"}}
                     expanded={expanded}
                     setDragonText={setDragonText}
@@ -34,7 +32,6 @@ const About = ({ expanded, setDragonText, lang }) => {
                     lang={lang}
                     boxPos={{top: "75%", left:"35%"}}
                     img="vr-glasses"
-                    leftWing="70%"
                     imgPos={{top: "2.5rem", left:"15%"}}
                     expanded={expanded}
                     setDragonText={setDragonText}
@@ -64,15 +61,24 @@ const About = ({ expanded, setDragonText, lang }) => {
                 <div className="languages__lang-en"></div>
             </div>
             <div id="social">
-                <img className="social__img" src="http://127.0.0.1:8081/images/cv_sections/about/linkedin.png" />
-                <img className="social__img" src="http://127.0.0.1:8081/images/technologies/github.png" />
-                <img className="social__img" src="http://127.0.0.1:8081/images/cv_sections/about/twitter.png" />
+                <div className="social__box" tabIndex={0} onClick={() => showBubble(dragonText.social_media.linkedin, setDragonText, true)}>
+                    <img className="social__img" src="http://127.0.0.1:8081/images/cv_sections/about/linkedin.png" />
+                    <a href="" target="_blank" className="social__link">Go to</a>
+                </div>
+                <div className="social__box" tabIndex={0} onClick={() => showBubble(dragonText.social_media.github, setDragonText, true)}>
+                    <img className="social__img" src="http://127.0.0.1:8081/images/technologies/github.png" />
+                    <a href="" target="_blank" className="social__link">Go to</a>
+                </div>
+                <div className="social__box" tabIndex={0} onClick={() => showBubble(dragonText.social_media.twitter, setDragonText, true)}>
+                    <img className="social__img" src="http://127.0.0.1:8081/images/cv_sections/about/twitter.png" />
+                    <a href="" target="_blank" className="social__link">Go to</a>
+                </div>
             </div>
         </div>
     )
 }
 
-const InfoBox = ({boxPos, imgPos, dragonText, leftWing, img, expanded, delay, lang, setDragonText}) => {
+const InfoBox = ({boxPos, imgPos, dragonText, img, expanded, delay, lang, setDragonText}) => {
 
     const infoBox = useRef(null);
     useEffect(() => {
@@ -97,11 +103,11 @@ const InfoBox = ({boxPos, imgPos, dragonText, leftWing, img, expanded, delay, la
 
     return (
         <div ref={infoBox} style={{top: "-100%"}} className="info__box" onMouseUp={() => showBubble(dragonText.dragon, setDragonText, true)}>
-            <div className="info__panel">
+            <div className="info__panel" tabIndex={0}>
                 <div className="bat-wing"></div>
                 <span className="info__text">{dragonText.template[lang]}</span>
                 <img style={imgPos} className="info__img" src={`http://127.0.0.1:8081/images/cv_sections/about/${img}.svg`} />
-                <div style={{left:leftWing}} className="bat-wing"></div>
+                <div className="bat-wing"></div>
             </div>
         </div>
     )

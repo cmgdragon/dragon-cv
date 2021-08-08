@@ -5,8 +5,8 @@
             "es": "Nacido y viviendo en Barcelona, España"
         },
         "dragon": {
-            "en": "",
-            "es": ""
+            "en": "Actually I'm not living in the capital, but in a little mountain village near of it",
+            "es": "De hecho, no vivo en la capital sino en un pequeño pueblo de montaña cerca de ella"
         }
     },
     "info_air": {
@@ -15,8 +15,8 @@
             "es": "Amante de los deportes aéreos"
         },
         "dragon": {
-            "en": "",
-            "es": ""
+            "en": "I would like to become a skydiver someday",
+            "es": "Algún día quisiera iniciarme en el paracaidismo"
         }
     },
     "info_vr": {
@@ -29,7 +29,18 @@
             "es": "Básicamente solo juego a títulos VR. Y a League of Legends..."
         }
     },
-    "tech": {
-        
+    "social_media": {
+        "linkedin": {
+            "en": "",
+            "es": ""
+        },
+        "github": {
+            "en": "",
+            "es": ""
+        },
+        "twitter": {
+            "en": "",
+            "es": ""
+        }
     }
 }

@@ -34,7 +34,7 @@
         color: white;
         font-weight: 600;
         position: relative;
-
+    
         &::before {
             content: '';
             position: absolute;
@@ -46,6 +46,11 @@
             padding-bottom: 1rem;
         }
         
+        &:hover::before,
+        &:focus::before {
+            box-shadow: 0px 0px 5px 2px white;
+        }
+
         .info__text {
             padding: .5rem;
             position: relative;
@@ -78,7 +83,7 @@
     top: -1rem;
 
     &.reverse {
-        left: 82%;
+        left: calc(100% - 86px);
         transform: scaleX(-1);
         top: -1rem;
     }
@@ -127,9 +132,47 @@
 #social {
     display: flex;
     justify-content: space-evenly;
+}
+
+.social__box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    &:hover, &:focus {
+        filter: drop-shadow(0 0 5px white);
+    }
 
     .social__img {
         width: 50px;
         object-fit: contain;
+    }
+
+    &:hover .social__img {
+        width: 50px;
+        object-fit: contain;
+    }
+
+    .social__link {
+        position: absolute;
+        left: 90%;
+        opacity: 0;
+        width: 100%;
+        transition: .1s ease-in;
+        transition-property: left, opacity;
+        text-decoration: underline;
+        background-color: white;
+        font-weight: bold;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        padding: .3rem;
+
+        &:visited, :active { color: initial }
+    }
+
+    &:focus .social__link {
+        left: 110%;
+        opacity: 1;
     }
 }
