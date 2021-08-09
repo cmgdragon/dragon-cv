@@ -1,0 +1,8 @@
+@media (max-height: 800px) {
+    #dragon { 
+        transform: scale(.40) translate(-5rem, 0.5rem) !important;
+    }
+    #dragon.reverse {
+        transform: scale(0.40) rotateY(180deg) translate(-568px, 1.5rem) !important;
+    }
+}

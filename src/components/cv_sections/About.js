@@ -61,15 +61,15 @@ const About = ({ expanded, setDragonText, lang }) => {
                 <div tabIndex={0} data-clickable className="languages__lang-en" onClick={() => showBubble(dragonText.languages.english, setDragonText, true)}></div>
             </div>
             <div id="social">
-                <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_media.linkedin, setDragonText, true)}>
+                <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.linkedin, setDragonText, true)}>
                     <img className="social__img" src="http://127.0.0.1:8081/images/cv_sections/about/linkedin.png" />
                     <a href="" target="_blank" className="social__link">Go to</a>
                 </div>
-                <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_media.github, setDragonText, true)}>
+                <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.github, setDragonText, true)}>
                     <img className="social__img" src="http://127.0.0.1:8081/images/technologies/github.png" />
                     <a href="" target="_blank" className="social__link">Go to</a>
                 </div>
-                <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_media.twitter, setDragonText, true)}>
+                <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.twitter, setDragonText, true)}>
                     <img className="social__img" src="http://127.0.0.1:8081/images/cv_sections/about/twitter.png" />
                     <a href="" target="_blank" className="social__link">Go to</a>
                 </div>

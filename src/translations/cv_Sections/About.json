@@ -43,18 +43,18 @@
             "es": "Tengo un nivel medio de inglés. Lo suficiente para navegar por Stackoverflow y mirar tutoriales de Youtube"
         }
     },
-    "social_media": {
+    "social_networks": {
         "linkedin": {
-            "en": "",
-            "es": ""
+            "en": "You can visit my Linkedin for a detailed, boring and more formal version of this page",
+            "es": "Puedes visitar mi Linkedin para una verisón más detallada, formal y aburrida de esta página"
         },
         "github": {
             "en": "Visit my Github and give me some starts! If you want 😏",
             "es": "¡Visita mi Github y dame alguna estrella! Si quieres 😏"
         },
         "twitter": {
-            "en": "",
-            "es": ""
+            "en": "Honestly I never had a Twitter account. I'm not so active there since I don't like this social network so much",
+            "es": "Honestamente nunca he tenido una cuenta de Twitter. No soy muy activo porque no me gusta demasiado la plataforma"
         }
     }
 }

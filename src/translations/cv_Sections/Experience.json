@@ -1,7 +1,7 @@
 {
 
     "job1": {
-        "year": "2019",
+        "year": "2020 - ",
         "name": {
              "en": "Pompeu Fabra University",
              "es": "Universidad Pompeu Fabra"
@@ -73,14 +73,14 @@
                 }
             },
         "dragon": {
-            "en": "This is my actual job",
-            "es": "Este es mi actual trabajo"
+            "en": "In this stage I start to handle various responsibilities and I improve my time management skills",
+            "es": "En esta etapa empiezo a manegar múltiples responsabilidades y mejoro mis habilidades de gestión del tiempo"
         }
     },
 
 
     "job2": {
-        "year": "2018",
+        "year": "2019 - 2020",
         "name": {
             "en": "Pompeu Fabra University",
             "es": "Universidad Pompeu Fabra"
@@ -119,7 +119,7 @@
 
 
     "job3": {
-        "year": "2017",
+        "year": "2017 - 2018",
         "name": {
             "en": "Pompeu Fabra University",
             "es": "Universidad Pompeu Fabra"
@@ -151,8 +151,8 @@
                 }
             },
             "dragon": {
-                "en": "",
-                "es": ""
+                "en": "I remember this job was very repetitive, so I developed a program for working faster",
+                "es": "Recuerdo que este trabajo era muy repetitivo, así que desarrollé un programa para ir más rápido"
             }
     },
 
@@ -179,8 +179,8 @@
                 }
             },
             "dragon": {
-                "en": "",
-                "es": ""
+                "en": "Mi first job was in an archive and I only had one task. I felt good when I finished it",
+                "es": "Mi primer trabajo fue en un archivo y solo tuve una tarea. Me sentí muy bien cuando la acabé"
             }
     }
 

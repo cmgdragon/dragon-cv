@@ -1,6 +1,5 @@
 @use "animations/dragon/dragon_walk";
 @use "animations/dragon/dragon_sit";
-@use "responsive/dragon";
 @use "styles/dragon/dragon_main";
 @use "styles/cave";
 @use "styles/language";
@@ -10,6 +9,8 @@
 @use "styles/cv_sections/education";
 @use "styles/cv_sections/experience";
 @use "styles/cv_sections/cv_section";
+
+@use "styles/mobile/dragon/dragon_main_mobile";
 
 * {
     box-sizing: border-box;
