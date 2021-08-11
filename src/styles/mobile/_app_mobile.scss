@@ -1,0 +1,7 @@
+@import "breakpoints";
+
+@media (max-width: $mobile) {
+    #main-menu { 
+        display: block;
+    }
+}

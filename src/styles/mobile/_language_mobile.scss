@@ -1,0 +1,7 @@
+@import "breakpoints";
+
+@media (max-width: $mobile) {
+    .language { 
+        left: 2% !important;
+    }
+}

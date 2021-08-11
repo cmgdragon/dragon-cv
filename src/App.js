@@ -18,7 +18,7 @@ const App = () => {
     const [pos, setPos] = useState({top: 0, left: 0});
     const [isDragging, setDragging] = useState(false);
     const [selectedSection, setSection] = useState('dragon-home');
-    const initDragonPos = { top: '2%', left: '78%'};
+    const initDragonPos = { top: '2%', left: '75%'};
     const [lang, setLang] = useState('en');
     const [dragonText, setDragonText] = useState(dragonWelcome);
 
@@ -31,12 +31,15 @@ const App = () => {
         });
 
         document.querySelectorAll('[data-clickable]').forEach(el => {
-            console.log('MIERDA')
             el.addEventListener('keydown', event => {
                 event.stopPropagation();
                 if (event.code === 'Enter') {
                     event.target.click();
                 }
+            })
+
+            el.addEventListener('blur', event => {
+                hideBubble();
             })
         });
 
@@ -76,20 +79,20 @@ const App = () => {
         }, 10)
     }
 
-    const style = {
-        position: 'relative',
-        display: 'grid',
-        height: '100%',
-        gridTemplateColumns: '1fr 1fr',
-        gridTemplateRows: 'auto'
+    const expandMobile = (section_name, setSection) => {
+        const selectedSectionMobile = document.getElementById(section_name); 
+        selectedSectionMobile.classList.add('expanded');
+        selectedSectionMobile.classList.add('cave__background');
+        selectedSectionMobile.previousElementSibling.classList.add('expanded');
+        setSection(selectedSectionMobile);
     }
 
     return (
         <>
         <Language lang={lang} setLang={setLang} selectedSection={selectedSection} />
-        <div style={style} onMouseMove={dragDragon}>
+        <div id="main-menu" onMouseMove={dragDragon}>
 
-            <HomeSection id="about">
+            <HomeSection id="about" expandMobile={expandMobile} setSection={setSection} >
                 <About setDragonText={setDragonText} lang={lang} />
             </HomeSection>
 
@@ -112,19 +115,19 @@ const App = () => {
                 </div>
             </div>
 
-            <HomeSection id="projects">
+            <HomeSection id="projects" expandMobile={expandMobile} setSection={setSection}>
                 <Projects setDragonText={setDragonText} lang={lang} />
             </HomeSection>
 
-            <HomeSection id="education">
+            <HomeSection id="education" expandMobile={expandMobile} setSection={setSection}>
                 <Education setDragonText={setDragonText} lang={lang} />
             </HomeSection>
 
-            <HomeSection id="experience">
+            <HomeSection id="experience" expandMobile={expandMobile} setSection={setSection}>
                 <Experience setDragonText={setDragonText} lang={lang} />
             </HomeSection>
 
-            <HomeSection id="contact">
+            <HomeSection id="contact" expandMobile={expandMobile} setSection={setSection}>
                 <Contact setDragonText={setDragonText} lang={lang} />
             </HomeSection>
 

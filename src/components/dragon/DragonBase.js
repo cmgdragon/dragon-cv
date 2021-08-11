@@ -11,6 +11,7 @@ import DragonHead from './body_parts/DragonHead';
 import DragonEyes from './body_parts/DragonEyes';
 import DragonBelly from './body_parts/DragonBelly';
 import DragonBody from './body_parts/DragonBody';
+import calcDragonTransform from '../../functions/calcDragonTransform';
 
 const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
     selectedSection, initDragonPos, dragonText, lang}) => {
@@ -20,6 +21,7 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
 
     useEffect(() => {
         //console.log(selectedSection);
+        calcDragonTransform();
 
     }, [selectedSection])
 
@@ -27,6 +29,7 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
         if (!selectedSection) return;
         const bubble = document.getElementById('speech-bubble');
         const section = selectedSection.id ?? selectedSection;
+
         switch (section) {
             case 'dragon-home':
                 setPos(initDragonPos);
@@ -60,6 +63,7 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
         const dragon = document.getElementById('dragon');
 
         dragon.classList.add('reverse', 'transition');
+        calcDragonTransform();
 
         replaceAnimation('walk');
         setPos({top, left});
@@ -92,6 +96,8 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
             
             if (!forward) dragon.classList.remove('reverse');
             else dragon.classList.add('reverse');
+
+            calcDragonTransform();
 
             setPos({top, left});
 
@@ -146,7 +152,7 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
         position: 'absolute',
         top: isDragged ? drag_top: dragonPos.top,
         left: isDragged ? drag_left: dragonPos.left,
-        //transform: `scale(.55) translate(${isDragged ? '-250px':0}, ${isDragged ? '-250px':0})`,
+        //transform: calcDragonTransform(),
         zIndex: 12
     }
 

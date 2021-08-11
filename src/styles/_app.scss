@@ -1,0 +1,7 @@
+#main-menu {
+    position: relative;
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}

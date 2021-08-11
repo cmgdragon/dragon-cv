@@ -1,14 +1,26 @@
 @use "dragon_home";
 @use "dragon_speech_bubble";
 
-#dragon {
+/*#dragon {
     transform: scale(.55) translate(0, 0) !important;
     user-select: none;
 }
 
 #dragon.reverse {
     transform: scale(-.55, .55) translate(-568px, 0) !important;
+}*/
+
+$size: 1;
+
+#dragon {
+    //transform: scale($size) translate(0, 0) !important;
+    user-select: none;
 }
+
+#dragon.reverse {
+    //transform: scale(-$size, $size) translate(-568px, 0) !important;
+}
+
 
 #dragon:hover {
     cursor: grab;

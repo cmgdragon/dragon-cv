@@ -21,6 +21,10 @@
     flex-direction: row-reverse;
     align-items: center;
 
+    @media (max-width: 1850px) {
+        transform: scale(.75);
+    }
+
     &.start { flex-direction: row; }
 
     &.start .rune__text-container {

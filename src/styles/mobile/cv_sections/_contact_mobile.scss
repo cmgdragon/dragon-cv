@@ -1,0 +1,18 @@
+@import "../breakpoints";
+
+@media (max-width: $mobile) {
+    .contact-section {
+        width: 100vw;
+        padding: 0 .5rem;
+        position: absolute;
+        top: -5%;
+    }
+
+    .contact-form {
+        width: 100%;
+    }     
+    
+    .contact-form__button {
+        width: 70%;
+    }
+}

@@ -1,12 +1,18 @@
 import React, { useEffect, useState, useRef } from 'react';
+import calcDragonTransform from '../functions/calcDragonTransform';
 
-const HomeSection = ({width='100vw', id, children}) => {
+const HomeSection = ({width='100vw', id, children, expandMobile, setSection}) => {
 
     const [clipPath, setClipPath] = useState('');
     const [expanded, setExpanded] = useState(false);
     const curtain = useRef(undefined);
     useEffect(() => {
         setClipPath(getclipPath());
+
+        window.addEventListener('resize', () => {
+            setClipPath(getclipPath());
+            calcDragonTransform();
+        });
 
         //observe section
         const observer = new MutationObserver(mutations => {
@@ -43,7 +49,7 @@ const HomeSection = ({width='100vw', id, children}) => {
 
     return (
         <>
-        <div ref={curtain} data-curtain={id} className="section-curtain">
+        <div ref={curtain} data-curtain={id} className="section-curtain" onTouchStart={() => expandMobile(id, setSection)}>
             <h1 className="section-title">
                 <span>{id}</span>
             </h1>

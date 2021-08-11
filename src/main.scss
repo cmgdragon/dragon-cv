@@ -1,3 +1,4 @@
+@use "styles/app";
 @use "animations/dragon/dragon_walk";
 @use "animations/dragon/dragon_sit";
 @use "styles/dragon/dragon_main";
@@ -10,7 +11,16 @@
 @use "styles/cv_sections/experience";
 @use "styles/cv_sections/cv_section";
 
+@use "styles/mobile/app_mobile";
+@use "styles/mobile/cv_sections/cv_section_mobile";
+@use "styles/mobile/language_mobile";
 @use "styles/mobile/dragon/dragon_main_mobile";
+@use "styles/mobile/dragon/dragon_home_mobile";
+@use "styles/mobile/cv_sections/about_mobile";
+@use "styles/mobile/cv_sections/projects_mobile";
+@use "styles/mobile/cv_sections/education_mobile";
+@use "styles/mobile/cv_sections/experience_mobile";
+@use "styles/mobile/cv_sections/contact_mobile";
 
 * {
     box-sizing: border-box;
@@ -31,12 +41,6 @@ html {
 main {
     width: 100vw;
     height: 100vh;
-}
-
-.idiomas {
-    position: absolute;
-    color: white;
-    z-index: 10;
 }
 
 .pivot-point::before {

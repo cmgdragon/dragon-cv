@@ -1,0 +1,54 @@
+@import "../breakpoints";
+
+@media (max-width: $mobile) {
+
+    .education-section {
+        width: 100vw;
+        padding-top: 2.5rem;
+        justify-content: flex-start;
+        gap: 3rem;
+        transform: scale(1);
+    }
+
+    .rune {
+        max-height: 130px;
+    }
+
+    .glyph {
+
+    }
+
+    .glyph__container {
+        width: 120px !important;
+        height: 100%;
+
+        &::before {
+
+        }
+    }
+
+    .rune__text-container,
+    .rune.start .rune__text-container {
+        justify-content: center;
+        transform-origin: right center;
+        position: absolute;
+        left: 5%;
+        width: 90vw;
+        top: 4%;
+        height: 75vh;
+        border-radius: 10px;
+        z-index: 10;;
+        transform: translateX(100px) scaleX(0);
+    }
+
+    .rune__text-box {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    .rune__text {
+        flex: 40% !important;
+        text-align: center;
+    }
+
+}

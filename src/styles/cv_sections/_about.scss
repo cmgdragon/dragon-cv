@@ -27,6 +27,11 @@
         transition: 1s ease-in;
         transition-property: top, left;
         cursor: pointer;
+
+        @media (max-width: 1160px) {
+            font-size: .9rem;
+            animation: none;
+        }
     }
 
     .info__panel {
@@ -34,8 +39,15 @@
         color: white;
         font-weight: 600;
         position: relative;
-        text-align: center;
     
+        @media (max-width: 1560px) {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 1160px) {
+            font-size: .9rem;
+        }
+
         &::before {
             content: '';
             position: absolute;
@@ -55,6 +67,8 @@
         .info__text {
             padding: .5rem;
             position: relative;
+            display: block;
+            text-align: center;
         }
 
         .info__img {
@@ -82,6 +96,10 @@
     position: absolute;
     left: -6.5rem;
     top: -1rem;
+
+    @media (max-width: 1160px) {
+        display: none;
+    }
 
     &.reverse {
         left: calc(100% - 86px);
@@ -173,6 +191,7 @@
         font-size: 1.1rem;
         border-radius: 5px;
         padding: .3rem;
+        pointer-events: none;
 
         &:visited, :active { color: initial }
     }
@@ -181,5 +200,6 @@
     .social__link:focus {
         left: 110%;
         opacity: 1;
+        pointer-events: all;
     }
 }

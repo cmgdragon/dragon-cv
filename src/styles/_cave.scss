@@ -37,7 +37,7 @@
 
 #projects .cave__background-depth1 {
     @include background-depth("columnas2", 5);
-    background-size: contain;
+    background-size: cover;
     background-position: right 400px bottom 0px;
 }
 
@@ -55,10 +55,12 @@
 
 .cave__background .cave__background-depth2 {
     @include background-depth("depth2", 4);
+    background-size: cover;
 }
 
 .cave__background .cave__background-depth3 {
     @include background-depth("depth3", 3);
+    background-size: cover;
 }
 
 .cave__background .cave__background-depth4 {

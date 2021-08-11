@@ -1,0 +1,12 @@
+@import "../breakpoints";
+
+@media (max-width: $mobile) {
+    .section-curtain {
+        height: 20vh;
+    }
+
+    .section-curtain.expanded { 
+        height: 20vh;
+        z-index: 10;
+    }
+}

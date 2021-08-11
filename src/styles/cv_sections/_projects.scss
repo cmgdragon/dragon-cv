@@ -19,13 +19,17 @@
     flex-direction: column;
     height: max-content;
     cursor: pointer;
+    transform: scale(.5);
+    opacity: 0;
+    pointer-events: none;
 
     &.show {
         animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        pointer-events: all;
     }
 
     .project-box__image {
-        width: 350px;
+        //width: 350px;
         max-height: 330px;
         height: auto;
         object-fit: contain;
@@ -95,9 +99,11 @@
 
 @keyframes scale-up-center {
     0% {
-        transform: scale(0);
+        opacity: 0;
+        transform: scale(.5);
     }
     100% {
+        opacity: 1;
         transform: scale(1);
     }
   }

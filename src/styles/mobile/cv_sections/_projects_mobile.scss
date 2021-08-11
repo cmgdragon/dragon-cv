@@ -1,0 +1,18 @@
+@import "../breakpoints";
+
+@media (max-width: $mobile) {
+    .projects-section {
+        padding: 3rem 0 6rem 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .project-box {
+        left: 0;
+    }
+
+    .project-box__image {
+        max-width: 270px !important;
+    }
+}

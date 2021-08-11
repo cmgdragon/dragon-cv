@@ -1,0 +1,49 @@
+@import "../breakpoints";
+
+@media (max-width: $mobile) {
+
+.about-section {
+    width: 100vw;
+}
+
+#info { 
+    flex-direction: column;
+
+    .info__box {
+        position: relative;
+        animation: none;
+        top: 0 !important;
+        left: 0 !important;
+        margin: 1rem .5rem;
+    }
+
+    .info__panel {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .info__text {
+        padding: 0 .5rem !important;
+        font-size: 1.3rem;
+    }
+
+    .info__img {
+        position: initial !important;
+        margin-right: 1rem;
+    }
+
+    .bat-wing {
+        display: none;
+    }
+}
+
+#social {
+    //flex-direction: column;
+}
+
+#technologies {
+    width: 90%;
+}
+
+}

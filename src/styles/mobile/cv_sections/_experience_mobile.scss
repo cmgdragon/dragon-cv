@@ -1,0 +1,28 @@
+@import "../breakpoints";
+
+@media (max-width: $mobile) {
+    .experience-section {
+        position: absolute;
+        width: 95vw;
+        left: 3%;
+    }
+
+    .experience {
+        font-size: 1.2rem;
+    }
+
+    .experience__name,
+    .experience__place {
+        font-size: 1.3rem !important;
+    }
+
+    .experience__timeline {
+        position: absolute;
+        left: 0;
+        bottom: 80%;
+    }
+
+    .experience__year {
+        font-size: 1.1rem !important;
+    }
+}

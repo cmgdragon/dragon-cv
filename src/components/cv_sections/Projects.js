@@ -4,22 +4,23 @@ import removeAnimation from '../../animations/animation_functions/removeAnimatio
 import { showBubble } from '../speech_bubble/ShowBubble';
 import { hideBubble } from '../speech_bubble/hideBubble';
 import * as dragonText from '../../translations/cv_Sections/Projects.json';
+import calcDragonTransform from '../../functions/calcDragonTransform';
 
-const Project = ({ expanded, id, setDragonText, lang }) => {
+const Project = ({ expanded, id, setDragonText }) => {
 
     useEffect(() => {
 
-        window.addEventListener('keydown', dragonKeyDown);
+        if (!expanded) return;
+        window.addEventListener('keydown', dragonKeyDown, { once: true });
         window.addEventListener('keyup', dragonKeyUp);
 
-        /*document.getElementById('projects').addEventListener('click', ({target}) => {
+        document.querySelectorAll('.project-box').forEach(el => {
+            setTimeout(() => {
+                el.classList.add('show');
+            }, 1000);
+        });
 
-            if (target.className.includes('project-box')) return;
-                hideBubble(setTimeout(() => {
-                    document.getElementById("speech-bubble").classList.add('hidden');
-                }, 200));
-        } )*/
-    }, []);
+    }, [expanded]);
 
     let isMoving = false;
 
@@ -40,9 +41,11 @@ const Project = ({ expanded, id, setDragonText, lang }) => {
 
         switch (code) {
             case 'KeyA':
+                calcDragonTransform(false);
                 moveToDirection(-vel);
             break;
             case 'KeyD':
+                calcDragonTransform(true);
                 moveToDirection(vel);
         }
     }
@@ -52,7 +55,8 @@ const Project = ({ expanded, id, setDragonText, lang }) => {
             || code === 'ArrowLeft' || code === 'ArrowRight') {
                 isMoving = false;
                 removeAnimation('walk');
-            }
+        }
+        window.addEventListener('keydown', dragonKeyDown, { once: true });
     }
 
     const moveDragon = left => {
@@ -85,7 +89,7 @@ const Project = ({ expanded, id, setDragonText, lang }) => {
 
     }
 
-    const detectWalkScroll = dragon => {
+    /*const detectWalkScroll = dragon => {
 
         setTimeout(() => {
             const projectNumbers = document.querySelectorAll('.project-box').length;
@@ -103,7 +107,7 @@ const Project = ({ expanded, id, setDragonText, lang }) => {
            
         }, 500);
 
-    }
+    }*/
 
     const showProjectBubble = (event, number) => {
         document.getElementById("speech-bubble").classList.remove('hidden');
@@ -138,7 +142,6 @@ const Project = ({ expanded, id, setDragonText, lang }) => {
                 <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/docker.png'} />
             </div>
         </div>
-        <div className="project-box-activator1"></div>
 
         <div tabIndex={0} data-clickable className="project-box project2" onClick={event => showProjectBubble(event, 2)}>
             <a href="https://you-tales.com" target="_blank" className="project-box__link">
@@ -151,7 +154,6 @@ const Project = ({ expanded, id, setDragonText, lang }) => {
                 <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/php.jpg'} />
             </div>
         </div>
-        <div className="project-box-activator2"></div>
 
         <div tabIndex={0} data-clickable className="project-box project3" onClick={event => showProjectBubble(event, 3)}>
             <a href="https://udiet.page" target="_blank" className="project-box__link">
@@ -164,7 +166,6 @@ const Project = ({ expanded, id, setDragonText, lang }) => {
                 <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/firebase.png'} />
             </div>
         </div>
-        <div className="project-box-activator3"></div>
 
         <div tabIndex={0} data-clickable className="project-box project4" onClick={event => showProjectBubble(event, 4)}>
             <a href="https://github.com/cmgdragon/dragon-cv" target="_blank" className="project-box__link">
@@ -176,7 +177,6 @@ const Project = ({ expanded, id, setDragonText, lang }) => {
                 <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/node.png'} />
             </div>
         </div>
-        <div className="project-box-activator4"></div>
 
         <div tabIndex={0} data-clickable className="project-box project5" onClick={event => showProjectBubble(event, 5)}>
             <a href="https://github.com/cmgdragon" target="_blank" className="project-box__link">
@@ -184,7 +184,6 @@ const Project = ({ expanded, id, setDragonText, lang }) => {
             </a>
             <img className="project-box__image" src={'http://127.0.0.1:8081/images/technologies/github.png'} />
         </div>
-        <div className="project-box-activator5"></div>
 
         </div>
     )
