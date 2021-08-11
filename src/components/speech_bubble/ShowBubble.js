@@ -15,5 +15,6 @@ export const showBubble = (text, setDragonText, preserveBubble=false, cb) => {
 }
 
 const autoHiddeBubbleFn = () => setTimeout(() => {
-    hideBubble()
+    document.querySelector('.menu-mobile__dragon-bubble').classList.remove('show');
+    hideBubble();
 }, 5000);

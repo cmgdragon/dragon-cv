@@ -10,8 +10,10 @@ const HomeSection = ({width='100vw', id, children, expandMobile, setSection}) =>
         setClipPath(getclipPath());
 
         window.addEventListener('resize', () => {
-            setClipPath(getclipPath());
-            calcDragonTransform();
+            setTimeout(() => {
+                setClipPath(getclipPath());
+                calcDragonTransform();
+            }, 1000);
         });
 
         //observe section

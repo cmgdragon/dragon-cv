@@ -1,7 +1,25 @@
 @import "../breakpoints";
 
 @media (max-width: $mobile) {
-    #dragon-home { 
-        display: none;
+    #dragon-home {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: 30;
+        top: 0;
+        left: -150vw;
+        transition: left .2s ease-in;
+        background-image: none;
+        background-color: rgba(42,42,42, .7);
+        overflow: hidden;
+
+        &.show {
+            left: 0;
+        }
+    }
+
+    .dragon-home__floor > div {
+        height: 30%;
+        opacity: .6;
     }
 }

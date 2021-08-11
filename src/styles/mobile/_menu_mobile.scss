@@ -1,0 +1,112 @@
+@import "breakpoints";
+
+#menu-mobile {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(42,42,42,.9);
+    justify-content: space-between;
+    align-items: center;
+    z-index: 35;
+}
+
+.menu-mobile__language {
+    flex: 1%;
+    align-self: start;
+}
+
+.menu-mobile__back {
+    flex: 10%;
+    text-align: end;
+    color: black;
+    font-size: 1.4rem;
+    font-weight: bold;
+    transform: scale(.8);
+    background-color: white;
+    margin: 0 3rem 0 2rem;
+    padding: .9rem;
+    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+    visibility: hidden;
+
+    &.show {
+        visibility: visible;
+    }
+}
+
+.menu-mobile__dragon {
+    display: flex;
+    flex: 20%;
+    width: 100%;
+    justify-content: space-between;
+
+    .menu-mobile__dragon-bubble {
+        background-color: white;
+        width: 80%;
+        height: 6vh;
+        border-radius: 5px;
+        position: relative;
+        margin-right: 1.5rem;
+        align-self: center;
+        opacity: 0;
+        transform: translateX(50px);
+        transition: .2s ease-in;
+        transition-property: opacity, transform;
+
+        &.show {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+
+        .menu-mobile__dragon-bubble-triangle {
+            width: 4vw;
+            height: 3vh;
+            background-color: white;
+            transform: rotate(90deg);
+            clip-path: polygon(50% 30%, 0% 100%, 100% 100%);
+            position: absolute;
+            right: -4vw;
+            bottom: 1vh;
+        }
+
+        .menu-mobile__dragon-bubble-text-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 100%;
+            
+            div {
+                width: 60%;
+                height: 3px;
+                background-color: black;
+            }
+        }
+    }
+
+    .menu-mobile__dragon-head {
+        background-image: url('http://127.0.0.1:8081/images/icons/dragon-head-menu.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 8vh;
+        margin-right: 1rem;
+        opacity: .8;
+        transition: opacity .2s ease-in;
+
+        &.show {
+            opacity: 1;
+        }
+    }
+
+}
+
+@media (max-width: $mobile) {
+    #menu-mobile {
+        display: flex;
+    }
+}
+

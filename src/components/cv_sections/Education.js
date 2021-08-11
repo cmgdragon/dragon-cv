@@ -21,9 +21,9 @@ const Education = ({expanded, setDragonText, lang}) => {
 
     }, [expanded]);
 
-    const selectRune = ({target}) => {
+    const selectRune = ({target}, text) => {
         target.parentElement.classList.add('selected-rune');
-        showBubble(dragonText.degree.dragon, setDragonText, true)
+        showBubble(text.dragon, setDragonText, true)
     }
 
     const unSelectRune = ({target}) => {
@@ -32,8 +32,8 @@ const Education = ({expanded, setDragonText, lang}) => {
 
     return (
         <div className="cv-section education-section">
-            <div className="rune" onClick>
-                <div className="glyph floating-glyph-d1" tabIndex={0} data-clickable onFocus={selectRune} onBlur={unSelectRune}>
+            <div className="rune">
+                <div className="glyph floating-glyph-d1" tabIndex={0} data-clickable onFocus={event => selectRune(event, dragonText.degree)} onBlur={unSelectRune}>
                     <div className="glyph__container">
                         <GlyphLine expanded={expanded} width="50%" />
                         <GlyphLine expanded={expanded} height="50%" sHeight="calc(100% - 10px)" sBottom="0" />
@@ -55,7 +55,7 @@ const Education = ({expanded, setDragonText, lang}) => {
             </div>
 
             <div className="rune start">
-                <div className="glyph floating-glyph-d2 left" tabIndex={0} data-clickable onFocus={selectRune} onBlur={unSelectRune}>
+                <div className="glyph floating-glyph-d2 left" tabIndex={0} data-clickable onFocus={event => selectRune(event, dragonText.master)} onBlur={unSelectRune}>
                     <div className="glyph__container">
                         <GlyphLine expanded={expanded} height="100%" left="calc(80% - 10px)" />
                         <GlyphLine expanded={expanded} width="45%" right="20%" sWidth="calc(100% - 10px)" sLeft="0" />
@@ -77,7 +77,7 @@ const Education = ({expanded, setDragonText, lang}) => {
             </div>
 
             <div className="rune">
-                <div className="glyph floating-glyph-d3" tabIndex={0} data-clickable onFocus={selectRune} onBlur={unSelectRune}>
+                <div className="glyph floating-glyph-d3" tabIndex={0} data-clickable onFocus={event => selectRune(event, dragonText.autonomous)} onBlur={unSelectRune}>
                     <div className="glyph__container">
                         <GlyphLine expanded={expanded} height="100%" right="0" sHeight="calc(100% - 20px)" sBottom="10px" />
                         <GlyphLine expanded={expanded} height="100%" right="40%" sHeight="calc(100% - 20px)" sBottom="10px" />

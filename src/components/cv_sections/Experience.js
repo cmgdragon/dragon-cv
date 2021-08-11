@@ -62,12 +62,16 @@ const Experience = ({lang, setDragonText}) => {
             if (elementTop >= 20 && elementTop <= 50) {
                 element.querySelector('.experience-tasks').classList.add('expanded');
                 element.style.opacity = 1;
+                element.style.pointerEvents = 'all';
                 element.classList.add('selected');
             } else {
                 element.querySelector('.experience-tasks').classList.remove('expanded');
+                element.querySelector('.experience__img').blur();
                 element.classList.remove('selected');
+                element.style.pointerEvents = 'none';
                 if (elementTop < 40) {
                     element.style.opacity = elementTop*0.05;
+                    element.querySelector('.experience__img').blur();
                 } else {
                     element.style.opacity = (100-elementTop)*0.02;
                 }
@@ -113,6 +117,7 @@ const Experience = ({lang, setDragonText}) => {
                         <img className="experience__img"
                             tabIndex={0}
                             onClick={() => dragonTextHandler(dragonText.job1.dragon)}
+                            data-clickable
                             src="http://127.0.0.1:8081/images/cv_sections/experience/upf.png"
                         />
                         <div className="experience__work">
@@ -166,6 +171,7 @@ const Experience = ({lang, setDragonText}) => {
                     <img className="experience__img"
                             tabIndex={0}
                             onClick={() => dragonTextHandler(dragonText.job2.dragon)}
+                            data-clickable
                             src="http://127.0.0.1:8081/images/cv_sections/experience/upf.png"
                         />
                         <div className="experience__work">
@@ -219,6 +225,7 @@ const Experience = ({lang, setDragonText}) => {
                     <img className="experience__img"
                         tabIndex={0}
                         onClick={() => dragonTextHandler(dragonText.job3.dragon)}
+                        data-clickable
                         src="http://127.0.0.1:8081/images/cv_sections/experience/upf.png"
                     />
                         <div className="experience__work">
@@ -272,6 +279,7 @@ const Experience = ({lang, setDragonText}) => {
                     <img className="experience__img"
                             tabIndex={0}
                             onClick={() => dragonTextHandler(dragonText.job4.dragon)}
+                            data-clickable
                             src="http://127.0.0.1:8081/images/cv_sections/experience/ub.png"
                         />
                         <div className="experience__work">

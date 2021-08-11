@@ -4,6 +4,7 @@
 
 .about-section {
     width: 100vw;
+    height: 90vh;
     z-index: 5;
 }
 
@@ -39,8 +40,14 @@
     }
 }
 
-#social {
-    //flex-direction: column;
+.social__box {
+    &:focus .social__link,
+    .social__link:focus {
+        left: 0%;
+        bottom: -60%;
+        opacity: 1;
+        pointer-events: all;
+    }
 }
 
 #technologies {

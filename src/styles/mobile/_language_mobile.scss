@@ -1,7 +1,39 @@
 @import "breakpoints";
 
 @media (max-width: $mobile) {
-    .language { 
-        left: 2% !important;
+    .language {
+        display: none;
+    }
+
+    .language.mobile {
+        display: block;
+        position: relative;
+        left: 0;
+        transform: scale(.8);
+        opacity: .5;
+
+        &.show {
+            opacity: 1;
+        }
+    }
+
+
+    .language__box {
+        &.show > .language__lang {
+            @extend .shown;
+        }
+    }
+
+    .language__lang {
+        transform: translate(4rem, 0rem);
+        opacity: 0 !important;
+        box-shadow: 0px 0px 10px 2px black;
+        pointer-events: none;
+
+        &.shown {
+            pointer-events: all;
+            transform: translate(.5rem, -4.5rem);
+            opacity: 1 !important;
+        }
     }
 }

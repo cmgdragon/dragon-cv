@@ -3,5 +3,8 @@
 @media (max-width: $mobile) {
     #dragon { 
         //display: none;
+        bottom: -70vh;
+        left: 70vw !important;
+        transform: scale(-.4, .4) !important;
     }
 }

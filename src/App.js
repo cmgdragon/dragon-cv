@@ -12,6 +12,8 @@ import Language from './components/Language';
 import * as dragonWelcome from './translations/Welcome.json';
 import { hideBubble } from './components/speech_bubble/hideBubble';
 import calcDragonTransform from './functions/calcDragonTransform';
+import MenuMobile from './components/MenuMobile';
+import mobile_breakpoint from './breakpoints';
 
 const App = () => {
 
@@ -41,8 +43,10 @@ const App = () => {
                 }
             })
 
-            el.addEventListener('blur', event => {
-                hideBubble();
+            el.addEventListener('blur', () => {
+                if (window.outerWidth > mobile_breakpoint) {
+                    hideBubble();
+                }
             })
         });
 
@@ -88,6 +92,13 @@ const App = () => {
         selectedSectionMobile.classList.add('cave__background');
         selectedSectionMobile.previousElementSibling.classList.add('expanded');
         setSection(selectedSectionMobile);
+    }
+
+    const unExpandMobile = () => {
+        selectedSection.classList.remove('expanded');
+        selectedSection.previousElementSibling.classList.remove('expanded');
+        document.getElementById("dragon-home").classList.remove('show');
+        setSection('dragon-home');
     }
 
     return (
@@ -136,7 +147,23 @@ const App = () => {
 
             {/*<button onClick={() => replaceAnimation('walk')}>Add animation</button>*/}
         </div>
-        
+        <MenuMobile id="menu-mobile" dragonText={dragonText} selectedSection={selectedSection} >
+            <div className="menu-mobile__language">
+                <Language lang={lang} setLang={setLang} selectedSection={selectedSection} mobile={true} />
+            </div>
+            <div className="menu-mobile__back" onClick={unExpandMobile} ><span>Back</span></div>
+            <div className="menu-mobile__dragon">
+                <div className="menu-mobile__dragon-bubble">
+                    <div className="menu-mobile__dragon-bubble-triangle"></div>
+                    <div className="menu-mobile__dragon-bubble-text-icon">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div className="menu-mobile__dragon-head"></div>
+            </div>
+        </MenuMobile>
         </>
     )
 }

@@ -1,11 +1,22 @@
 import React from 'react';
 
-const Language = ({ lang, setLang, selectedSection }) => {
+const Language = ({ lang, setLang, selectedSection, mobile=false }) => {
 
     const handleLang = newLang => setLang(newLang);
 
+    const toggleFocus = ({target}) => {
+        if (target.classList.contains('show')) {
+            target.classList.remove('show');
+            target.parentElement.classList.remove('show');
+        } else {
+            target.classList.add('show');
+            target.parentElement.classList.add('show');
+        }
+    }
+
     return (
-        <div className={`language ${selectedSection !== 'dragon-home' ? 'expanded-lang' : ''}`}>
+        <div className={`language ${selectedSection !== 'dragon-home' ? 'expanded-lang ' : ' '}` + 
+        `${mobile ? 'mobile' : ''}`} onClick={toggleFocus}>
             <div className="language__box">
                 <img onClick={() => handleLang('en')} 
                     className={`language__lang ${lang === 'en' ? 'selected' : ''}`}

@@ -7,7 +7,7 @@
     transition-property: opacity, left;
     opacity: .5;
 
-    &:hover {
+    &:hover, &.show {
         opacity: 1;
     }
 
@@ -45,7 +45,8 @@
         z-index: -1;
     }
 
-    &:hover > .language__lang {
+    &:hover > .language__lang,
+    &.show > .language__lang {
         @extend .shown;
     }
 }
