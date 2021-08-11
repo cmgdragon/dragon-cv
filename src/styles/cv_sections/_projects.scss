@@ -29,9 +29,8 @@
     }
 
     .project-box__image {
-        //width: 350px;
-        max-height: 330px;
-        height: auto;
+        max-height: 800px;
+        height: 45vh;
         object-fit: contain;
         width: auto;
     }
@@ -42,8 +41,9 @@
     }
 
     .project-box__tech-img {
-        width: 45px;
-        height: 45px;
+        max-height: 100px;
+        height: 5vh;
+        width: 5vh;
         margin: .7rem 0 .5rem 0;
         background-color: white;
         object-fit: contain;
@@ -86,7 +86,7 @@
         box-shadow: 1px 1px 13px 8px #1d1d1d;
         background-color: #5a5a5a85;
         height: 104%;
-        width: 108%;
+        width: calc(100% + 30px);
         margin: -15px;
         z-index: -1;
     }
@@ -106,7 +106,7 @@
         opacity: 1;
         transform: scale(1);
     }
-  }
+}
   
 
 $projects: 5;
@@ -116,14 +116,6 @@ $left: 0%;
     $left: $left + $division;
 
     .project#{$i} {
-        left: $left;
-    }
-
-    .project-box-activator#{$i} {
-        position: absolute;
-        background-color: blue;
-        width: 5px;
-        height: 5px;
         left: $left;
     }
 

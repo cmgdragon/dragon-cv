@@ -75,13 +75,17 @@
     margin: 0 4rem;
     color: inherit;
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     transition: 1s ease-in;
     transition-property: opacity;
     opacity: 0;
     display: flex;
     align-items: center;
     column-gap: 1rem;
+
+    @media (max-width: 1050px) {
+        font-size: 1.9rem;
+    }
 
     .rune__text {
         flex: 80%;
@@ -120,6 +124,9 @@
     max-width: 170px;
     max-height: 200px;
     align-self: flex-end;
+    pointer-events: none;
+
+    &.show { pointer-events: all; }
 
     &.left {
         align-self: flex-start;

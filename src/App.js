@@ -11,6 +11,7 @@ import HomeSection from './components/HomeSection';
 import Language from './components/Language';
 import * as dragonWelcome from './translations/Welcome.json';
 import { hideBubble } from './components/speech_bubble/hideBubble';
+import calcDragonTransform from './functions/calcDragonTransform';
 
 const App = () => {
 
@@ -22,7 +23,9 @@ const App = () => {
     const [lang, setLang] = useState('en');
     const [dragonText, setDragonText] = useState(dragonWelcome);
 
-   useEffect(() => {
+    useEffect(() => {
+
+        calcDragonTransform();
 
         window.addEventListener('keydown', ({code}) => {
             if (code === 'Tab') {

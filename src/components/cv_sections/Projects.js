@@ -9,10 +9,13 @@ import calcDragonTransform from '../../functions/calcDragonTransform';
 const Project = ({ expanded, id, setDragonText }) => {
 
     useEffect(() => {
-
-        if (!expanded) return;
         window.addEventListener('keydown', dragonKeyDown, { once: true });
         window.addEventListener('keyup', dragonKeyUp);
+    }, []);
+
+    useEffect(() => {
+
+        if (!expanded) return;
 
         document.querySelectorAll('.project-box').forEach(el => {
             setTimeout(() => {

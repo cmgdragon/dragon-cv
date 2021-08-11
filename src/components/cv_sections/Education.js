@@ -9,7 +9,9 @@ const Education = ({expanded, setDragonText, lang}) => {
         console.log('entrar')
         let i = 0;
         const showGlyph = () => setTimeout(() => {
-            document.querySelector(`.floating-glyph-d${i+1} .glyph__container`).classList.add('show');
+            const glyph_container = document.querySelector(`.floating-glyph-d${i+1} .glyph__container`);
+            glyph_container.classList.add('show');
+            glyph_container.parentElement.classList.add('show');
             ++i;
             if (i < document.querySelectorAll('.glyph__container').length) {
                 showGlyph();
@@ -19,10 +21,19 @@ const Education = ({expanded, setDragonText, lang}) => {
 
     }, [expanded]);
 
+    const selectRune = ({target}) => {
+        target.parentElement.classList.add('selected-rune');
+        showBubble(dragonText.degree.dragon, setDragonText, true)
+    }
+
+    const unSelectRune = ({target}) => {
+        target.parentElement.classList.remove('selected-rune');
+    }
+
     return (
         <div className="cv-section education-section">
-            <div className="rune">
-                <div className="glyph floating-glyph-d1" tabIndex={0} data-clickable onFocus={() => showBubble(dragonText.degree.dragon, setDragonText, true)}>
+            <div className="rune" onClick>
+                <div className="glyph floating-glyph-d1" tabIndex={0} data-clickable onFocus={selectRune} onBlur={unSelectRune}>
                     <div className="glyph__container">
                         <GlyphLine expanded={expanded} width="50%" />
                         <GlyphLine expanded={expanded} height="50%" sHeight="calc(100% - 10px)" sBottom="0" />
@@ -44,7 +55,7 @@ const Education = ({expanded, setDragonText, lang}) => {
             </div>
 
             <div className="rune start">
-                <div className="glyph floating-glyph-d2 left" tabIndex={0} data-clickable onFocus={() => showBubble(dragonText.master.dragon, setDragonText, true)}>
+                <div className="glyph floating-glyph-d2 left" tabIndex={0} data-clickable onFocus={selectRune} onBlur={unSelectRune}>
                     <div className="glyph__container">
                         <GlyphLine expanded={expanded} height="100%" left="calc(80% - 10px)" />
                         <GlyphLine expanded={expanded} width="45%" right="20%" sWidth="calc(100% - 10px)" sLeft="0" />
@@ -66,7 +77,7 @@ const Education = ({expanded, setDragonText, lang}) => {
             </div>
 
             <div className="rune">
-                <div className="glyph floating-glyph-d3" tabIndex={0} data-clickable onFocus={() => showBubble(dragonText.autonomous.dragon, setDragonText, true)}>
+                <div className="glyph floating-glyph-d3" tabIndex={0} data-clickable onFocus={selectRune} onBlur={unSelectRune}>
                     <div className="glyph__container">
                         <GlyphLine expanded={expanded} height="100%" right="0" sHeight="calc(100% - 20px)" sBottom="10px" />
                         <GlyphLine expanded={expanded} height="100%" right="40%" sHeight="calc(100% - 20px)" sBottom="10px" />
