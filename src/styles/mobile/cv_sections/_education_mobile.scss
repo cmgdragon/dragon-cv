@@ -12,13 +12,44 @@
     .rune {
         max-height: 130px;
         transform: scale(1);
-        left: 50%;
+        left: -20%;
         top: 7%;
         flex-direction: row;
     }
 
     .glyph {
         align-self: flex-end;
+    }
+
+    .glyph__container {
+        width: 120px !important;
+        height: 100%;
+    }
+
+    .rune__text-container,
+    .rune.start .rune__text-container {
+        justify-content: center;
+        transform-origin: right center;
+        position: absolute;
+        width: 90vw;
+        top: 10%;
+        height: 75vh;
+        border-radius: 10px;
+        z-index: 10;
+        transform: translateX(100px) scale(0);
+        transition: transform .1s ease-in;
+        height: 0;
+        width: 0;
+    }
+
+    .rune__text-box {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    .rune__text {
+        flex: 40% !important;
+        text-align: center;
     }
 
     .selected-rune {
@@ -33,40 +64,9 @@
 
     .selected-rune .rune__text-container {
         transform: scale(1.5) !important;
-        left: -90%;
-    }
-
-    .glyph__container {
-        width: 120px !important;
-        height: 100%;
-
-        &::before {
-
-        }
-    }
-
-    .rune__text-container,
-    .rune.start .rune__text-container {
-        justify-content: center;
-        transform-origin: right center;
-        position: absolute;
-        width: 90vw;
-        top: 10%;
-        height: 75vh;
-        border-radius: 10px;
-        z-index: 10;
-        transform: translateX(100px) scaleX(0);
-        transition: transform .1s ease-in;
-    }
-
-    .rune__text-box {
-        flex-direction: column;
-        padding: 1rem 0;
-    }
-
-    .rune__text {
-        flex: 40% !important;
-        text-align: center;
+        left: 70%;
+        width: 90vw !important;
+        height: 75vh !important;
     }
 
 }

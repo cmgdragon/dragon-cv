@@ -20,10 +20,12 @@ const App = () => {
     const [debounce, setDebounce] = useState(false);
     const [pos, setPos] = useState({top: 0, left: 0});
     const [isDragging, setDragging] = useState(false);
+    const [selectedElement, setSelectedElement] = useState(undefined);
     const [selectedSection, setSection] = useState('dragon-home');
     const initDragonPos = { top: '2%', left: '75%'};
     const [lang, setLang] = useState('en');
     const [dragonText, setDragonText] = useState(dragonWelcome);
+    let currentSelected;
 
     useEffect(() => {
 
@@ -36,16 +38,22 @@ const App = () => {
         });
 
         document.querySelectorAll('[data-clickable]').forEach(el => {
+
+            el.addEventListener('click', event => {
+                setSelectedElement(event.target);
+            })        
+
             el.addEventListener('keydown', event => {
                 event.stopPropagation();
                 if (event.code === 'Enter') {
                     event.target.click();
+                    selectElement();
                 }
             })
 
             el.addEventListener('blur', () => {
+                hideBubble();
                 if (window.outerWidth > mobile_breakpoint) {
-                    hideBubble();
                 }
             })
         });
@@ -147,7 +155,7 @@ const App = () => {
 
             {/*<button onClick={() => replaceAnimation('walk')}>Add animation</button>*/}
         </div>
-        <MenuMobile id="menu-mobile" dragonText={dragonText} selectedSection={selectedSection} >
+        <MenuMobile id="menu-mobile" dragonText={dragonText} selectedSection={selectedSection} selectedElement={selectedElement}>
             <div className="menu-mobile__language">
                 <Language lang={lang} setLang={setLang} selectedSection={selectedSection} mobile={true} />
             </div>
