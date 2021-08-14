@@ -12,9 +12,12 @@ import DragonEyes from './body_parts/DragonEyes';
 import DragonBelly from './body_parts/DragonBelly';
 import DragonBody from './body_parts/DragonBody';
 import calcDragonTransform from '../../functions/calcDragonTransform';
+import * as mobileInteractions from '../../translations/MobileInteractions.json';
+import * as sectionsText from '../../translations/Sections.json';
+import { showBubble } from '../speech_bubble/ShowBubble';
 
 const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
-    selectedSection, initDragonPos, dragonText, lang}) => {
+    selectedSection, setDragonText, initDragonPos, dragonText, lang}) => {
 
     const [isDragged, setDragged] = useState(false);
     const [dragonPos, setPos] = useState(pos);
@@ -37,6 +40,9 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
             case 'dragon-home':
                 setPos(initDragonPos);
                 bubble.classList.remove('top');
+                setTimeout(() => {
+                    showBubble(sectionsText.dragon_home, setDragonText);
+                }, 200);
                 break;
             case 'projects':
                 walkToProjectPosition('65%', '35%');
@@ -51,7 +57,7 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
                 bubble.classList.add('top');
                 break;
             case 'education':
-                walkToPosition('51%', '75%', false, true);
+                walkToPosition('51%', '80%', false, true);
                 bubble.classList.add('top');
                 break;
             case 'contact':
@@ -141,13 +147,20 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
         releaseDragonIntoSection();
     }
 
+    const mobileInteracion = event => {
+        if (document.getElementById('speech-bubble').classList.contains('show') ||
+            !document.getElementById("dragon-home").classList.contains('show')) return;
+        event.stopPropagation();
+        showBubble(mobileInteractions, setDragonText);
+    }
+
     const style = {
         top: isDragged ? drag_top: dragonPos.top,
         left: isDragged ? drag_left: dragonPos.left
     }
 
     return (
-        <div id="dragon" style={style} onMouseDown={grabDragon} onMouseUp={releaseDragon}>
+        <div id="dragon" style={style} onClick={mobileInteracion} onMouseDown={grabDragon} onMouseUp={releaseDragon}>
             <DragonBody image="cuerpo/cuerpo_upper"
              basePivot={{top: '8.2em', left: '17%'}}
              width="190px" isDragged={isDragged}>

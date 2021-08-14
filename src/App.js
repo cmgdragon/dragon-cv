@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import addAnimation from './animations/animation_functions/addAnimation';
-import replaceAnimation from './animations/animation_functions/replaceAnimation';
 import DragonBase from './components/dragon/DragonBase';
 import About from './components/cv_sections/About';
 import Projects from './components/cv_sections/Projects';
@@ -10,6 +8,7 @@ import Contact from './components/cv_sections/Contact';
 import HomeSection from './components/HomeSection';
 import Language from './components/Language';
 import * as dragonWelcome from './translations/Welcome.json';
+import * as sectionsText from './translations/Sections.json';
 import { hideBubble } from './components/speech_bubble/hideBubble';
 import calcDragonTransform from './functions/calcDragonTransform';
 import MenuMobile from './components/MenuMobile';
@@ -18,9 +17,10 @@ import { showBubble } from './components/speech_bubble/ShowBubble';
 const App = () => {
 
     const [debounce, setDebounce] = useState(false);
+    const [homeGuide, setHomeGuide] = useState(false);
     const [pos, setPos] = useState({top: 0, left: 0});
     const [isDragging, setDragging] = useState(false);
-    const [selectedSection, setSection] = useState('dragon-home');
+    const [selectedSection, setSection] = useState(undefined);
     const initDragonPos = { top: '2%', left: '75%'};
     const [lang, setLang] = useState('en');
     const [dragonText, setDragonText] = useState(dragonWelcome);
@@ -29,7 +29,7 @@ const App = () => {
 
         calcDragonTransform();
 
-        showBubble(dragonWelcome, setDragonText);
+        showBubble(dragonWelcome, setDragonText, true);
 
         window.addEventListener('keydown', ({code}) => {
             if (code === 'Tab') {
@@ -41,7 +41,8 @@ const App = () => {
             event.stopPropagation();
 
             if (!event.path.find(el => "getAttribute" in el && el.getAttribute("data-clickable")) &&
-                !event.path.find(el => el === document.querySelector('.menu-mobile__dragon'))) {
+                !event.path.find(el => el === document.querySelector('.menu-mobile__dragon')) &&
+                !event.path.find(el => el === document.querySelector('.language'))) {
                 hideBubble();
             }
         });
@@ -57,6 +58,27 @@ const App = () => {
         });
 
     }, []);
+
+    useEffect(() => {
+
+        if (!selectedSection) {
+            setHomeGuideTimeout();
+        } else {
+            clearTimeout(homeGuide);
+        }
+    }, [selectedSection])
+
+    const clearHomeGuide = () => {
+        document.querySelector('.desktop-menu-guide').classList.remove('show');
+        clearTimeout(homeGuide);
+        setHomeGuideTimeout();
+    }
+
+    const setHomeGuideTimeout = () => setHomeGuide( setTimeout(() => {
+        if (!selectedSection) {
+            document.querySelector('.desktop-menu-guide').classList.add('show');
+        }
+    }, 10000))
 
     const selectSection = () => {
         if (selectedSection !== 'dragon-home') {
@@ -112,10 +134,13 @@ const App = () => {
 
     return (
         <>
+        <div className="desktop-menu-guide" onClick={clearHomeGuide}>
+            <div className="desktop-menu-guide__hand"></div>
+        </div>
         <Language lang={lang} setLang={setLang} selectedSection={selectedSection} />
         <div id="main-menu" onMouseMove={dragDragon}>
 
-            <HomeSection id="about" expandMobile={expandMobile} setSection={setSection} >
+            <HomeSection id="about" lang={lang} expandMobile={expandMobile} setSection={setSection} >
                 <About setDragonText={setDragonText} lang={lang} />
             </HomeSection>
 
@@ -126,7 +151,8 @@ const App = () => {
                     selectSection={selectSection}
                     selectedSection={selectedSection}
                     setDragging={setDragging}
-                    drag_top={pos.top} 
+                    drag_top={pos.top}
+                    setDragonText={setDragonText}
                     drag_left={pos.left}
                     dragonText={dragonText}
                     initDragonPos={initDragonPos}
@@ -138,29 +164,27 @@ const App = () => {
                 </div>
             </div>
 
-            <HomeSection id="projects" expandMobile={expandMobile} setSection={setSection}>
+            <HomeSection id="projects" lang={lang} expandMobile={expandMobile} setSection={setSection}>
                 <Projects setDragonText={setDragonText} lang={lang} />
             </HomeSection>
 
-            <HomeSection id="education" expandMobile={expandMobile} setSection={setSection}>
+            <HomeSection id="education" lang={lang} expandMobile={expandMobile} setSection={setSection}>
                 <Education setDragonText={setDragonText} lang={lang} />
             </HomeSection>
 
-            <HomeSection id="experience" expandMobile={expandMobile} setSection={setSection}>
+            <HomeSection id="experience" lang={lang} expandMobile={expandMobile} setSection={setSection}>
                 <Experience setDragonText={setDragonText} lang={lang} />
             </HomeSection>
 
-            <HomeSection id="contact" expandMobile={expandMobile} setSection={setSection}>
+            <HomeSection id="contact" lang={lang} expandMobile={expandMobile} setSection={setSection}>
                 <Contact setDragonText={setDragonText} lang={lang} />
             </HomeSection>
-
-            {/*<button onClick={() => replaceAnimation('walk')}>Add animation</button>*/}
         </div>
         <MenuMobile id="menu-mobile" dragonText={dragonText} selectedSection={selectedSection}>
             <div className="menu-mobile__language">
                 <Language lang={lang} setLang={setLang} selectedSection={selectedSection} mobile={true} />
             </div>
-            <div className="menu-mobile__back" onClick={unExpandMobile} ><span>Menu</span></div>
+            <div className="menu-mobile__back" onClick={unExpandMobile} ><span>{sectionsText.menu[lang]}</span></div>
             <div className="menu-mobile__dragon">
                 <div className="menu-mobile__dragon-bubble">
                     <div className="menu-mobile__dragon-bubble-triangle"></div>

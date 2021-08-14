@@ -105,6 +105,29 @@ const Project = ({ expanded, id, setDragonText }) => {
     return (
         <div id="project-carousel" className="cv-section projects-section">
 
+        <div className="projects-guide">
+            <div className="projects-guide__top-row">
+                <div className="projects-guide__key">W</div>
+            </div>
+            <div className="projects-guide__bottom-row">
+                <div className="projects-guide__key selected">A</div>
+                <div className="projects-guide__key">S</div>
+                <div className="projects-guide__key selected">D</div>
+            </div>
+            <div className="projects-guide__arrow-box">
+                <div className="projects-guide__arrow reverse">
+                    <div className="projects-guide__arrow stick1"></div>
+                    <div className="projects-guide__arrow stick2"></div>
+                    <div className="projects-guide__arrow stick3"></div>
+                </div>
+                <div className="projects-guide__arrow">
+                    <div className="projects-guide__arrow stick1"></div>
+                    <div className="projects-guide__arrow stick2"></div>
+                    <div className="projects-guide__arrow stick3"></div>
+                </div>
+            </div>
+        </div>
+
         <div tabIndex={0} data-clickable className="project-box project1" onClick={event => showProjectBubble(event, 1)}>
             <a href="https://researcher.zone" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>

@@ -47,10 +47,6 @@
     padding: 1rem;
 }
 
-.section-title::first-letter {
-    text-transform: capitalize;
-}
-
 .expanded {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important;
     z-index: 9;

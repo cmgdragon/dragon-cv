@@ -5,18 +5,19 @@
   "main": "dist/index.html",
   "scripts": {
     "parcel:dev": "parcel src/index.html -p 8080 --open --no-cache",
-    "dev": "npm-run-all clean parcel:dev",
+    "dev": "npm-run-all clear parcel:dev",
     "parcel:build": "parcel build src/index.html --public-url ./ --no-cache --no-scope-hoist",
     "localserver": "nodemon src/server/index.js",
     "server": "node src/server/index.js",
-    "clean": "rimraf dist",
-    "start": "npm-run-all clean parcel:build server"
+    "clear": "rimraf dist",
+    "start": "npm-run-all clear parcel:build server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "googleapis": "^84.0.0",
     "nodemailer": "^6.6.3",
     "parcel": "^2.0.0-beta.2",
     "react": "^17.0.2",

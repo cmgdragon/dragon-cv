@@ -1,5 +1,6 @@
 #dragon-home {
-    background-image: url("http://127.0.0.1:8081/images/cave_parts/pared.svg");
+    //background-image: url("http://127.0.0.1:8081/images/cave_parts/pared.svg");
+    background-color: #2a2a2ae5;
 }
 #dragon-home > div {
     width: 100%;
@@ -15,7 +16,7 @@
     width: 100%;
 }
 .dragon-home__floor > div {
-    height: 18%;
+    height: 23%;
     width: 100%;
     position: absolute;
     bottom: 0;

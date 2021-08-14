@@ -31,7 +31,6 @@ const Contact = ({expanded, setDragonText, lang}) => {
 
     const initWaitingInterval = (init, msgs, preserve=false) => {
         setIntervalFn(setInterval(function() {
-                console.log(init, msgs)
             if (!init) {
                 showBubble(msgs, setDragonText, preserve);
             }
@@ -44,6 +43,7 @@ const Contact = ({expanded, setDragonText, lang}) => {
 
         clearInterval(intervalFn);
         setRandomWord({...randomWordShown, init: false});
+        document.getElementById
 
         const email = document.getElementById("form-email");
         const name = document.getElementById("form-name");
@@ -136,17 +136,17 @@ const Contact = ({expanded, setDragonText, lang}) => {
             <form id="dragon-form" className="contact-form" onSubmit={validateForm} noValidate>
                 <div className="contact-form__frame">
                     <div className="contact-form__input-box">
-                        <input className="contact-form__input" data-clickable id="form-name" name="form-name" type="text" onKeyPress={randomWord} required />
+                        <input className="contact-form__input" data-clickable id="form-name" name="form-name" type="text" onChange={randomWord} required />
                         <label className="contact-form__label" htmlFor="form-name">Your name</label>
                     </div>
 
                     <div className="contact-form__input-box">
-                        <input className="contact-form__input" data-clickable id="form-email" type="text" name="form-email" onKeyPress={randomWord} required />
+                        <input className="contact-form__input" data-clickable id="form-email" type="text" name="form-email" onChange={randomWord} required />
                         <label className="contact-form__label" htmlFor="form-email">Your email</label>
                     </div>
 
                     <div className="contact-form__input-box">
-                        <textarea className="contact-form__teaxt-area" data-clickable id="form-msg" name="form-msg" onKeyPress={randomWord} required ></textarea>
+                        <textarea className="contact-form__teaxt-area" data-clickable id="form-msg" name="form-msg" onChange={randomWord} required ></textarea>
                         <label className="contact-form__label" htmlFor="form-msg">Message</label>
                     </div>
 

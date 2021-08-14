@@ -23,7 +23,7 @@ const MenuMobile = ({id, dragonText, selectedSection, children}) => {
     }, [dragonText]);
 
     useEffect(() => {
-        if (selectedSection !== 'dragon-home') {
+        if (selectedSection && selectedSection !== 'dragon-home') {
             document.querySelector('.menu-mobile__back').classList.add('show');
         } else {
             document.querySelector('.menu-mobile__back').classList.remove('show');

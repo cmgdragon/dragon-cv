@@ -53,6 +53,12 @@
     background-position: right 0px bottom 0px;
 }
 
+#education .cave__background-depth1 {
+    @include background-depth("depth1", 5);
+    background-size: cover;
+    background-position: right 0px bottom 0px;
+}
+
 #contact .cave__background-depth1 {
     @include background-depth("depth1", 5);
     background-size: cover;

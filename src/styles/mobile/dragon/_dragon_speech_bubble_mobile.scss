@@ -1,0 +1,12 @@
+@import "../breakpoints";
+
+@media (max-width: $mobile) {
+    #speech-bubble.top,
+    #dragon #speech-bubble.top {
+        transform: scaleY(-1);
+    }
+    
+    #dragon #speech-bubble.top .speech-bubble__text {
+        transform: scale(-1);
+    }
+}

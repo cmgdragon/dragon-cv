@@ -1,4 +1,12 @@
 {
-    "en": "Welcome!",
-    "es": "Bienvenido!"
+    "en": [
+        "Welcome!",
+        "Oh, I have visitors",
+        "Hello! My cave is your home"
+    ],
+    "es": [
+        "Bienvenido!",
+        "Oh, tengo visita",
+        "¡Hola! Mi cueva es tu casa"
+    ]
 }

@@ -8,7 +8,7 @@ const SpeechBubble = ({ text, lang }) => {
     useEffect(() => {
         
         const selectedTextLang = text[lang];
-
+        
         if (Array.isArray(selectedTextLang)) {
 
             let index;

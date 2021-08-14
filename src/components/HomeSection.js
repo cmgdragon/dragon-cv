@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import calcDragonTransform from '../functions/calcDragonTransform';
+import * as sectionsText from '../translations/Sections.json';
 
-const HomeSection = ({width='100vw', id, children, expandMobile, setSection}) => {
+const HomeSection = ({width='100vw', id, children, expandMobile, lang, setSection}) => {
 
     const [clipPath, setClipPath] = useState('');
     const [expanded, setExpanded] = useState(false);
@@ -53,7 +54,7 @@ const HomeSection = ({width='100vw', id, children, expandMobile, setSection}) =>
         <>
         <div ref={curtain} data-curtain={id} className="section-curtain" onTouchEnd={() => expandMobile(id, setSection)}>
             <h1 className="section-title">
-                <span>{id}</span>
+                <span>{sectionsText[id][lang]}</span>
             </h1>
         </div>
         <section data-section id={id} style={style} className="cave__background">

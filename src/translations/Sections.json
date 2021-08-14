@@ -1,0 +1,38 @@
+{
+    "dragon_home": {
+        "en": [
+            "Alright, take your time",
+            "Are you leaving already?",
+            "Okay, I'll wait here"
+        ],
+        "es": [
+            "Está bien, tómate tu tiempo",
+            "¿Ya te vas?",
+            "Vale, te espero aquí"
+        ]
+    },
+    "menu": {
+        "en": "Menu", 
+        "es": "Menú"
+    },
+    "about": {
+        "en": "About me",
+        "es": "Sobre mí"
+    },
+    "projects": {
+        "en": "Projects",
+        "es": "Projectos"
+    },
+    "education": {
+        "en": "Education",
+        "es": "Formación"
+    },
+    "experience": {
+        "en": "Experience",
+        "es": "Experiencia"
+    },
+    "contact": {
+        "en": "Contact",
+        "es": "Contacto"
+    }
+}

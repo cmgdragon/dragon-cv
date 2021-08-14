@@ -1,0 +1,11 @@
+@import "../breakpoints";
+
+@media (max-width: $mobile) {
+    .desktop-menu-guide {
+        display: none !important;
+
+        &.show .desktop-menu-guide__hand {
+            animation: none !important;
+        }
+    }
+}
