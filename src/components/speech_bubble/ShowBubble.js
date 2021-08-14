@@ -1,4 +1,4 @@
-import { hideBubble } from "./hideBubble";
+import { hideBubble } from "./HideBubble";
 
 const bubbleTimeouts = [];
 
