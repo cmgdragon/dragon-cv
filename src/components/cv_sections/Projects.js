@@ -92,26 +92,6 @@ const Project = ({ expanded, id, setDragonText }) => {
 
     }
 
-    /*const detectWalkScroll = dragon => {
-
-        setTimeout(() => {
-            const projectNumbers = document.querySelectorAll('.project-box').length;
-            const walkOffset = 100;
-    
-       for (const projectNum of [...Array(projectNumbers+1).keys()].slice(1)) {
-           const projectPos = document.querySelector(`.project-box-activator${projectNum}`)
-                                .getBoundingClientRect().x;
-            const dragonPos = dragon.getBoundingClientRect().x;
-
-           if (dragonPos + walkOffset >= projectPos) {
-                   document.querySelector(`.project${projectNum}`).classList.add('show');
-                }
-            }
-           
-        }, 500);
-
-    }*/
-
     const showProjectBubble = (event, number) => {
         document.getElementById("speech-bubble").classList.remove('hidden');
         const dragon = document.getElementById("dragon");

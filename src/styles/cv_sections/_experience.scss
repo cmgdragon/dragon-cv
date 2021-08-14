@@ -7,6 +7,12 @@
     flex-direction: column;
     justify-content: flex-end;
     z-index: 5;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+
+    &.show {
+        opacity: 1;
+    }
 }
 
 #experience-bar {

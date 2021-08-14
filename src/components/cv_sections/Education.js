@@ -6,7 +6,6 @@ const Education = ({expanded, setDragonText, lang}) => {
 
     useEffect(() => {
         if (!expanded) return;
-        console.log('entrar')
         let i = 0;
         const showGlyph = () => setTimeout(() => {
             const glyph_container = document.querySelector(`.floating-glyph-d${i+1} .glyph__container`);

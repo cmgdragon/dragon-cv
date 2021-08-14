@@ -8,11 +8,24 @@ const Contact = ({expanded, setDragonText, lang}) => {
     const [randomWordShown, setRandomWord] = useState({init: false, timeout: false});
     const [intervalFn, setIntervalFn] = useState(undefined);
     const interval = 15;
+
+    useEffect(() => {
+
+        if (!expanded) return;
+
+        document.querySelector('.contact-section').classList.add('show');
+
+    }, [expanded]);
+
     useEffect(() => {
         if (expanded) {
             initWaitingInterval(randomWordShown.init, dragonText.waiting_interval.init);
+            setTimeout(() => {
+                document.querySelector('.contact-form__button').classList.remove('disable-click');
+            }, 100);
         } else {
             clearInterval(intervalFn);
+            document.querySelector('.contact-form__button').classList.add('disable-click');
         }
     }, [expanded])
 
@@ -137,7 +150,7 @@ const Contact = ({expanded, setDragonText, lang}) => {
                         <label className="contact-form__label" htmlFor="form-msg">Message</label>
                     </div>
 
-                    <button className="contact-form__button" type="submit">Send</button>
+                    <button className="contact-form__button disable-click" type="submit">Send</button>
                 </div>
             </form>
         </div>

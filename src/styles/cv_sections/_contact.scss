@@ -9,10 +9,20 @@
     z-index: 5;
     padding-left: 5rem;
     padding-right: 5rem;
+    transform: translateX(-100%);
+    transition: transform 1s ease-in;
+    
+    &.show {
+        transform: translateX(0%);
+    }
 }
 
 .contact-form {
     width: 70%;
+}
+
+.disable-click {
+    pointer-events: none;
 }
 
 .contact-form__frame {

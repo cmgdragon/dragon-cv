@@ -15,6 +15,8 @@ $size: 1;
 #dragon {
     //transform: scale($size) translate(0, 0) !important;
     user-select: none;
+    position: absolute;
+    z-index: 12;
 }
 
 #dragon.reverse {

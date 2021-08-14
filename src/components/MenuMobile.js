@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import addAnimation from '../animations/animation_functions/addAnimation';
-import { hideBubble } from './speech_bubble/hideBubble';
 
 const MenuMobile = ({id, dragonText, selectedSection, children}) => {
 
-    const [shown, setShown] = useState(false);
     useEffect(() => {
         document.querySelector('.menu-mobile__dragon').addEventListener('click', () => {
             addAnimation('sit');
@@ -15,7 +13,6 @@ const MenuMobile = ({id, dragonText, selectedSection, children}) => {
             checkMenuDragonBubbleIndicator();
 
             document.querySelector('.menu-mobile__dragon-head').classList.toggle('show');
-            document.getElementById("dragon").classList.add('reverse');
             document.getElementById('speech-bubble').classList.add('top');
 
         });

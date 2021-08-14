@@ -51,7 +51,7 @@ const HomeSection = ({width='100vw', id, children, expandMobile, setSection}) =>
 
     return (
         <>
-        <div ref={curtain} data-curtain={id} className="section-curtain" onTouchStart={() => expandMobile(id, setSection)}>
+        <div ref={curtain} data-curtain={id} className="section-curtain" onTouchEnd={() => expandMobile(id, setSection)}>
             <h1 className="section-title">
                 <span>{id}</span>
             </h1>

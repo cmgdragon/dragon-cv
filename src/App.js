@@ -13,6 +13,7 @@ import * as dragonWelcome from './translations/Welcome.json';
 import { hideBubble } from './components/speech_bubble/hideBubble';
 import calcDragonTransform from './functions/calcDragonTransform';
 import MenuMobile from './components/MenuMobile';
+import { showBubble } from './components/speech_bubble/ShowBubble';
 
 const App = () => {
 
@@ -27,6 +28,8 @@ const App = () => {
     useEffect(() => {
 
         calcDragonTransform();
+
+        showBubble(dragonWelcome, setDragonText);
 
         window.addEventListener('keydown', ({code}) => {
             if (code === 'Tab') {
@@ -93,7 +96,11 @@ const App = () => {
         selectedSectionMobile.classList.add('expanded');
         selectedSectionMobile.classList.add('cave__background');
         selectedSectionMobile.previousElementSibling.classList.add('expanded');
-        setSection(selectedSectionMobile);
+
+        setTimeout(() => {
+            
+            setSection(selectedSectionMobile);
+        }, 100);
     }
 
     const unExpandMobile = () => {

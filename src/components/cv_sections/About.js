@@ -1,13 +1,32 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as dragonText from '../../translations/cv_Sections/About.json';
 import { showBubble } from '../speech_bubble/ShowBubble';
-import { hideBubble } from '../speech_bubble/hideBubble';
 
 const About = ({ expanded, setDragonText, lang }) => {
 
+    useEffect(() => {
+
+        if (!expanded) return;
+
+        document.querySelector('.about-section').classList.add('show');
+
+    }, [expanded]);
+
+    useEffect(() => {
+
+        if (!expanded) {
+            document.querySelector('#info').classList.add('disable-click');
+        } else {
+            setTimeout(() => {
+                document.querySelector('#info').classList.remove('disable-click');
+            }, 100);
+        }
+
+    }, [expanded]);
+
     return (
         <div className="cv-section about-section">
-            <div id="info">
+            <div id="info" className="disable-click">
                 <InfoBox 
                     lang={lang}
                     boxPos={{top: "15%", left:"-10%"}}

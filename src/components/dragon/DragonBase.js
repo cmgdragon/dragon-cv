@@ -21,10 +21,15 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
 
     useEffect(() => {
         calcDragonTransform();
+        if (!isDragged) {
+            releaseDragonIntoSection();
+        }
     }, [selectedSection])
 
     const releaseDragonIntoSection = () => {
         if (!selectedSection) return;
+
+        removeAnimation('sit');
         const bubble = document.getElementById('speech-bubble');
         const section = selectedSection.id ?? selectedSection;
 
@@ -70,20 +75,13 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
             removeAnimation('walk');
             dragon.classList.remove('transition');
             dragon.classList.add('controllable');
-            /*setPos({
-                top: dragon.getBoundingClientRect().top+'px',
-                left: getPositionInPixels(left.replace('%', ''))
-            })*/
         }, 1000);
             
     }
 
     const walkToPosition = (top, left, forward, sit) => {
-        //setPos({top: drag_top, left: `${forward ? '40vh' : '-40vh'}`});
-        //setPos({top: drag_top, left: drag_left});
         const dragon = document.getElementById('dragon');
 
-        
         dragon.classList.add('transition', 'fast');
         
         setPos({top, left: `${forward ? '-40vh' : '105vw'}`});
@@ -104,19 +102,12 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
                 dragon.classList.remove('transition');
                 dragon.classList.add('controllable');
                 if (sit) replaceAnimation('sit');
-                /*setPos({
-                    top: dragon.getBoundingClientRect().top+'px',
-                    left: getPositionInPixels(left.replace('%', ''))
-                })*/
+
             }, 1000);
             
         }, 400);
 
 
-    }
-
-    const getPositionInPixels = percentage => {
-        return `${(percentage * window.innerWidth) / 100}px`;
     }
 
     const grabDragon = () => {
@@ -142,6 +133,7 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
         setDragging(true);
     }
     const releaseDragon = () => {
+        if (document.getElementById("dragon-home").classList.contains('show')) return;
         document.getElementById("speech-bubble").classList.remove('hidden');
         setDragged(false);
         setDragging(false);
@@ -150,11 +142,8 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
     }
 
     const style = {
-        position: 'absolute',
         top: isDragged ? drag_top: dragonPos.top,
-        left: isDragged ? drag_left: dragonPos.left,
-        //transform: calcDragonTransform(),
-        zIndex: 12
+        left: isDragged ? drag_left: dragonPos.left
     }
 
     return (

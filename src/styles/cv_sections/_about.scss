@@ -8,6 +8,16 @@
     flex-direction: column;
     justify-content: space-evenly;
     z-index: 4;
+    transform: scaleX(0);
+    transition: transform .4s ease-in;
+
+    &.show {
+        transform: scaleX(1);
+    }
+}
+
+.disable-click {
+    pointer-events: none;
 }
 
 #info {
@@ -182,7 +192,7 @@
         position: absolute;
         left: 90%;
         opacity: 0;
-        width: 100%;
+        width: max-content;
         transition: .1s ease-in;
         transition-property: left, opacity;
         text-decoration: underline;
