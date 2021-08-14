@@ -1,0 +1,14 @@
+@keyframes shake {
+    0% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateX(20px);
+    }
+    70% {
+        transform: translateX(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

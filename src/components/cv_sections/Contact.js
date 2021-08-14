@@ -32,32 +32,39 @@ const Contact = ({expanded, setDragonText, lang}) => {
         clearInterval(intervalFn);
         setRandomWord({...randomWordShown, init: false});
 
-        const email = document.getElementById("form-email").value;
-        const name = document.getElementById("form-name").value;
-        const msg = document.getElementById("form-msg").value;
+        const email = document.getElementById("form-email");
+        const name = document.getElementById("form-name");
+        const msg = document.getElementById("form-msg");
+        email.classList.remove('error-form');
+        name.classList.remove('error-form');
+        msg.classList.remove('error-form');
 
-        if (name === "") {
-            showBubble(dragonText.error_name, setDragonText);
+        if (name.value === "") {
+            showBubble(dragonText.error_name, setDragonText, true);
             console.log('what', randomWordShown.init)
             initWaitingInterval(randomWordShown.init, dragonText.waiting_interval.init);
+            name.classList.add('error-form');
             return;
         }
 
-        if (email === "") {
-            showBubble(dragonText.error_email, setDragonText);
+        if (email.value === "") {
+            showBubble(dragonText.error_email, setDragonText, true);
             initWaitingInterval(randomWordShown.init, dragonText.waiting_interval.init);
+            email.classList.add('error-form');
             return;
         }
 
-        if (!/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(email)) {
-            showBubble(dragonText.error_worngemail, setDragonText);
+        if (!/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(email.value)) {
+            showBubble(dragonText.error_worngemail, setDragonText, true);
             initWaitingInterval(randomWordShown.init, dragonText.waiting_interval.init);
+            email.classList.add('error-form');
             return;
         }
 
-        if (msg === "") {
-            showBubble(dragonText.error_msg, setDragonText);
+        if (msg.value === "") {
+            showBubble(dragonText.error_msg, setDragonText, true);
             initWaitingInterval(randomWordShown.init, dragonText.waiting_interval.init);
+            msg.classList.add('error-form');
             return;
         }
 
@@ -102,11 +109,11 @@ const Contact = ({expanded, setDragonText, lang}) => {
 
             switch (response.code) {
                 case 200:
-                    showBubble(response.success, setDragonText);
+                    showBubble(dragonText.success_send, setDragonText, true);
                     document.getElementById("dragon-form").reset();
                     break;
                 default:
-                    showBubble("¿Ha habido un error...? ", setDragonText);
+                    showBubble(dragonText.error_send, setDragonText, true);
                     break;
             }
     }

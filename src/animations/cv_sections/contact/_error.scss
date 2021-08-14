@@ -1,0 +1,3 @@
+@use "./keyframes/shake";
+
+.error { animation: shake .5s linear 0s }

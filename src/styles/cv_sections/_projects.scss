@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use "../../animations/cv_sections/projects/keyframes/scale-up-center";
 
 .projects-section {
     width: 100vw;
@@ -96,19 +97,7 @@
     }
 
 }
-
-@keyframes scale-up-center {
-    0% {
-        opacity: 0;
-        transform: scale(.5);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
   
-
 $projects: 5;
 $division:  math.div(85%, $projects);
 $left: 0%;

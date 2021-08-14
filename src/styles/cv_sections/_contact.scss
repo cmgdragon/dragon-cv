@@ -1,3 +1,5 @@
+@use "../../animations/cv_sections/contact/error";
+
 .contact-section {
     height: 100vh;
     width: 75vw;
@@ -126,4 +128,10 @@
         background-color: #fa5d5d;
         box-shadow: none;
     }
+}
+
+.error-form {
+    @extend .error;
+
+    box-shadow: 0px 0px 6px 3px #ff1c1c;
 }

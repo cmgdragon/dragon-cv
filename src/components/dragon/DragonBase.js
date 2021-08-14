@@ -20,9 +20,7 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
     const [dragonPos, setPos] = useState(pos);
 
     useEffect(() => {
-        //console.log(selectedSection);
         calcDragonTransform();
-
     }, [selectedSection])
 
     const releaseDragonIntoSection = () => {
@@ -48,11 +46,11 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
                 bubble.classList.add('top');
                 break;
             case 'education':
-                walkToPosition('51%', '80%', false, true);
+                walkToPosition('51%', '75%', false, true);
                 bubble.classList.add('top');
                 break;
             case 'contact':
-                walkToPosition('51%', '80%', false, true);
+                walkToPosition('51%', '75%', false, true);
                 bubble.classList.add('top');
         }
     }
@@ -88,7 +86,7 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
         
         dragon.classList.add('transition', 'fast');
         
-        setPos({top, left: `${forward ? '-40vh' : '110vw'}`});
+        setPos({top, left: `${forward ? '-40vh' : '105vw'}`});
         
         setTimeout(() => {
             replaceAnimation('walk');

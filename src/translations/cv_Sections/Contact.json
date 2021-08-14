@@ -44,5 +44,13 @@
             "en": "Why have you stopped?",
             "es": "¿Por qué te has detenido?"
         }
+    },
+    "error_send": {
+        "en": "Oups!! There has been an error... Please, try it later",
+        "es": "¡Ups! Ha habido algún error... Inténtalo más tarde"
+    },
+    "success_send": {
+        "en": "Thank you! Your message has been sent!",
+        "es": "¡Gracias! El mensaje se ha enviado correctamente"
     }
 }
