@@ -23,6 +23,8 @@ const Project = ({ expanded, id, setDragonText }) => {
             }, 1000);
         });
 
+        document.querySelector('.projects-guide').classList.add('show');
+
     }, [expanded]);
 
     let isMoving = false;

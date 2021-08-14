@@ -25,10 +25,15 @@
     background-color: #2a2a2ab2;
     padding: .5rem;
     border-radius: 5px;
+    transform: scale(.5);
+    opacity: 0;
 
+    &.show {
+        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    }
+    
     .projects-guide__bottom-row {
         display: flex;
-        
     }
 
     .projects-guide__key {
