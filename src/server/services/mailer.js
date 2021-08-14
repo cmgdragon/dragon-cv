@@ -1,23 +1,28 @@
 import nodemailer from 'nodemailer';
+import oAuth2Client from './oAuth2';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
 const sendEmail = async (req, res) => {
 
-    let transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 587,
-        secure: false,
+    const accessToken = await oAuth2Client.getAccessToken();
+
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
         auth: {
-          user: process.env.MAIL_USER,
-          pass: process.env.MAIL_PASS,
-        },
+            type: 'OAuth2',
+            user: process.env.MAIL_USER,
+            clientId: process.env.CLIENT_ID,
+            clientSecret: process.env.CLIENT_SECRET,
+            refreshToken: process.env.REFRESH_TOKEN,
+            accessToken
+        }
     });
     
     try {
         await transporter.sendMail({
-            from: req.body.from,
+            from: `${req.body.name} 🐲 <${req.body.from}>`,
             to: process.env.MAIL_TO,
             subject: `¡Mensaje de ${req.body.name}!`,
             text: req.body.msg
