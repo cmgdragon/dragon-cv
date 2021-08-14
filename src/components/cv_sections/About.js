@@ -39,11 +39,6 @@ const About = ({ expanded, setDragonText, lang }) => {
                     delay={900}
                 />
             </div>
-            <div id="hobbies">
-                <div className="hobby"></div>
-                <div className="hobby"></div>
-                <div className="hobby"></div>
-            </div>
             <div id="technologies">
                 <CarouselItems 
                     lang={lang}

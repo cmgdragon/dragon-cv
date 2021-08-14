@@ -116,17 +116,17 @@ const Contact = ({expanded, setDragonText, lang}) => {
             <form id="dragon-form" className="contact-form" onSubmit={validateForm} noValidate>
                 <div className="contact-form__frame">
                     <div className="contact-form__input-box">
-                        <input className="contact-form__input" id="form-name" name="form-name" type="text" onKeyPress={randomWord} required />
+                        <input className="contact-form__input" data-clickable id="form-name" name="form-name" type="text" onKeyPress={randomWord} required />
                         <label className="contact-form__label" htmlFor="form-name">Your name</label>
                     </div>
 
                     <div className="contact-form__input-box">
-                        <input className="contact-form__input" id="form-email" type="text" name="form-email" onKeyPress={randomWord} required />
+                        <input className="contact-form__input" data-clickable id="form-email" type="text" name="form-email" onKeyPress={randomWord} required />
                         <label className="contact-form__label" htmlFor="form-email">Your email</label>
                     </div>
 
                     <div className="contact-form__input-box">
-                        <textarea className="contact-form__teaxt-area" id="form-msg" name="form-msg" onKeyPress={randomWord} required ></textarea>
+                        <textarea className="contact-form__teaxt-area" data-clickable id="form-msg" name="form-msg" onKeyPress={randomWord} required ></textarea>
                         <label className="contact-form__label" htmlFor="form-msg">Message</label>
                     </div>
 

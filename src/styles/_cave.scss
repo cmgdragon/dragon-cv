@@ -1,5 +1,5 @@
 @mixin background-depth($layer, $zIndex) {
-    background-image: url("http://127.0.0.1:8081/cave_parts/#{$layer}.svg");
+    background-image: url("http://127.0.0.1:8081/images/cave_parts/#{$layer}.svg");
     width: inherit;
     height: inherit;
     z-index: $zIndex;
@@ -42,13 +42,19 @@
 }
 
 #about .cave__background-depth1 {
-    @include background-depth("saliente-izquierda", 5);
+    @include background-depth("depth1", 5);
     background-size: cover;
     background-position: right 0px bottom 0px;
 }
 
 #experience .cave__background-depth1 {
-    @include background-depth("saliente-izquierda", 5);
+    @include background-depth("depth1", 5);
+    background-size: cover;
+    background-position: right 0px bottom 0px;
+}
+
+#contact .cave__background-depth1 {
+    @include background-depth("depth1", 5);
     background-size: cover;
     background-position: right 0px bottom 0px;
 }

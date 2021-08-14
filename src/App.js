@@ -13,19 +13,16 @@ import * as dragonWelcome from './translations/Welcome.json';
 import { hideBubble } from './components/speech_bubble/hideBubble';
 import calcDragonTransform from './functions/calcDragonTransform';
 import MenuMobile from './components/MenuMobile';
-import mobile_breakpoint from './breakpoints';
 
 const App = () => {
 
     const [debounce, setDebounce] = useState(false);
     const [pos, setPos] = useState({top: 0, left: 0});
     const [isDragging, setDragging] = useState(false);
-    const [selectedElement, setSelectedElement] = useState(undefined);
     const [selectedSection, setSection] = useState('dragon-home');
     const initDragonPos = { top: '2%', left: '75%'};
     const [lang, setLang] = useState('en');
     const [dragonText, setDragonText] = useState(dragonWelcome);
-    let currentSelected;
 
     useEffect(() => {
 
@@ -37,31 +34,28 @@ const App = () => {
             }
         });
 
-        document.querySelectorAll('[data-clickable]').forEach(el => {
+        window.addEventListener('click', event => {
+            event.stopPropagation();
 
-            el.addEventListener('click', event => {
-                setSelectedElement(event.target);
-            })        
+            if (!event.path.find(el => "getAttribute" in el && el.getAttribute("data-clickable")) &&
+                !event.path.find(el => el === document.querySelector('.menu-mobile__dragon'))) {
+                hideBubble();
+            }
+        });
+
+        document.querySelectorAll('[data-clickable]').forEach(el => {
 
             el.addEventListener('keydown', event => {
                 event.stopPropagation();
                 if (event.code === 'Enter') {
                     event.target.click();
-                    selectElement();
-                }
-            })
-
-            el.addEventListener('blur', () => {
-                hideBubble();
-                if (window.outerWidth > mobile_breakpoint) {
                 }
             })
         });
 
     }, []);
 
-    const selectSection = event => {
-        //console.log(event)
+    const selectSection = () => {
         if (selectedSection !== 'dragon-home') {
             if (!isDragging) return;
             selectedSection.classList.add('expanded');
@@ -155,11 +149,11 @@ const App = () => {
 
             {/*<button onClick={() => replaceAnimation('walk')}>Add animation</button>*/}
         </div>
-        <MenuMobile id="menu-mobile" dragonText={dragonText} selectedSection={selectedSection} selectedElement={selectedElement}>
+        <MenuMobile id="menu-mobile" dragonText={dragonText} selectedSection={selectedSection}>
             <div className="menu-mobile__language">
                 <Language lang={lang} setLang={setLang} selectedSection={selectedSection} mobile={true} />
             </div>
-            <div className="menu-mobile__back" onClick={unExpandMobile} ><span>Back</span></div>
+            <div className="menu-mobile__back" onClick={unExpandMobile} ><span>Menu</span></div>
             <div className="menu-mobile__dragon">
                 <div className="menu-mobile__dragon-bubble">
                     <div className="menu-mobile__dragon-bubble-triangle"></div>

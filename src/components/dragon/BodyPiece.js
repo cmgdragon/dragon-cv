@@ -6,7 +6,7 @@ const BodyPiece = ({ image, width, layer, pos, pivotPos, back=false, children })
     const id = image.replace('/', '_');
     const dataName = image.includes('/') ? image.substr(image.indexOf("/")+1) : image;
     const style = {
-        backgroundImage: `url("http://127.0.0.1:8081/dragon_parts/${image}.svg")`,
+        backgroundImage: `url("http://127.0.0.1:8081/images/dragon_parts/${image}.svg")`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'contain',
         position: 'absolute',

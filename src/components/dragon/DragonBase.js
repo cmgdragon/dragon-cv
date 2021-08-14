@@ -122,7 +122,10 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
     }
 
     const grabDragon = () => {
+        if (document.getElementById("dragon-home").classList.contains('show')) return;
+
         window.scrollTo(0, 0);
+        removeAnimation('sit');
         document.getElementById("speech-bubble").classList.add('hidden');
         document.getElementById('dragon').classList.remove('controllable');
         document.getElementById('dragon').classList.remove('reverse');
