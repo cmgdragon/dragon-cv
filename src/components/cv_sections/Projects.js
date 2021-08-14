@@ -69,14 +69,7 @@ const Project = ({ expanded, id, setDragonText }) => {
         const [right, right_px, bottom, bottom_px] = getComputedStyle(background).backgroundPosition.split(' ');
         const bkMove = +right_px.replace('px', '') + left;
         
-        const forward = Math.sign(left) === 1 ? true : false;
         const carouselPercent = projectCarousel.scrollLeft / (projectCarousel.scrollWidth - projectCarousel.clientWidth) * 100;
-
-        if (forward) {
-            dragon.classList.add("reverse");
-        } else {
-            dragon.classList.remove("reverse");
-        }
         
         if (carouselPercent !== 0 && carouselPercent !== 100) {
             background.style.backgroundPosition = `${right} ${bkMove}px ${bottom} ${bottom_px}`;
@@ -87,8 +80,7 @@ const Project = ({ expanded, id, setDragonText }) => {
             }
         } else {
             removeAnimation('walk');
-        }
-        
+        } 
 
     }
 
@@ -154,7 +146,7 @@ const Project = ({ expanded, id, setDragonText }) => {
             <a href="https://github.com/cmgdragon/dragon-cv" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>
-            <img className="project-box__image" src={'http://127.0.0.1:8081/images/cv_sections/projects/youtales.jpg'} />
+            <img className="project-box__image" src={'http://127.0.0.1:8081/images/dragon-web.svg'} />
             <div className="project-box__tech">
                 <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/react.png'} />
                 <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/node.png'} />

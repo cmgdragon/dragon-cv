@@ -4,9 +4,13 @@
   "description": "",
   "main": "dist/index.html",
   "scripts": {
-    "dev": "parcel src/index.html -p 8080 --open --no-cache",
-    "build": "parcel build src/index.html --public-url ./ --no-source-maps --no-cache --no-scope-hoist",
-    "server": "nodemon src/server/index.js"
+    "parcel:dev": "parcel src/index.html -p 8080 --open --no-cache",
+    "dev": "npm-run-all clean parcel:dev",
+    "parcel:build": "parcel build src/index.html --public-url ./ --no-cache --no-scope-hoist",
+    "localserver": "nodemon src/server/index.js",
+    "server": "node src/server/index.js",
+    "clean": "rimraf dist",
+    "start": "npm-run-all clean parcel:build server"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +29,8 @@
     "@babel/preset-react": "^7.14.5",
     "@babel/register": "^7.14.5",
     "@parcel/transformer-sass": "^2.0.0-beta.2",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2"
   }
 }

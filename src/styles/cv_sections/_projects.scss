@@ -29,11 +29,19 @@
         pointer-events: all;
     }
 
+    &:last-of-type {
+        &::before {
+
+            border-radius: 50%;
+        }
+    }
+
     .project-box__image {
         max-height: 800px;
         height: 45vh;
         object-fit: contain;
         width: auto;
+        max-width: 352px;
     }
     
     .project-box__tech {
