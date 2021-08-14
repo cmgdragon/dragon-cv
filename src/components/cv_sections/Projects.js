@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import addAnimation from '../../animations/animation_functions/addAnimation';
 import removeAnimation from '../../animations/animation_functions/removeAnimation';
 import { showBubble } from '../speech_bubble/ShowBubble';
-import { hideBubble } from '../speech_bubble/hideBubble';
+import { hideBubble } from '../speech_bubble/HideBubble';
 import * as dragonText from '../../translations/cv_Sections/Projects.json';
 import calcDragonTransform from '../../functions/calcDragonTransform';
 

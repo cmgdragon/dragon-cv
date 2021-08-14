@@ -9,7 +9,7 @@ import HomeSection from './components/HomeSection';
 import Language from './components/Language';
 import * as dragonWelcome from './translations/Welcome.json';
 import * as sectionsText from './translations/Sections.json';
-import { hideBubble } from './components/speech_bubble/hideBubble';
+import { hideBubble } from './components/speech_bubble/HideBubble';
 import calcDragonTransform from './functions/calcDragonTransform';
 import MenuMobile from './components/MenuMobile';
 import { showBubble } from './components/speech_bubble/ShowBubble';

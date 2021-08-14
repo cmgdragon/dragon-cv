@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { showBubble } from '../speech_bubble/ShowBubble';
-import { hideBubble } from '../speech_bubble/hideBubble';
+import { hideBubble } from '../speech_bubble/HideBubble';
 import * as dragonText from '../../translations/cv_Sections/Contact.json';
 
 const Contact = ({expanded, setDragonText, lang}) => {
