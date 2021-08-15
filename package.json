@@ -2,36 +2,39 @@
   "name": "dev-cv",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.html",
   "scripts": {
     "parcel:dev": "parcel src/index.html -p 8080 --open --no-cache",
     "dev": "npm-run-all clear parcel:dev",
     "parcel:build": "parcel build src/index.html --public-url ./ --no-cache --no-scope-hoist",
-    "localserver": "nodemon src/server/index.js",
-    "server": "node src/server/index.js",
-    "clear": "rimraf dist",
-    "start": "npm-run-all clear parcel:build server"
+    "deamon": "nodemon src/server/index.js",
+    "clear": "rimraf dist .parcel-cache",
+    "build": "npm-run-all clear parcel:build server",
+    "start": "node src/server/index.js",
+    "build:server": "npx babel src/server -d dist/server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
-    "googleapis": "^84.0.0",
-    "nodemailer": "^6.6.3",
-    "parcel": "^2.0.0-beta.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
-  "devDependencies": {
     "@babel/cli": "^7.14.8",
     "@babel/core": "^7.14.8",
     "@babel/preset-env": "^7.14.9",
     "@babel/preset-react": "^7.14.5",
     "@babel/register": "^7.14.5",
-    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "core-js": "^3.16.1",
     "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "googleapis": "^84.0.0",
+    "nodemailer": "^6.6.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "@parcel/transformer-sass": "^2.0.0-beta.2",
     "npm-run-all": "^4.1.5",
+    "parcel": "^2.0.0-beta.2",
     "rimraf": "^3.0.2"
   }
 }
