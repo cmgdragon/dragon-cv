@@ -76,7 +76,7 @@ const About = ({ expanded, setDragonText, lang }) => {
             </div>
             <div id="social">
                 <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.linkedin, setDragonText, true)}>
-                    <img className="social__img" src="/images/cv_sections/about/linkedin.png" />
+                    <img className="social__img" src="/images/cv_sections/about/linkedIn.png" />
                     <a href="" target="_blank" className="social__link">Go to</a>
                 </div>
                 <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.github, setDragonText, true)}>

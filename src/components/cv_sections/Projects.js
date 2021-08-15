@@ -134,7 +134,7 @@ const Project = ({ expanded, id, setDragonText }) => {
             <a href="https://researcher.zone" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>
-            <img className="project-box__image" src={'/images/cv_sections/projects/researcherzone.jpg'} />
+            <img className="project-box__image" src={'/images/cv_sections/projects/researcherzone.JPG'} />
             <div className="project-box__tech">
                 <img className="project-box__tech-img" src={'/images/technologies/react.png'} />
                 <img className="project-box__tech-img" src={'/images/technologies/deno.png'} />
@@ -147,7 +147,7 @@ const Project = ({ expanded, id, setDragonText }) => {
             <a href="https://you-tales.com" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>
-            <img className="project-box__image" src={'/images/cv_sections/projects/youtales.jpg'} />
+            <img className="project-box__image" src={'/images/cv_sections/projects/youtales.JPG'} />
             <div className="project-box__tech">
                 <img className="project-box__tech-img" src={'/images/technologies/raspberry.png'} />
                 <img className="project-box__tech-img" src={'/images/technologies/mysql.png'} />
@@ -159,7 +159,7 @@ const Project = ({ expanded, id, setDragonText }) => {
             <a href="https://udiet.page" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>
-            <img className="project-box__image" src={'/images/cv_sections/projects/udiet.jpg'} />
+            <img className="project-box__image" src={'/images/cv_sections/projects/udiet.JPG'} />
             <div className="project-box__tech">
                 <img className="project-box__tech-img" src={'/images/technologies/react.png'} />
                 <img className="project-box__tech-img" src={'/images/technologies/node.png'} />

@@ -22,10 +22,10 @@ const sendEmail = async (req, res) => {
     
     try {
         await transporter.sendMail({
-            from: `${req.body.name} 🐲 <${req.body.from}>`,
+            from: `${req.body.from}`,
             to: process.env.MAIL_TO,
-            subject: `¡Mensaje de ${req.body.name}!`,
-            text: req.body.msg
+            subject: `¡Mensaje de ${req.body.name}! 🐲`,
+            html: `${req.body.msg}<br><br>${req.body.from}`
         });
 
         res.status(200).send({
