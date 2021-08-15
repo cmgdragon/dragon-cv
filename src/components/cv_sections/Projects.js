@@ -134,12 +134,12 @@ const Project = ({ expanded, id, setDragonText }) => {
             <a href="https://researcher.zone" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>
-            <img className="project-box__image" src={'http://127.0.0.1:8081/images/cv_sections/projects/researcherzone.jpg'} />
+            <img className="project-box__image" src={'/images/cv_sections/projects/researcherzone.jpg'} />
             <div className="project-box__tech">
-                <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/react.png'} />
-                <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/deno.png'} />
-                <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/mongodb.png'} />
-                <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/docker.png'} />
+                <img className="project-box__tech-img" src={'/images/technologies/react.png'} />
+                <img className="project-box__tech-img" src={'/images/technologies/deno.png'} />
+                <img className="project-box__tech-img" src={'/images/technologies/mongodb.png'} />
+                <img className="project-box__tech-img" src={'/images/technologies/docker.png'} />
             </div>
         </div>
 
@@ -147,11 +147,11 @@ const Project = ({ expanded, id, setDragonText }) => {
             <a href="https://you-tales.com" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>
-            <img className="project-box__image" src={'http://127.0.0.1:8081/images/cv_sections/projects/youtales.jpg'} />
+            <img className="project-box__image" src={'/images/cv_sections/projects/youtales.jpg'} />
             <div className="project-box__tech">
-                <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/raspberry.png'} />
-                <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/mysql.png'} />
-                <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/php.jpg'} />
+                <img className="project-box__tech-img" src={'/images/technologies/raspberry.png'} />
+                <img className="project-box__tech-img" src={'/images/technologies/mysql.png'} />
+                <img className="project-box__tech-img" src={'/images/technologies/php.jpg'} />
             </div>
         </div>
 
@@ -159,11 +159,11 @@ const Project = ({ expanded, id, setDragonText }) => {
             <a href="https://udiet.page" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>
-            <img className="project-box__image" src={'http://127.0.0.1:8081/images/cv_sections/projects/udiet.jpg'} />
+            <img className="project-box__image" src={'/images/cv_sections/projects/udiet.jpg'} />
             <div className="project-box__tech">
-                <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/react.png'} />
-                <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/node.png'} />
-                <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/firebase.png'} />
+                <img className="project-box__tech-img" src={'/images/technologies/react.png'} />
+                <img className="project-box__tech-img" src={'/images/technologies/node.png'} />
+                <img className="project-box__tech-img" src={'/images/technologies/firebase.png'} />
             </div>
         </div>
 
@@ -171,10 +171,10 @@ const Project = ({ expanded, id, setDragonText }) => {
             <a href="https://github.com/cmgdragon/dragon-cv" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>
-            <img className="project-box__image" src={'http://127.0.0.1:8081/images/dragon-web.svg'} />
+            <img className="project-box__image" src={'/images/dragon-web.svg'} />
             <div className="project-box__tech">
-                <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/react.png'} />
-                <img className="project-box__tech-img" src={'http://127.0.0.1:8081/images/technologies/node.png'} />
+                <img className="project-box__tech-img" src={'/images/technologies/react.png'} />
+                <img className="project-box__tech-img" src={'/images/technologies/node.png'} />
             </div>
         </div>
 
@@ -182,7 +182,7 @@ const Project = ({ expanded, id, setDragonText }) => {
             <a href="https://github.com/cmgdragon" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>
-            <img className="project-box__image" src={'http://127.0.0.1:8081/images/technologies/github.png'} />
+            <img className="project-box__image" src={'/images/technologies/github.png'} />
         </div>
 
         </div>

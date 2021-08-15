@@ -96,7 +96,7 @@
 }
 
 .bat-wing {
-    background-image: url('http://127.0.0.1:8081/images/cv_sections/about/bat-wing.svg');
+    background-image: url('./images/cv_sections/about/bat-wing.svg');
     background-size: contain;
     background-repeat: no-repeat;
     transform-origin: top right;
@@ -137,7 +137,7 @@
     justify-content: space-evenly;
 
     @mixin lang($lang) {
-        background-image: url('http://127.0.0.1:8081/images/cv_sections/about/#{$lang}.svg');
+        background-image: url('./images/cv_sections/about/#{$lang}.svg');
         background-size: cover;
         width: 100%;
         max-width: 80px;

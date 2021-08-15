@@ -59,7 +59,7 @@ const Experience = ({expanded, lang, setDragonText}) => {
                             tabIndex={0}
                             onClick={() => dragonTextHandler(dragonText.job1.dragon)}
                             data-clickable
-                            src="http://127.0.0.1:8081/images/cv_sections/experience/upf.png"
+                            src="/images/cv_sections/experience/upf.png"
                         />
                         <div className="experience__work">
                             <div className="experience__info">
@@ -113,7 +113,7 @@ const Experience = ({expanded, lang, setDragonText}) => {
                             tabIndex={0}
                             onClick={() => dragonTextHandler(dragonText.job2.dragon)}
                             data-clickable
-                            src="http://127.0.0.1:8081/images/cv_sections/experience/upf.png"
+                            src="/images/cv_sections/experience/upf.png"
                         />
                         <div className="experience__work">
                             <div className="experience__info">
@@ -167,7 +167,7 @@ const Experience = ({expanded, lang, setDragonText}) => {
                         tabIndex={0}
                         onClick={() => dragonTextHandler(dragonText.job3.dragon)}
                         data-clickable
-                        src="http://127.0.0.1:8081/images/cv_sections/experience/upf.png"
+                        src="/images/cv_sections/experience/upf.png"
                     />
                         <div className="experience__work">
                             <div className="experience__info">
@@ -221,7 +221,7 @@ const Experience = ({expanded, lang, setDragonText}) => {
                             tabIndex={0}
                             onClick={() => dragonTextHandler(dragonText.job4.dragon)}
                             data-clickable
-                            src="http://127.0.0.1:8081/images/cv_sections/experience/ub.png"
+                            src="/images/cv_sections/experience/ub.png"
                         />
                         <div className="experience__work">
                             <div className="experience__info">

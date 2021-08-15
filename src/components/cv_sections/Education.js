@@ -46,7 +46,7 @@ const Education = ({expanded, setDragonText, lang}) => {
                         <span className="rune__text">{dragonText.degree.template[lang]}</span>
                         <div className="rune__logo">
                             <div className="rune__logo-img" style={{
-                                backgroundImage:`url('http://127.0.0.1:8081/images/${'cv_sections/experience/ub.png'}')`
+                                backgroundImage:`url('./images/${'cv_sections/experience/ub.png'}')`
                             }}></div>
                             <span className="rune__logo-year">{dragonText.degree.year[lang]}</span>
                         </div>
@@ -68,7 +68,7 @@ const Education = ({expanded, setDragonText, lang}) => {
                         <span className="rune__text">{dragonText.master.template[lang]}</span>
                         <div className="rune__logo">
                             <div className="rune__logo-img" style={{
-                                backgroundImage:`url('http://127.0.0.1:8081/images/${'cv_sections/education/uoc.png'}')`
+                                backgroundImage:`url('./images/${'cv_sections/education/uoc.png'}')`
                             }}></div>
                             <span className="rune__logo-year">{dragonText.master.year[lang]}</span>
                         </div>

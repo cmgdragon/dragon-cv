@@ -40,34 +40,34 @@
 
 @keyframes glyph-image-autonomous {
     0% {
-        background-image: url('http://127.0.0.1:8081/images/technologies/github.png');
+        background-image: url('./images/technologies/github.png');
         transform: scale(1);
     }
     15% {
-        background-image: url('http://127.0.0.1:8081/images/cv_sections/education/js.png');
+        background-image: url('./images/cv_sections/education/js.png');
     }
     30% {
-        background-image: url('http://127.0.0.1:8081/images/technologies/docker.png');
+        background-image: url('./images/technologies/docker.png');
         transform: scale(.8);
     }
     45% {
-        background-image: url('http://127.0.0.1:8081/images/technologies/react.png');
+        background-image: url('./images/technologies/react.png');
         transform: scale(1);
     }
     60% {
-        background-image: url('http://127.0.0.1:8081/images/technologies/mongodb.png');
+        background-image: url('./images/technologies/mongodb.png');
         transform: scale(1);
     }
     75% {
-        background-image: url('http://127.0.0.1:8081/images/technologies/gcp.svg');
+        background-image: url('./images/technologies/gcp.svg');
         transform: scale(1);
     }
     88% {
-        background-image: url('http://127.0.0.1:8081/images/cv_sections/education/css3.png');
+        background-image: url('./images/cv_sections/education/css3.png');
         transform: scale(1);
     }
     100% {
-        background-image: url('http://127.0.0.1:8081/images/technologies/github.png');
+        background-image: url('./images/technologies/github.png');
         transform: scale(1);
     }
 }

@@ -76,15 +76,15 @@ const About = ({ expanded, setDragonText, lang }) => {
             </div>
             <div id="social">
                 <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.linkedin, setDragonText, true)}>
-                    <img className="social__img" src="http://127.0.0.1:8081/images/cv_sections/about/linkedin.png" />
+                    <img className="social__img" src="/images/cv_sections/about/linkedin.png" />
                     <a href="" target="_blank" className="social__link">Go to</a>
                 </div>
                 <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.github, setDragonText, true)}>
-                    <img className="social__img" src="http://127.0.0.1:8081/images/technologies/github.png" />
+                    <img className="social__img" src="/images/technologies/github.png" />
                     <a href="" target="_blank" className="social__link">Go to</a>
                 </div>
                 <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.twitter, setDragonText, true)}>
-                    <img className="social__img" src="http://127.0.0.1:8081/images/cv_sections/about/twitter.png" />
+                    <img className="social__img" src="/images/cv_sections/about/twitter.png" />
                     <a href="" target="_blank" className="social__link">Go to</a>
                 </div>
             </div>
@@ -120,7 +120,7 @@ const InfoBox = ({boxPos, imgPos, dragonText, img, expanded, delay, lang, setDra
             <div className="info__panel" tabIndex={0} data-clickable onClick={() => showBubble(dragonText.dragon, setDragonText, true)}>
                 <div className="bat-wing"></div>
                 <span className="info__text">{dragonText.template[lang]}</span>
-                <img style={imgPos} className="info__img" src={`http://127.0.0.1:8081/images/cv_sections/about/${img}.svg`} />
+                <img style={imgPos} className="info__img" src={`/images/cv_sections/about/${img}.svg`} />
                 <div className="bat-wing"></div>
             </div>
         </div>
@@ -174,16 +174,16 @@ const CarouselItems = ({items, imageWidth, imageMargin, expanded, lang, dragonTe
 
     return (
         <>
-        <img style={style} className="technology" src="http://127.0.0.1:8081/images/technologies/react.png" />
-        <img style={style} className="technology" src="http://127.0.0.1:8081/images/technologies/node.png" />
-        <img style={style} className="technology" src="http://127.0.0.1:8081/images/technologies/liferay.png" />
-        <img style={style} className="technology" src="http://127.0.0.1:8081/images/technologies/docker.png" />
-        <img style={style} className="technology" src="http://127.0.0.1:8081/images/technologies/deno.png" />
-        <img style={style} className="technology" src="http://127.0.0.1:8081/images/technologies/firebase.png" />
-        <img style={style} className="technology" src="http://127.0.0.1:8081/images/technologies/mongodb.png" />
-        <img style={style} className="technology" src="http://127.0.0.1:8081/images/technologies/vue.png" />
-        <img style={style} className="technology" src="http://127.0.0.1:8081/images/technologies/angular.png" />
-        <img style={style} className="technology" src="http://127.0.0.1:8081/images/technologies/gcp.svg" />
+        <img style={style} className="technology" src="/images/technologies/react.png" />
+        <img style={style} className="technology" src="/images/technologies/node.png" />
+        <img style={style} className="technology" src="/images/technologies/liferay.png" />
+        <img style={style} className="technology" src="/images/technologies/docker.png" />
+        <img style={style} className="technology" src="/images/technologies/deno.png" />
+        <img style={style} className="technology" src="/images/technologies/firebase.png" />
+        <img style={style} className="technology" src="/images/technologies/mongodb.png" />
+        <img style={style} className="technology" src="/images/technologies/vue.png" />
+        <img style={style} className="technology" src="/images/technologies/angular.png" />
+        <img style={style} className="technology" src="/images/technologies/gcp.svg" />
         </>
     )
 }

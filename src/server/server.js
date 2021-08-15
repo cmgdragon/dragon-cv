@@ -31,6 +31,7 @@ server.get('/', (req, res) => {
 server.post('/sendemail', sendEmail);
 
 server.use(express.static(path.resolve(__dirname, '..', '..', 'dist')));
+server.use("/images", express.static(path.resolve(__dirname, '..', 'images')));
 
 server.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);

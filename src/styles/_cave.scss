@@ -1,5 +1,5 @@
 @mixin background-depth($layer, $zIndex) {
-    background-image: url("http://127.0.0.1:8081/images/cave_parts/#{$layer}.svg");
+    background-image: url("./images/cave_parts/#{$layer}.svg");
     width: inherit;
     height: inherit;
     z-index: $zIndex;
