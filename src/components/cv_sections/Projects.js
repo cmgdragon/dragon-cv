@@ -72,8 +72,8 @@ const Project = ({ expanded, id, setDragonText }) => {
         const bkMove = +right_px.replace('px', '') + left;
         
         const carouselPercent = projectCarousel.scrollLeft / (projectCarousel.scrollWidth - projectCarousel.clientWidth) * 100;
-        
-        if (carouselPercent !== 0 && carouselPercent !== 100) {
+
+        if (carouselPercent !== 0 && !(carouselPercent >= 100)) {
             background.style.backgroundPosition = `${right} ${bkMove}px ${bottom} ${bottom_px}`;
             if (isMoving) {
                 setTimeout(() => {
