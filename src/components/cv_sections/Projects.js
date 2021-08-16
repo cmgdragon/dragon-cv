@@ -54,10 +54,12 @@ const Project = ({ expanded, id, setDragonText }) => {
 
         switch (code) {
             case 'KeyA':
+                dragon.classList.remove('reverse');
                 calcDragonTransform(false);
                 moveToDirection(-vel);
             break;
             case 'KeyD':
+                dragon.classList.add('reverse');
                 calcDragonTransform(true);
                 moveToDirection(vel);
         }
@@ -96,19 +98,6 @@ const Project = ({ expanded, id, setDragonText }) => {
 
     const showProjectBubble = (event, number) => {
         document.getElementById("speech-bubble").classList.remove('hidden');
-        const dragon = document.getElementById("dragon");
-        const bubbleWidth = document.querySelector('.speech-bubble__body').offsetWidth;
-        
-        if (dragon.classList.contains('reverse')) {
-            if (dragon.offsetLeft >= document.getElementById(id).offsetWidth - bubbleWidth) {
-                dragon.classList.remove('reverse');
-            }
-        } else {
-            if (dragon.offsetLeft + bubbleWidth <= 0) {
-                dragon.classList.add('reverse');
-            }
-        }
-
         showBubble(dragonText[`project${number}`], setDragonText, true);
     }
 

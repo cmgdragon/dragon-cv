@@ -28,7 +28,8 @@ const App = () => {
     useEffect(() => {
 
         window.addEventListener('load', () => {
-            clearHomeGuide();
+            document.querySelector('.desktop-menu-guide').classList.remove('show');
+            clearTimeout(homeGuide);
             document.getElementById("app-loader").classList.add('hidden');
         }, { once: true });
 
@@ -68,7 +69,9 @@ const App = () => {
 
         if (!selectedSection) {
             setHomeGuideTimeout();
+            console.log('no', homeGuide)
         } else {
+            console.log('yes', homeGuide)
             clearTimeout(homeGuide);
         }
     }, [selectedSection])
@@ -80,9 +83,7 @@ const App = () => {
     }
 
     const setHomeGuideTimeout = () => setHomeGuide( setTimeout(() => {
-        if (!selectedSection) {
-            document.querySelector('.desktop-menu-guide').classList.add('show');
-        }
+        document.querySelector('.desktop-menu-guide').classList.add('show');
     }, 15000))
 
     const selectSection = () => {
