@@ -99,6 +99,7 @@
     transform: scale(.5);
     opacity: 0;
     pointer-events: none;
+    max-width: 25vw;
 
     &.show {
         animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
@@ -115,7 +116,6 @@
         height: 45vh;
         object-fit: contain;
         width: auto;
-        max-width: 352px;
     }
     
     .project-box__tech {
