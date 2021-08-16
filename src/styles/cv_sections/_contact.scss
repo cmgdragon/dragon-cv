@@ -56,6 +56,12 @@
 
 }
 
+input:disabled:-internal-autofill-selected {
+    -webkit-box-shadow: 0 0 0px 1000px #7a7a7a inset;
+    cursor: default;
+    -webkit-text-fill-color: #545454 !important;
+}
+
 .contact-form__input {
     height: 3rem;
     font-size: 1.4rem;
@@ -71,12 +77,14 @@
     }
 
     &:focus,
-    &:valid {
+    &:valid,
+    &:disabled {
         margin-top: 3.5rem;
     }
 
     &:focus + .contact-form__label,
-    &:valid + .contact-form__label {
+    &:valid + .contact-form__label,
+    &:disabled + .contact-form__label {
         top: -.8rem;
         color: white;
         padding: 1.7rem 0;
@@ -112,12 +120,14 @@
     }
 
     &:focus,
-    &:valid {
+    &:valid,
+    &:disabled {
         margin-top: 3.5rem;
     }
 
     &:focus + .contact-form__label,
-    &:valid + .contact-form__label {
+    &:valid + .contact-form__label,
+    &:disabled + .contact-form__label {
         top: -.8rem;
         color: white;
         padding: 1.7rem 0;

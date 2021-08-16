@@ -24,9 +24,11 @@ const HomeSection = ({width='100vw', id, children, expandMobile, lang, selectedS
             mutations.forEach(({target}) => {
               if (target.classList.contains('expanded')) {
                 setExpanded(true);
+
+                document.querySelector('.dragon__guide').classList.add('show');
+
               } else {
                 setExpanded(false);
-
               }
             });
         });
@@ -65,8 +67,6 @@ const HomeSection = ({width='100vw', id, children, expandMobile, lang, selectedS
     }
 
     const background_1 = { width }
-
-
 
     return (
         <>

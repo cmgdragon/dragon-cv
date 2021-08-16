@@ -69,9 +69,7 @@ const App = () => {
 
         if (!selectedSection) {
             setHomeGuideTimeout();
-            console.log('no', homeGuide)
         } else {
-            console.log('yes', homeGuide)
             clearTimeout(homeGuide);
         }
     }, [selectedSection])

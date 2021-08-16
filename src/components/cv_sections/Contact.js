@@ -7,6 +7,7 @@ const Contact = ({expanded, setDragonText, lang}) => {
 
     const [randomWordShown, setRandomWord] = useState({init: false, timeout: false});
     const [intervalFn, setIntervalFn] = useState(undefined);
+    const [sending, setSending] = useState(false);
     const interval = 15;
 
     useEffect(() => {
@@ -38,18 +39,6 @@ const Contact = ({expanded, setDragonText, lang}) => {
         }, interval*1000))
     }
 
-    const enableFormButton = () => {
-        document.querySelector('.contact-form__button').disabled = false;
-        document.querySelector('.contact-form__button').innerText = "Send";
-        document.querySelector('.contact-form__button').classList.remove('sending');
-    }
-
-    const disableFormButton = () => {
-        document.querySelector('.contact-form__button').disabled = true;
-        document.querySelector('.contact-form__button').innerText = "Sending...";
-        document.querySelector('.contact-form__button').classList.add('sending');
-    }
- 
     const validateForm = event => {
         event.preventDefault();
 
@@ -65,7 +54,6 @@ const Contact = ({expanded, setDragonText, lang}) => {
         
         if (name.value === "") {
             showBubble(dragonText.error_name, setDragonText, true);
-            console.log('what', randomWordShown.init)
             initWaitingInterval(randomWordShown.init, dragonText.waiting_interval.init);
             name.classList.add('error-form');
             return;
@@ -92,7 +80,7 @@ const Contact = ({expanded, setDragonText, lang}) => {
             return;
         }
         
-        disableFormButton();
+        setSending(true);
         sendMail();
     }
 
@@ -141,7 +129,7 @@ const Contact = ({expanded, setDragonText, lang}) => {
                     showBubble(dragonText.error_send, setDragonText, true);
                     break;
             }
-            enableFormButton();
+            setSending(false);
     }
 
     return (
@@ -149,21 +137,25 @@ const Contact = ({expanded, setDragonText, lang}) => {
             <form id="dragon-form" className="contact-form" onSubmit={validateForm} noValidate>
                 <div className="contact-form__frame">
                     <div className="contact-form__input-box">
-                        <input className="contact-form__input" data-clickable id="form-name" name="form-name" type="text" onChange={randomWord} required />
-                        <label className="contact-form__label" htmlFor="form-name">Your name</label>
+                        <input disabled={sending ? true : false} className="contact-form__input" data-clickable id="form-name" name="form-name" type="text" onChange={randomWord} required />
+                        <label className="contact-form__label" htmlFor="form-name">{dragonText.placeholder.name[lang]}</label>
                     </div>
 
                     <div className="contact-form__input-box">
-                        <input className="contact-form__input" data-clickable id="form-email" type="text" name="form-email" onChange={randomWord} required />
-                        <label className="contact-form__label" htmlFor="form-email">Your email</label>
+                        <input disabled={sending ? true : false} className="contact-form__input" data-clickable id="form-email" type="text" name="form-email" onChange={randomWord} required />
+                        <label className="contact-form__label" htmlFor="form-email">{dragonText.placeholder.email[lang]}</label>
                     </div>
 
                     <div className="contact-form__input-box">
-                        <textarea className="contact-form__teaxt-area" data-clickable id="form-msg" name="form-msg" onChange={randomWord} required ></textarea>
-                        <label className="contact-form__label" htmlFor="form-msg">Message</label>
+                        <textarea disabled={sending ? true : false} className="contact-form__teaxt-area" data-clickable id="form-msg" name="form-msg" onChange={randomWord} required ></textarea>
+                        <label className="contact-form__label" htmlFor="form-msg">{dragonText.placeholder.message[lang]}</label>
                     </div>
 
-                    <button className="contact-form__button disable-click" type="submit">Send</button>
+                    <button 
+                        disabled={sending ? true : false}
+                        className={`contact-form__button disable-click ${sending ? 'sending' : ''}`} 
+                        type="submit">{sending ? dragonText.sending[lang] : dragonText.send[lang]}
+                    </button>
                 </div>
             </form>
         </div>

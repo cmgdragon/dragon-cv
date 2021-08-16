@@ -6,6 +6,7 @@ export const showBubble = (text, setDragonText, preserveBubble=false, cb) => {
 
     bubbleTimeouts.forEach(timeout => clearTimeout(timeout));
 
+    document.querySelector('.dragon__guide').classList.remove('show');
     document.getElementById("speech-bubble").classList.remove('hidden');
     document.getElementById("speech-bubble").classList.add('show');
     setDragonText({ ...text });

@@ -14,6 +14,7 @@ import DragonBody from './body_parts/DragonBody';
 import calcDragonTransform from '../../functions/calcDragonTransform';
 import * as mobileInteractions from '../../translations/MobileInteractions.json';
 import * as sectionsText from '../../translations/Sections.json';
+import * as dragonGuide from '../../translations/DragonGuide.json';
 import { showBubble } from '../speech_bubble/ShowBubble';
 
 const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
@@ -121,6 +122,7 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
 
         window.scrollTo(0, 0);
         removeAnimation('sit');
+        document.querySelector('.dragon__guide').classList.remove('show');
         document.getElementById("speech-bubble").classList.add('hidden');
         document.getElementById('dragon').classList.remove('controllable');
         document.getElementById('dragon').classList.remove('reverse');
@@ -161,6 +163,7 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
 
     return (
         <div id="dragon" style={style} onClick={mobileInteracion} onMouseDown={grabDragon} onMouseUp={releaseDragon}>
+            <div className="dragon__guide">{dragonGuide[lang]}</div>
             <DragonBody image="cuerpo/cuerpo_upper"
              basePivot={{top: '8.2em', left: '17%'}}
              width="190px" isDragged={isDragged}>

@@ -1,28 +1,11 @@
 @use "dragon_home";
 @use "dragon_speech_bubble";
 
-/*#dragon {
-    transform: scale(.55) translate(0, 0) !important;
-    user-select: none;
-}
-
-#dragon.reverse {
-    transform: scale(-.55, .55) translate(-568px, 0) !important;
-}*/
-
-$size: 1;
-
 #dragon {
-    //transform: scale($size) translate(0, 0) !important;
     user-select: none;
     position: absolute;
     z-index: 12;
 }
-
-#dragon.reverse {
-    //transform: scale(-$size, $size) translate(-568px, 0) !important;
-}
-
 
 #dragon:hover {
     cursor: grab;
@@ -40,4 +23,44 @@ $size: 1;
 #dragon.controllable {
     transition: .1s cubic-bezier(1, 0.99, 0,-0.01);
     transition-property: top, left;
+}
+
+.dragon__guide {
+    position: absolute;
+    width: 30vw;
+    transform: translate(-220px, 4rem);
+    opacity: 0;
+    font-size: 2rem;
+    color: white;
+    padding: .5rem;
+    font-weight: bold;
+    transition: .2s ease-in;
+    transition-property: transform, opacity;
+
+    &.show {
+        opacity: 1;
+        transform: translate(-220px, -7rem);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: .2rem;
+        transform: translate(-.8rem, -.4rem);
+        width: 95%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .4);
+        box-shadow: 0px 0px 5px 3px black;
+        z-index: -1;
+        border-radius: 7px;
+    }
+}
+
+#dragon.reverse .dragon__guide {
+    transform: translate(-220px, 3rem) scale(-1, 1);
+
+    &.show {
+        opacity: 1;
+        transform: translate(-220px, -4rem) scale(-1, 1);
+    }
 }
