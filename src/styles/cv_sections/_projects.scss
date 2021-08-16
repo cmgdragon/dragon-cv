@@ -14,6 +14,10 @@
     padding-top: 4%;
 }
 
+.disable-click {
+    pointer-events: none !important;
+}
+
 .projects-guide {
 
     position: absolute;

@@ -15,17 +15,23 @@ const Project = ({ expanded, id, setDragonText }) => {
 
     useEffect(() => {
 
-        if (!expanded) return;
-
-        document.querySelectorAll('.project-box').forEach(el => {
+        if (!expanded) {
+            document.querySelectorAll('.project-box').forEach(el => {
+                setTimeout(() => {
+                    el.classList.add('disable-click');
+                }, 1000);
+            });  
+        } else {
+            document.querySelectorAll('.project-box').forEach(el => {
+                setTimeout(() => {
+                    el.classList.add('show');
+                    el.classList.remove('disable-click');
+                }, 1000);
+            });
             setTimeout(() => {
-                el.classList.add('show');
+                document.querySelector('.projects-guide').classList.add('show');
             }, 1000);
-        });
-
-        setTimeout(() => {
-            document.querySelector('.projects-guide').classList.add('show');
-        }, 1000);
+        }
 
     }, [expanded]);
 
