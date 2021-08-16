@@ -150,9 +150,6 @@ const CarouselItems = ({items, imageWidth, imageMargin, expanded, lang, dragonTe
             canScroll = true;
             scrollCarousel();
         });
-        /*tech.querySelectorAll('img').forEach(img => {
-            img.addEventListener('mouseover', () => setCanScroll(false))
-        });*/
     }, [expanded]);
 
     const scrollCarousel = () => {
