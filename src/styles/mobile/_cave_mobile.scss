@@ -1,0 +1,7 @@
+@import "breakpoints";
+
+@media (max-width: $mobile) {
+    .cave__background {
+        height: 90vh;
+     }
+}

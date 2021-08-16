@@ -57,6 +57,18 @@
     }
 }
 
+.social__link.not-a-link {
+    left: -70px;
+}
+
+.social__box {
+    &:focus .social__link.not-a-link,
+    .social__link.not-a-link:focus {
+        bottom: -74%;
+        left: -70px;
+    }
+}
+
 .social__img {
     width: 40px !important;
 }
