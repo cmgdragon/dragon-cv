@@ -81,7 +81,7 @@ const About = ({ expanded, setDragonText, lang }) => {
                 </div>
                 <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.github, setDragonText, true)}>
                     <img className="social__img" src="/images/technologies/github.png" />
-                    <a href="" target="_blank" className="social__link">Go to</a>
+                    <a href="https://github.com/cmgdragon" target="_blank" className="social__link">Go to</a>
                 </div>
                 <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.discord, setDragonText, true)}>
                     <img className="social__img" src="/images/cv_sections/about/discord.png" />

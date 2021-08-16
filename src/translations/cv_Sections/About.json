@@ -31,8 +31,8 @@
     },
     "languages": {
         "spanish": {
-            "en": "Spanish is my main language. I rarely make typos <span style='font-size:2rem'>not like others</span>",
-            "es": "El español es mi lengua nativa. Nunca suelo cometer faltas de ortografía <span style='font-size:2rem'>a diferencia de otros</span>"
+            "en": "Spanish is my main language. I rarely make typos <span style='font-size:2rem'>rarely</span>",
+            "es": "El español es mi lengua nativa. Nunca suelo cometer faltas de ortografía <span style='font-size:2rem'>casi nunca</span>"
         },
         "catalan": {
             "en": "I also speak catalan because I was born in Catalonia. That makes sense I guess",
@@ -46,7 +46,7 @@
     "social_networks": {
         "linkedin": {
             "en": "You can visit my Linkedin for a detailed, boring and more formal version of this page",
-            "es": "Puedes visitar mi Linkedin para una verisón más detallada, formal y aburrida de esta página"
+            "es": "Puedes visitar mi Linkedin para una versión más detallada, formal y aburrida de esta página"
         },
         "github": {
             "en": "Visit my Github if you want to check my other published work",

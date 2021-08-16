@@ -52,5 +52,27 @@
     "success_send": {
         "en": "Thank you! Your message has been sent!",
         "es": "¡Gracias! El mensaje se ha enviado correctamente"
+    },
+    "placeholder": {
+        "name": {
+            "en": "Your name",
+            "es": "Tu nombre"
+        },
+        "email": {
+            "en": "Your email",
+            "es": "Tu email"
+        },
+        "message": {
+            "en": "Message",
+            "es": "Mensaje"
+        }
+    },
+    "send": {
+        "en": "Send",
+        "es": "Enviar"
+    },
+    "sending": {
+        "en": "Sending...",
+        "es": "Enviando..."
     }
 }

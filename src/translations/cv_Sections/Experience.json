@@ -21,7 +21,7 @@
                         ]
                     },
                     "es": {
-                        "name": "Desarollo Front-end",
+                        "name": "Desarrollo Front-end",
                         "tech": [
                             "HTML, CSS/SASS and JS ES6",
                             "Freemarker",
@@ -41,7 +41,7 @@
                         ]
                     },
                     "es": {
-                        "name": "Desarollo y gestión de contenidos",
+                        "name": "Desarrollo y gestión de contenidos",
                         "tech": [
                             "Liferay Cloud PaaS",
                             "Git – Gitflow workflow",
@@ -67,14 +67,14 @@
                         "tech": []
                     },
                     "es": {
-                        "name": "Collaborador en el diaridebarcelona.cat",
+                        "name": "Colaborador en el diaridebarcelona.cat",
                         "tech": []
                     }
                 }
             },
         "dragon": {
             "en": "In this stage I start to handle various responsibilities and I improve my time management skills",
-            "es": "En esta etapa empiezo a manegar múltiples responsabilidades y mejoro mis habilidades de gestión del tiempo"
+            "es": "En esta etapa empiezo a manejar múltiples responsabilidades y mejoro mis habilidades de gestión del tiempo"
         }
     },
 
