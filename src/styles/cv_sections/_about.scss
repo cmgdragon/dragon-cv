@@ -203,6 +203,11 @@
         padding: .3rem;
         pointer-events: none;
 
+        &.not-a-link {
+            text-decoration: none;
+            cursor: default;
+        }
+
         &:visited, :active { color: initial }
     }
 

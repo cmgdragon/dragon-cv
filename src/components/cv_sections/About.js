@@ -77,15 +77,15 @@ const About = ({ expanded, setDragonText, lang }) => {
             <div id="social">
                 <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.linkedin, setDragonText, true)}>
                     <img className="social__img" src="/images/cv_sections/about/linkedIn.png" />
-                    <a href="" target="_blank" className="social__link">Go to</a>
+                    <a href="https://www.linkedin.com/in/carlos-mart%C3%ADnez-51605b21a/" target="_blank" className="social__link">Go to</a>
                 </div>
                 <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.github, setDragonText, true)}>
                     <img className="social__img" src="/images/technologies/github.png" />
                     <a href="" target="_blank" className="social__link">Go to</a>
                 </div>
-                <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.twitter, setDragonText, true)}>
-                    <img className="social__img" src="/images/cv_sections/about/twitter.png" />
-                    <a href="" target="_blank" className="social__link">Go to</a>
+                <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.discord, setDragonText, true)}>
+                    <img className="social__img" src="/images/cv_sections/about/discord.png" />
+                    <span className="social__link not-a-link">CMG_DRAGON#8476</span>
                 </div>
             </div>
         </div>

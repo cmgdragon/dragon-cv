@@ -1,7 +1,78 @@
+@use "../animations/app_loader/pulsating_eyes";
+
 #main-menu {
     position: relative;
     display: grid;
     height: 100%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
+}
+
+#app-loader {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+    z-index: 40;
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &.hidden {
+        display: none;
+    }
+
+    .app-loader__text {
+        color: white;
+        font-size: 5vw;
+        @extend .pulsating-text;
+    }
+}
+
+.app-loader__eyes {
+    display: flex;
+    gap: 1.3rem;
+
+    .app-loader__eye {
+        width: 5.3vw;
+        height: 4vw;
+        background-color: white;
+        border-radius: 40px;
+        transform: rotate(-7deg);
+        z-index: 41;
+        display: flex;
+        justify-content: center;
+        @extend .pulsating-eyes;
+
+        &.reverse {
+            transform: scale(-1, 1);
+            transform: rotate(7deg);
+        }
+    }
+
+    .app-loader__iris {
+        width: 3.5vw;
+        height: 3.5vw;
+        background-color: yellow;
+        display: flex;
+        position: relative;
+        border-top-right-radius: 11px;
+        border-top-left-radius: 11px;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        z-index: 40;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: calc(50% - .5vw);
+            width: 1vw;
+            top: -15%;
+            border-radius: 50%;
+            height: 100%;
+            background-color: black;
+        }
+    }
 }

@@ -23,7 +23,9 @@ const Project = ({ expanded, id, setDragonText }) => {
             }, 1000);
         });
 
-        document.querySelector('.projects-guide').classList.add('show');
+        setTimeout(() => {
+            document.querySelector('.projects-guide').classList.add('show');
+        }, 1000);
 
     }, [expanded]);
 
@@ -73,7 +75,7 @@ const Project = ({ expanded, id, setDragonText }) => {
         
         const carouselPercent = projectCarousel.scrollLeft / (projectCarousel.scrollWidth - projectCarousel.clientWidth) * 100;
 
-        if (carouselPercent !== 0 && !(carouselPercent >= 100)) {
+        if (carouselPercent !== 0 && !(carouselPercent >= 99.9)) {
             background.style.backgroundPosition = `${right} ${bkMove}px ${bottom} ${bottom_px}`;
             if (isMoving) {
                 setTimeout(() => {

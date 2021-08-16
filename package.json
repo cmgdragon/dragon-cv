@@ -8,9 +8,8 @@
     "parcel:build": "parcel build src/index.html --public-url ./ --no-cache --no-scope-hoist",
     "deamon": "nodemon src/server/index.js",
     "clear": "rimraf dist .parcel-cache",
-    "build": "npm-run-all clear parcel:build server",
-    "start": "node src/server/index.js",
-    "build:server": "npx babel src/server -d dist/server"
+    "build": "npm-run-all clear parcel:build start",
+    "start": "node src/server/index.js"
   },
   "keywords": [],
   "author": "",

@@ -15,14 +15,14 @@
             "es": "Amante de los deportes aéreos"
         },
         "dragon": {
-            "en": "I would like to become a skydiver someday",
-            "es": "Algún día quisiera iniciarme en el paracaidismo"
+            "en": "Skydiving, paragliding, wingsuiting, hang gliding, etc., are sports that fascinates me",
+            "es": "Paracaidimo, parapente, <i>wingsuit</i>, ala delta, etc., son deportes que me fascinan"
         }
     },
     "info_vr": {
         "template": { 
-            "en": "Passionate about virtual reality",
-            "es": "Apasionado de la realidad virtual"
+            "en": "Virtual reality enthusiast",
+            "es": "Entusiasta de la realidad virtual"
         },
         "dragon": {
             "en": "I mostly play VR games. And League of Legends...",
@@ -49,12 +49,12 @@
             "es": "Puedes visitar mi Linkedin para una verisón más detallada, formal y aburrida de esta página"
         },
         "github": {
-            "en": "Visit my Github and give me some stars! If you want 😏",
-            "es": "¡Visita mi Github y dame alguna estrella! Si quieres 😏"
+            "en": "Visit my Github if you want to check my other published work",
+            "es": "Visita mi Github para ver mis otros trabajos publicados"
         },
-        "twitter": {
-            "en": "I'm not very active in Twitter. Follow me anyway",
-            "es": "No soy muy activo en Twitter. Dame follow de todas formas"
+        "discord": {
+            "en": "You can Add me on Discord so we can chat <span style='font-size:2.1rem'>Yeah, I don't have any other social network</span>",
+            "es": "¡Añádeme en discord si quieres chatear! <span style='font-size:2.1rem'>así es, no tengo más redes sociales</span>"
         }
     }
 }

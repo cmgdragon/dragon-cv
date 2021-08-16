@@ -12,6 +12,10 @@
     transform: translateX(-100%);
     transition: transform 1s ease-in;
     
+    @media (max-width: 1008px) {
+        width: 86vw;
+    }
+
     &.show {
         transform: translateX(0%);
     }
@@ -19,6 +23,12 @@
 
 .contact-form {
     width: 70%;
+
+    @media (max-width: 1008px) {
+        button {
+            font-size: 1.1rem;
+        }
+    }
 }
 
 .disable-click {
@@ -127,20 +137,20 @@
     background-color: #ff1c1c;
     transition: .2s ease-in;
     transition-property: background-color, margin, box-shadow;
-
-    &.sending{
-        background-color: #907c7c;
-    }
-
+    
     &:hover, &:focus {
         background-color: #b41616;
         box-shadow: 0px 0px 4px 1px white;
         margin-left: 1rem;
     }
-
+    
     &:active {
         background-color: #fa5d5d;
         box-shadow: none;
+    }
+
+    &.sending{
+        background-color: #907c7c;
     }
 }
 

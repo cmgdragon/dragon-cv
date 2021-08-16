@@ -1,0 +1,4 @@
+@use "./keyframes/pulsating";
+
+.pulsating-eyes { animation: pulsating-eyes 3s linear 0s infinite }
+.pulsating-text { animation: pulsating-text 3s linear 0s infinite }

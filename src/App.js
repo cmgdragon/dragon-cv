@@ -27,6 +27,11 @@ const App = () => {
 
     useEffect(() => {
 
+        window.addEventListener('load', () => {
+            clearHomeGuide();
+            document.getElementById("app-loader").classList.add('hidden');
+        }, { once: true });
+
         calcDragonTransform();
 
         showBubble(dragonWelcome, setDragonText, true);
@@ -78,7 +83,7 @@ const App = () => {
         if (!selectedSection) {
             document.querySelector('.desktop-menu-guide').classList.add('show');
         }
-    }, 10000))
+    }, 15000))
 
     const selectSection = () => {
         if (selectedSection !== 'dragon-home') {
@@ -134,13 +139,24 @@ const App = () => {
 
     return (
         <>
+        <div id="app-loader">
+            <div className="app-loader__text">Loading</div>
+            <div className="app-loader__eyes">
+                <div className="app-loader__eye reverse">
+                    <div className="app-loader__iris"></div>
+                </div>
+                <div className="app-loader__eye">
+                    <div className="app-loader__iris"></div>
+                </div>
+            </div>
+        </div>
         <div className="desktop-menu-guide" onClick={clearHomeGuide}>
             <div className="desktop-menu-guide__hand"></div>
         </div>
         <Language lang={lang} setLang={setLang} selectedSection={selectedSection} />
         <div id="main-menu" onMouseMove={dragDragon}>
 
-            <HomeSection id="about" lang={lang} expandMobile={expandMobile} setSection={setSection} >
+            <HomeSection id="about" lang={lang} expandMobile={expandMobile} setSection={setSection} selectedSection={selectedSection}>
                 <About setDragonText={setDragonText} lang={lang} />
             </HomeSection>
 
@@ -164,19 +180,19 @@ const App = () => {
                 </div>
             </div>
 
-            <HomeSection id="projects" lang={lang} expandMobile={expandMobile} setSection={setSection}>
+            <HomeSection id="projects" lang={lang} expandMobile={expandMobile} setSection={setSection} selectedSection={selectedSection}>
                 <Projects setDragonText={setDragonText} lang={lang} />
             </HomeSection>
 
-            <HomeSection id="education" lang={lang} expandMobile={expandMobile} setSection={setSection}>
+            <HomeSection id="education" lang={lang} expandMobile={expandMobile} setSection={setSection} selectedSection={selectedSection}>
                 <Education setDragonText={setDragonText} lang={lang} />
             </HomeSection>
 
-            <HomeSection id="experience" lang={lang} expandMobile={expandMobile} setSection={setSection}>
+            <HomeSection id="experience" lang={lang} expandMobile={expandMobile} setSection={setSection} selectedSection={selectedSection}>
                 <Experience setDragonText={setDragonText} lang={lang} />
             </HomeSection>
 
-            <HomeSection id="contact" lang={lang} expandMobile={expandMobile} setSection={setSection}>
+            <HomeSection id="contact" lang={lang} expandMobile={expandMobile} setSection={setSection} selectedSection={selectedSection}>
                 <Contact setDragonText={setDragonText} lang={lang} />
             </HomeSection>
         </div>
