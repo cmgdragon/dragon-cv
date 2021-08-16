@@ -2,11 +2,13 @@ import React, { useEffect, useState, useRef } from 'react';
 import calcDragonTransform from '../functions/calcDragonTransform';
 import * as sectionsText from '../translations/Sections.json';
 
-const HomeSection = ({width='100vw', id, children, expandMobile, lang, setSection}) => {
+const HomeSection = ({width='100vw', id, children, expandMobile, lang, selectedSection, setSection}) => {
 
     const [clipPath, setClipPath] = useState('');
     const [expanded, setExpanded] = useState(false);
+    const [isClick, setIsClick] = useState(false);
     const curtain = useRef(undefined);
+
     useEffect(() => {
         setClipPath(getclipPath());
 
@@ -23,7 +25,8 @@ const HomeSection = ({width='100vw', id, children, expandMobile, lang, setSectio
               if (target.classList.contains('expanded')) {
                 setExpanded(true);
               } else {
-                  setExpanded(false);
+                setExpanded(false);
+
               }
             });
         });
@@ -31,6 +34,12 @@ const HomeSection = ({width='100vw', id, children, expandMobile, lang, setSectio
         observer.observe(curtain.current, config);
         return () => observer.disconnect();
     }, []);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setClipPath(getclipPath());
+        }, 1000);
+    }, [selectedSection]);
 
     const getclipPath = () => {
         if (!document.querySelector(`[data-curtain=${id}]`)) return;
@@ -43,6 +52,13 @@ const HomeSection = ({width='100vw', id, children, expandMobile, lang, setSectio
         )
     }
     
+    const expandMobileHandler = () => {
+        if (isClick) {
+            expandMobile(id, setSection);
+        }
+        setIsClick(false);
+    }
+
     const style = {
         clipPath: `polygon(${clipPath})`,
         width: width
@@ -50,9 +66,14 @@ const HomeSection = ({width='100vw', id, children, expandMobile, lang, setSectio
 
     const background_1 = { width }
 
+
+
     return (
         <>
-        <div ref={curtain} data-curtain={id} className="section-curtain" onTouchEnd={() => expandMobile(id, setSection)}>
+        <div ref={curtain} data-curtain={id} className="section-curtain" 
+            onTouchMove={() => setIsClick(false)} 
+            onTouchStart={() => setIsClick(true)}
+            onTouchEnd={expandMobileHandler}>
             <h1 className="section-title">
                 <span>{sectionsText[id][lang]}</span>
             </h1>
