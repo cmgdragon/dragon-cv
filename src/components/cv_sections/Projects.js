@@ -55,14 +55,14 @@ const Project = ({ expanded, id, setDragonText }) => {
         switch (code) {
             case 'KeyA':
                 dragon.classList.remove('reverse');
-                calcDragonTransform(false);
                 moveToDirection(-vel);
-            break;
+                break;
             case 'KeyD':
                 dragon.classList.add('reverse');
-                calcDragonTransform(true);
                 moveToDirection(vel);
         }
+        calcDragonTransform();
+        document.querySelector('.dragon__guide').classList.remove('show');
     }
 
     const dragonKeyUp = ({code}) => {
