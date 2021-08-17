@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-import calcDragonTransform from '../functions/calcDragonTransform';
 import * as sectionsText from '../translations/Sections.json';
 
 const HomeSection = ({width='100vw', id, children, expandMobile, lang, selectedSection, setSection}) => {
@@ -15,7 +14,6 @@ const HomeSection = ({width='100vw', id, children, expandMobile, lang, selectedS
         window.addEventListener('resize', () => {
             setTimeout(() => {
                 setClipPath(getclipPath());
-                calcDragonTransform();
             }, 1000);
         });
 

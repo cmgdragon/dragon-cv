@@ -120,12 +120,13 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
     const grabDragon = () => {
         if (document.getElementById("dragon-home").classList.contains('show')) return;
 
-        window.scrollTo(0, 0);
         removeAnimation('sit');
+        const dragon = document.getElementById('dragon');
+        calcDragonTransform(true);
         document.querySelector('.dragon__guide').classList.remove('show');
         document.getElementById("speech-bubble").classList.add('hidden');
-        document.getElementById('dragon').classList.remove('controllable');
-        document.getElementById('dragon').classList.remove('reverse');
+        dragon.classList.remove('controllable');
+        dragon.classList.remove('reverse');
         document.querySelectorAll('[data-curtain]').forEach(el => {
             if (el.classList.contains('expanded')) {
                 el.nextElementSibling.classList.add('unexpand');
@@ -140,6 +141,7 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
         setDragged(true);
         setDragging(true);
     }
+
     const releaseDragon = () => {
         if (document.getElementById("dragon-home").classList.contains('show')) return;
         document.getElementById("speech-bubble").classList.remove('hidden');
