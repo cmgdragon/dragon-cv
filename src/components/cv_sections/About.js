@@ -126,7 +126,7 @@ const InfoBox = ({boxPos, imgPos, dragonText, img, expanded, delay, lang, setDra
         </div>
     )
 }
-ñ
+
 const CarouselItems = ({items, imageWidth, imageMargin}) => {
 
     let canScroll = true;
