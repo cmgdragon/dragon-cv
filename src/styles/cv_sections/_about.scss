@@ -125,7 +125,7 @@
     margin: 0 auto;
     width: 50vw;
 
-    @media (max-width: 2000px) {
+    @media (min-width: 2000px) {
         width: 35vw;
     }
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import * as dragonText from '../../translations/cv_Sections/About.json';
 import { showBubble } from '../speech_bubble/ShowBubble';
 
@@ -126,13 +126,12 @@ const InfoBox = ({boxPos, imgPos, dragonText, img, expanded, delay, lang, setDra
         </div>
     )
 }
+ñ
+const CarouselItems = ({items, imageWidth, imageMargin}) => {
 
-const CarouselItems = ({items, imageWidth, imageMargin, expanded, lang, dragonText, setDragonText}) => {
-    
     let canScroll = true;
     let lastMove = 0;
     useEffect(() => {
-        if (!expanded) return;
         const tech = document.getElementById("technologies");
         tech.innerHTML += tech.innerHTML;
         scrollCarousel();
@@ -150,7 +149,7 @@ const CarouselItems = ({items, imageWidth, imageMargin, expanded, lang, dragonTe
             canScroll = true;
             scrollCarousel();
         });
-    }, [expanded]);
+    }, []);
 
     const scrollCarousel = () => {
         if (!canScroll) return;
