@@ -23,7 +23,9 @@ const HomeSection = ({width='100vw', id, children, expandMobile, lang, selectedS
               if (target.classList.contains('expanded')) {
                 setExpanded(true);
 
-                document.querySelector('.dragon__guide').classList.add('show');
+                setTimeout(() => {
+                    document.querySelector('.dragon__guide').classList.add('show');
+                }, 500);
 
               } else {
                 setExpanded(false);
