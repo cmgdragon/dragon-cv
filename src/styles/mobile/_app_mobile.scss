@@ -2,7 +2,7 @@
 
 @media (max-width: $mobile), (hover: none) {
     body {
-        overflow-y: scroll;
+        overflow-y: scroll !important;
     }
 
     #main-menu { 
