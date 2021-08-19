@@ -1,6 +1,6 @@
 @import "../breakpoints";
 
-@media (max-width: $mobile) {
+@media (max-width: $mobile), (hover: none) {
     .contact-section {
         width: 100vw;
         padding: 0 .5rem;

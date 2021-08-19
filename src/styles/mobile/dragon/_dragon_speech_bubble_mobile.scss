@@ -1,6 +1,6 @@
 @import "../breakpoints";
 
-@media (max-width: $mobile) {
+@media (max-width: $mobile), (hover: none) {
     #speech-bubble.top,
     #dragon #speech-bubble.top {
         transform: scaleY(-1);
