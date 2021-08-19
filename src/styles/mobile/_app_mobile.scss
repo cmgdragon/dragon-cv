@@ -1,6 +1,11 @@
 @import "breakpoints";
 
 @media (max-width: $mobile) {
+
+    body {
+        overflow-y: scroll;
+    }
+
     #main-menu { 
         display: block;
     }
