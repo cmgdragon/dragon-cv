@@ -1,4 +1,10 @@
 {
-    "en": "Click & hold the dragon for going back",
-    "es": "Mantén pulsado el dragón para volver"
+    "inHome": {
+        "en": "Drag the dragon into a section for getting started",
+        "es": "Arrastra el dragón a una sección para empezar"
+    },
+    "inSection": {
+        "en": "Click & hold the dragon for going back",
+        "es": "Mantén pulsado el dragón para volver"
+    }
 }

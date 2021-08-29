@@ -165,7 +165,7 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
 
     return (
         <div id="dragon" style={style} onClick={mobileInteracion} onMouseDown={grabDragon} onMouseUp={releaseDragon}>
-            <div className="dragon__guide">{dragonGuide[lang]}</div>
+            <div className="dragon__guide">{dragonGuide.inSection[lang]}</div>
             <DragonBody image="cuerpo/cuerpo_upper"
              basePivot={{top: '8.2em', left: '17%'}}
              width="190px" isDragged={isDragged}>

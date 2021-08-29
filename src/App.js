@@ -12,6 +12,7 @@ import * as sectionsText from './translations/Sections.json';
 import { hideBubble } from './components/speech_bubble/HideBubble';
 import calcDragonTransform from './functions/calcDragonTransform';
 import MenuMobile from './components/MenuMobile';
+import * as dragonGuide from './translations/DragonGuide.json';
 import { showBubble } from './components/speech_bubble/ShowBubble';
 
 const App = () => {
@@ -71,6 +72,7 @@ const App = () => {
             setHomeGuideTimeout();
         } else {
             clearTimeout(homeGuide);
+            document.querySelector('.dragon__guide.home').classList.remove('show');
         }
     }, [selectedSection])
 
@@ -87,9 +89,9 @@ const App = () => {
     const selectSection = () => {
         if (selectedSection !== 'dragon-home') {
             if (!isDragging) return;
-            selectedSection.classList.add('expanded');
-            selectedSection.classList.add('cave__background');
-            selectedSection.previousElementSibling.classList.add('expanded');
+            selectedSection?.classList.add('expanded');
+            selectedSection?.classList.add('cave__background');
+            selectedSection?.previousElementSibling.classList.add('expanded');
         }
     }
 
@@ -101,11 +103,13 @@ const App = () => {
             setDebounce(false);
 
             if (isDragging) {
+                const section = document.elementsFromPoint(event.clientX, event.clientY)
+                                    .find(e => e.getAttribute('data-section'));
+
+                if (section && section !== 'dragon-home' && section === selectedSection) return;
+                                    
                 [...document.querySelectorAll('[data-section]')].forEach(s => 
                     s.previousElementSibling.classList.remove('expand'));
-
-                const section = document.elementsFromPoint(event.clientX, event.clientY)
-                                    .find(e => e.getAttribute('data-section'))
                 
                 if (section) {
                     section.previousElementSibling.classList.add('expand');
@@ -174,7 +178,8 @@ const App = () => {
                     pos={{top: initDragonPos.top, left: initDragonPos.left}}
                 />
                     <div  className="dragon-home__floor">
-                        <div></div>
+                        <div className="dragon__guide home show">{dragonGuide.inHome[lang]}</div>
+                        <div className="dragon-home__floor-background"></div>
                     </div>
                 </div>
             </div>

@@ -54,6 +54,19 @@
         z-index: -1;
         border-radius: 7px;
     }
+
+    &.home {
+        transform: none;
+        z-index: 20;
+        bottom: 2rem;
+        max-width: 355px;
+        left: .5rem;
+        font-size: 1rem;
+        &::before {
+            background-color: rgba(0, 0, 0, .8);
+            transform: translate(-.4rem);
+        }
+    }
 }
 
 #dragon.reverse .dragon__guide {
