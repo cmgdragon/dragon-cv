@@ -1,6 +1,9 @@
 @import "../breakpoints";
 
 @media (max-width: $mobile), (hover: none) {
+    #speech-bubble {
+        top: -6.5em;
+    }
     #speech-bubble.top,
     #dragon #speech-bubble.top {
         transform: scaleY(-1);
@@ -9,4 +12,18 @@
     #dragon #speech-bubble.top .speech-bubble__text {
         transform: scale(-1);
     }
+}
+
+
+@media (max-height: $mobile_height) {
+    #speech-bubble {
+        left: -14em !important;
+        top: 0 !important;
+    }
+    .speech-bubble__pivot.top .speech-bubble__body::before {
+        left: calc(100% - 1.1rem);
+        top: 20%;
+        transform: rotate(90deg);
+    }
+    .speech-bubble__text { transform: scale(1); }
 }

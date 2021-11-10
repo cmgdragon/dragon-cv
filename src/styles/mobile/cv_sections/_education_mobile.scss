@@ -70,3 +70,9 @@
     }
 
 }
+
+@media (max-height: $mobile_height) {
+    .education-section {
+        flex-direction: row;
+    }
+}

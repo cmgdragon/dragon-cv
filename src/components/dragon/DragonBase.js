@@ -164,7 +164,7 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
     }
 
     return (
-        <div id="dragon" style={style} onClick={mobileInteracion} onMouseDown={grabDragon} onMouseUp={releaseDragon}>
+        <div id="dragon" style={style} onMouseDown={grabDragon} onMouseUp={releaseDragon}>
             <div className="dragon__guide">{dragonGuide.inSection[lang]}</div>
             <DragonBody image="cuerpo/cuerpo_upper"
              basePivot={{top: '8.2em', left: '17%'}}
@@ -192,6 +192,9 @@ const DragonBase = ({drag_top, drag_left, pos, setDragging, selectSection,
                 </DragonBelly>
 
             </DragonBody>
+            <div className="dragon_mobile" onClick={mobileInteracion}>
+                <div className="dragon_mobile__image"></div>
+            </div>
             <SpeechBubble text={dragonText} lang={lang} />
         </div>
     )

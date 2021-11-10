@@ -1,14 +1,39 @@
 @import "../breakpoints";
 
 @media (max-width: $mobile), (hover: none) {
-    #dragon { 
+    .dragon_mobile {
+        display: flex;
+        align-items: center;
+        height: 90%;
+    }
+    .dragon_mobile__image {
+      background-image: url('./images/dragon_parts/dragon_mobile.PNG');
+      background-repeat: no-repeat;
+      background-size: contain;
+      bottom: auto;
+      display: block;
+      height: 390px;
+      margin-left: 170px;
+      position: fixed;
+      width: 210px;
+      z-index: 10;
+      transform: scale(-2.5, 2.5);
+    }
+    #dragon {
         bottom: -70vh !important;
         left: 70vw !important;
         top: 0% !important;
         transform: scale(-.4, .4) !important;
     }
-    
+    #dragon div:nth-child(2),
     .dragon__guide {
         display: none;
+    }
+}
+
+@media (max-height: $mobile_height) {
+    .dragon_mobile__image {
+        bottom: 140px;
+        margin-left: 570px;
     }
 }
