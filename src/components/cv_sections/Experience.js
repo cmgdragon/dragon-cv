@@ -16,26 +16,28 @@ const Experience = ({expanded, lang, setDragonText}) => {
 
     const scrollItem = () => {
         document.querySelectorAll('.experience').forEach(element => {
-            const top = element.getBoundingClientRect().y;
-            const elementTop = Math.round((top * 100) / window.innerHeight);
-
-            if (elementTop >= 20 && elementTop <= 50) {
-                element.querySelector('.experience-tasks').classList.add('expanded');
-                element.style.opacity = 1;
-                element.style.pointerEvents = 'all';
-                element.classList.add('selected');
-            } else {
-                element.querySelector('.experience-tasks').classList.remove('expanded');
-                element.querySelector('.experience__img').blur();
-                element.classList.remove('selected');
-                element.style.pointerEvents = 'none';
-                if (elementTop < 40) {
-                    element.style.opacity = elementTop*0.05;
-                    element.querySelector('.experience__img').blur();
+            setTimeout(() => {
+                const top = element.getBoundingClientRect().y;
+                const elementTop = Math.round((top * 100) / window.innerHeight);
+    
+                if (elementTop >= 20 && elementTop <= 50) {
+                    element.querySelector('.experience-tasks').classList.add('expanded');
+                    element.style.opacity = 1;
+                    element.style.pointerEvents = 'all';
+                    element.classList.add('selected');
                 } else {
-                    element.style.opacity = (100-elementTop)*0.02;
+                    element.querySelector('.experience-tasks').classList.remove('expanded');
+                    element.querySelector('.experience__img').blur();
+                    element.classList.remove('selected');
+                    element.style.pointerEvents = 'none';
+                    if (elementTop < 40) {
+                        element.style.opacity = elementTop*0.05;
+                        element.querySelector('.experience__img').blur();
+                    } else {
+                        element.style.opacity = (100-elementTop)*0.02;
+                    }
                 }
-            }
+            }, 100);
         });
     }
 
