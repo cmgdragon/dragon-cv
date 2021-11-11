@@ -16,7 +16,7 @@ server.use(express.json());
 
 server.get('/', (req, res) => {
 
-    const app = ReactDOMServer.renderToString(<App />);
+    const app = ReactDOMServer.renderToNodeStream(<App />);
 
     fs.readFile(
         path.resolve(__dirname, '..', '..', 'dist', 'index.html'), 'utf-8', (err, data) => {

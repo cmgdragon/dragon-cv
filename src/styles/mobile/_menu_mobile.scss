@@ -124,8 +124,7 @@
         height: 9vh;
     }
     .menu-mobile__dragon-bubble-triangle {
-        bottom: 2vh;
-        width: 2vw;
-        right: -19%;
+        transform: rotate(90deg) scale(.5) !important;
+        bottom: -5px !important;
     }
 }
