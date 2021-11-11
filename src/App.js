@@ -27,12 +27,10 @@ const App = () => {
     const [dragonText, setDragonText] = useState(dragonWelcome);
 
     useEffect(() => {
-
-        window.addEventListener('load', () => {
-            document.querySelector('.desktop-menu-guide').classList.remove('show');
-            clearTimeout(homeGuide);
-            document.getElementById("app-loader").classList.add('hidden');
-        }, { once: true });
+        
+        document.querySelector('.desktop-menu-guide').classList.remove('show');
+        clearTimeout(homeGuide);
+        document.getElementById("app-loader").classList.add('hidden');
 
         calcDragonTransform();
 
