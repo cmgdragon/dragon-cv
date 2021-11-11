@@ -1,9 +1,9 @@
 import express from 'express';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import fs from 'fs';
 import path from 'path';
-import App from '../App';
+import Html from './html';
+import { pipeline } from 'stream';
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 import sendEmail from './services/mailer';
@@ -16,16 +16,14 @@ server.use(express.json());
 
 server.get('/', (req, res) => {
 
-    const app = ReactDOMServer.renderToNodeStream(<App />);
+    const app = ReactDOMServer.renderToNodeStream(<Html />);
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(`<!DOCTYPE html>`);
 
-    fs.readFile(
-        path.resolve(__dirname, '..', '..', 'dist', 'index.html'), 'utf-8', (err, data) => {
-            if (err) { 
-                console.log(error);
-                res.status(500).send('An error occurred in server side');
-            }
-        return res.send(data.replace('<main id="root"></main>', `<main id="root">${app}</main>`))
-    })
+    pipeline(app, res, error => {
+        if (error) console.log(error)
+    });
+
 });
 
 server.post('/sendemail', sendEmail);

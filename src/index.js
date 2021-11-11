@@ -5,5 +5,4 @@ import App from './App';
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
-//ReactDOM.render(<App />, document.getElementById("root"));
 ReactDOM.hydrate(<App />, document.getElementById("root"));
