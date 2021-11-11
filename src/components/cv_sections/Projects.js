@@ -131,12 +131,12 @@ const Project = ({ expanded, id, setDragonText }) => {
             <a href="https://researcher.zone" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>
-            <img className="project-box__image" src={'/images/cv_sections/projects/researcherzone.JPG'} />
+            <img className="project-box__image" src={'/images/cv_sections/projects/researcherzone.webp'} />
             <div className="project-box__tech">
-                <img className="project-box__tech-img" src={'/images/technologies/react.png'} />
-                <img className="project-box__tech-img" src={'/images/technologies/deno.png'} />
-                <img className="project-box__tech-img" src={'/images/technologies/mongodb.png'} />
-                <img className="project-box__tech-img" src={'/images/technologies/docker.png'} />
+                <img className="project-box__tech-img" src={'/images/technologies/react.webp'} />
+                <img className="project-box__tech-img" src={'/images/technologies/deno.webp'} />
+                <img className="project-box__tech-img" src={'/images/technologies/mongodb.webp'} />
+                <img className="project-box__tech-img" src={'/images/technologies/docker.webp'} />
             </div>
         </div>
 
@@ -144,11 +144,11 @@ const Project = ({ expanded, id, setDragonText }) => {
             <a href="https://you-tales.com" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>
-            <img className="project-box__image" src={'/images/cv_sections/projects/youtales.JPG'} />
+            <img className="project-box__image" src={'/images/cv_sections/projects/youtales.webp'} />
             <div className="project-box__tech">
-                <img className="project-box__tech-img" src={'/images/technologies/raspberry.png'} />
-                <img className="project-box__tech-img" src={'/images/technologies/mysql.png'} />
-                <img className="project-box__tech-img" src={'/images/technologies/php.jpg'} />
+                <img className="project-box__tech-img" src={'/images/technologies/raspberry.webp'} />
+                <img className="project-box__tech-img" src={'/images/technologies/mysql.webp'} />
+                <img className="project-box__tech-img" src={'/images/technologies/php.webp'} />
             </div>
         </div>
 
@@ -156,11 +156,11 @@ const Project = ({ expanded, id, setDragonText }) => {
             <a href="https://udiet.page" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>
-            <img className="project-box__image" src={'/images/cv_sections/projects/udiet.JPG'} />
+            <img className="project-box__image" src={'/images/cv_sections/projects/udiet.webp'} />
             <div className="project-box__tech">
-                <img className="project-box__tech-img" src={'/images/technologies/react.png'} />
-                <img className="project-box__tech-img" src={'/images/technologies/node.png'} />
-                <img className="project-box__tech-img" src={'/images/technologies/firebase.png'} />
+                <img className="project-box__tech-img" src={'/images/technologies/react.webp'} />
+                <img className="project-box__tech-img" src={'/images/technologies/node.webp'} />
+                <img className="project-box__tech-img" src={'/images/technologies/firebase.webp'} />
             </div>
         </div>
 
@@ -170,8 +170,8 @@ const Project = ({ expanded, id, setDragonText }) => {
             </a>
             <img className="project-box__image" src={'/images/dragon-web.svg'} />
             <div className="project-box__tech">
-                <img className="project-box__tech-img" src={'/images/technologies/react.png'} />
-                <img className="project-box__tech-img" src={'/images/technologies/node.png'} />
+                <img className="project-box__tech-img" src={'/images/technologies/react.webp'} />
+                <img className="project-box__tech-img" src={'/images/technologies/node.webp'} />
             </div>
         </div>
 
@@ -179,7 +179,7 @@ const Project = ({ expanded, id, setDragonText }) => {
             <a href="https://github.com/cmgdragon" target="_blank" className="project-box__link">
                 <i className="project-box__link-icon"></i>
             </a>
-            <img className="project-box__image" src={'/images/technologies/github.png'} />
+            <img className="project-box__image" src={'/images/technologies/github.webp'} />
         </div>
 
         </div>

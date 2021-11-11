@@ -40,22 +40,22 @@
 
 @keyframes glyph-image-autonomous {
     0% {
-        background-image: url('./images/technologies/github.png');
+        background-image: url('./images/technologies/github.webp');
         transform: scale(1);
     }
     15% {
-        background-image: url('./images/cv_sections/education/js.png');
+        background-image: url('./images/cv_sections/education/js.webp');
     }
     30% {
-        background-image: url('./images/technologies/docker.png');
+        background-image: url('./images/technologies/docker.webp');
         transform: scale(.8);
     }
     45% {
-        background-image: url('./images/technologies/react.png');
+        background-image: url('./images/technologies/react.webp');
         transform: scale(1);
     }
     60% {
-        background-image: url('./images/technologies/mongodb.png');
+        background-image: url('./images/technologies/mongodb.webp');
         transform: scale(1);
     }
     75% {
@@ -63,11 +63,11 @@
         transform: scale(1);
     }
     88% {
-        background-image: url('./images/cv_sections/education/css3.png');
+        background-image: url('./images/cv_sections/education/css3.webp');
         transform: scale(1);
     }
     100% {
-        background-image: url('./images/technologies/github.png');
+        background-image: url('./images/technologies/github.webp');
         transform: scale(1);
     }
 }

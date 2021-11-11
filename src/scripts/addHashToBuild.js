@@ -7,7 +7,7 @@ fs.readdir("dist", (err, files) => {
 
     const js = files.find(file => file.startsWith('index.') && file.endsWith('.js'));
     const css = files.find(file => file.startsWith('index.') && file.endsWith('.css'));
-    const favicon = files.find(file => file.startsWith('favicon.') && file.endsWith('.png'));
+    const favicon = files.find(file => file.startsWith('favicon.') && file.endsWith('.webp'));
     
     fs.readFile(path.resolve(__dirname, '..', 'server', 'html_template.js'), (err, buff) => {
         if (err) console.log(err);

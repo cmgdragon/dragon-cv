@@ -76,15 +76,15 @@ const About = ({ expanded, setDragonText, lang }) => {
             </div>
             <div id="social">
                 <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.linkedin, setDragonText, true)}>
-                    <img className="social__img" src="/images/cv_sections/about/linkedIn.png" />
+                    <img className="social__img" src="/images/cv_sections/about/linkedIn.webp" />
                     <a href="https://www.linkedin.com/in/carlos-mart%C3%ADnez-51605b21a/" target="_blank" className="social__link">Go to</a>
                 </div>
                 <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.github, setDragonText, true)}>
-                    <img className="social__img" src="/images/technologies/github.png" />
+                    <img className="social__img" src="/images/technologies/github.webp" />
                     <a href="https://github.com/cmgdragon" target="_blank" className="social__link">Go to</a>
                 </div>
                 <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.discord, setDragonText, true)}>
-                    <img className="social__img" src="/images/cv_sections/about/discord.png" />
+                    <img className="social__img" src="/images/cv_sections/about/discord.webp" />
                     <span className="social__link not-a-link">CMG_DRAGON#8476</span>
                 </div>
             </div>
@@ -170,15 +170,15 @@ const CarouselItems = ({items, imageWidth, imageMargin}) => {
 
     return (
         <>
-        <img style={style} className="technology" src="/images/technologies/react.png" />
-        <img style={style} className="technology" src="/images/technologies/node.png" />
-        <img style={style} className="technology" src="/images/technologies/liferay.png" />
-        <img style={style} className="technology" src="/images/technologies/docker.png" />
-        <img style={style} className="technology" src="/images/technologies/deno.png" />
-        <img style={style} className="technology" src="/images/technologies/firebase.png" />
-        <img style={style} className="technology" src="/images/technologies/mongodb.png" />
-        <img style={style} className="technology" src="/images/technologies/vue.png" />
-        <img style={style} className="technology" src="/images/technologies/angular.png" />
+        <img style={style} className="technology" src="/images/technologies/react.webp" />
+        <img style={style} className="technology" src="/images/technologies/node.webp" />
+        <img style={style} className="technology" src="/images/technologies/liferay.webp" />
+        <img style={style} className="technology" src="/images/technologies/docker.webp" />
+        <img style={style} className="technology" src="/images/technologies/deno.webp" />
+        <img style={style} className="technology" src="/images/technologies/firebase.webp" />
+        <img style={style} className="technology" src="/images/technologies/mongodb.webp" />
+        <img style={style} className="technology" src="/images/technologies/vue.webp" />
+        <img style={style} className="technology" src="/images/technologies/angular.webp" />
         <img style={style} className="technology" src="/images/technologies/gcp.svg" />
         </>
     )
