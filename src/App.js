@@ -44,10 +44,11 @@ const App = () => {
 
         window.addEventListener('click', event => {
             event.stopPropagation();
+            const path = event.path ?? event.composedPath();
 
-            if (!event.path.find(el => "getAttribute" in el && el.getAttribute("data-clickable")) &&
-                !event.path.find(el => el === document.querySelector('.menu-mobile__dragon')) &&
-                !event.path.find(el => el === document.querySelector('.language'))) {
+            if (!path.find(el => "getAttribute" in el && el.getAttribute("data-clickable")) &&
+                !path.find(el => el === document.querySelector('.menu-mobile__dragon')) &&
+                !path.find(el => el === document.querySelector('.language'))) {
                 hideBubble();
             }
         });
