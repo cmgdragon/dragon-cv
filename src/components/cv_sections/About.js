@@ -75,6 +75,10 @@ const About = ({ expanded, setDragonText, lang }) => {
                 <div tabIndex={0} data-clickable className="languages__lang-en" onClick={() => showBubble(dragonText.languages.english, setDragonText, true)}></div>
             </div>
             <div id="social">
+                <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.telegram, setDragonText, true)}>
+                    <img className="social__img" src="/images/cv_sections/about/telegram.webp" />
+                    <span className="social__link not-a-link">@cmgdragon</span>
+                </div>
                 <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.linkedin, setDragonText, true)}>
                     <img className="social__img" src="/images/cv_sections/about/linkedIn.webp" />
                     <a href="https://www.linkedin.com/in/carlos-mart%C3%ADnez-51605b21a/" target="_blank" className="social__link">Go to</a>

@@ -30,7 +30,14 @@ const App = () => {
         
         document.querySelector('.desktop-menu-guide').classList.remove('show');
         clearTimeout(homeGuide);
-        document.getElementById("app-loader").classList.add('hidden');
+
+        if (document.readyState === 'complete') {
+            document.getElementById("app-loader").classList.add('hidden');
+        } else {
+            window.addEventListener('load', () => {
+                document.getElementById("app-loader").classList.add('hidden');
+            });
+        }
 
         calcDragonTransform();
 

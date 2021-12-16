@@ -44,6 +44,10 @@
         }
     },
     "social_networks": {
+        "telegram": {
+            "en": "Add me to Telegram. The fastest way to contact me",
+            "es": "Añadirme a Telegram es la forma más rápida de contactar conmigo"
+        },
         "linkedin": {
             "en": "You can visit my Linkedin for a detailed, boring and more formal version of this page",
             "es": "Puedes visitar mi Linkedin para una versión más detallada, formal y aburrida de esta página"
@@ -53,8 +57,8 @@
             "es": "Visita mi Github para ver mis otros trabajos publicados"
         },
         "discord": {
-            "en": "You can Add me on Discord so we can chat <span style='font-size:2.1rem'>Yeah, I don't have any other social network</span>",
-            "es": "¡Añádeme en discord si quieres chatear! <span style='font-size:2.1rem'>así es, no tengo más redes sociales</span>"
+            "en": "You can Add me on Discord so we can chat",
+            "es": "¡Añádeme en discord si quieres chatear!"
         }
     }
 }
