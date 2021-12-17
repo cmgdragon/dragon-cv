@@ -59,13 +59,21 @@
 
 .social__link.not-a-link {
     left: -70px;
+
+    &.left {
+        left: 0;
+    }
+
+    &.right {
+        left: -105px !important;
+        transform: scale(.8);
+    }
 }
 
 .social__box {
     &:focus .social__link.not-a-link,
     .social__link.not-a-link:focus {
         bottom: -74%;
-        left: -70px;
     }
 }
 

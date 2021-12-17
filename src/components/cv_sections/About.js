@@ -77,7 +77,7 @@ const About = ({ expanded, setDragonText, lang }) => {
             <div id="social">
                 <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.telegram, setDragonText, true)}>
                     <img className="social__img" src="/images/cv_sections/about/telegram.webp" />
-                    <span className="social__link not-a-link">@cmgdragon</span>
+                    <span className="social__link not-a-link left">@cmgdragon</span>
                 </div>
                 <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.linkedin, setDragonText, true)}>
                     <img className="social__img" src="/images/cv_sections/about/linkedIn.webp" />
@@ -89,7 +89,7 @@ const About = ({ expanded, setDragonText, lang }) => {
                 </div>
                 <div className="social__box" data-clickable tabIndex={0} onClick={() => showBubble(dragonText.social_networks.discord, setDragonText, true)}>
                     <img className="social__img" src="/images/cv_sections/about/discord.webp" />
-                    <span className="social__link not-a-link">CMG_DRAGON#8476</span>
+                    <span className="social__link not-a-link right">CMG_DRAGON#8476</span>
                 </div>
             </div>
         </div>
