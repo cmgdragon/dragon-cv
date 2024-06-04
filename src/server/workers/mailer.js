@@ -1,12 +1,9 @@
 import nodemailer from 'nodemailer';
 import oAuth2Client from './oAuth2';
-import dotenv from 'dotenv';
 
-dotenv.config();
-
-const sendEmail = async (req, res) => {
-    
+const sendEmail = async (c) => {
     try {
+        const { from, name, msg } = await c.req.json();
 
         const accessToken = await oAuth2Client.getAccessToken();
 
@@ -23,22 +20,22 @@ const sendEmail = async (req, res) => {
         });
 
         await transporter.sendMail({
-            from: `${req.body.from}`,
+            from: `${from}`,
             to: process.env.MAIL_TO,
-            subject: `¡Mensaje de ${req.body.name}! 🐲`,
-            html: `${req.body.msg}<br><br>${req.body.from}`
+            subject: `¡Mensaje de ${name}! 🐲`,
+            html: `${msg}<br><br>${from}`
         });
 
-        res.status(200).send({
+        return c.json({
             code: 200,
             success: '¡Mensaje enviado!'
-        });
+        }, 200);
     } catch (error) {
         console.log(error);
-        res.status(500).send({
+        return c.json({
             code: 500,
             error: error.message
-        });
+        }, 500);
     }
 }
 

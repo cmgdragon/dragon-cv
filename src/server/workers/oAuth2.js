@@ -1,7 +1,4 @@
 import { google } from 'googleapis';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 const oAuth2Client = new google.auth.OAuth2(
     process.env.CLIENT_ID,

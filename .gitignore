@@ -4,3 +4,4 @@ src/server/html.js
 dist
 dragonBK.svg
 .env
+wrangler.toml

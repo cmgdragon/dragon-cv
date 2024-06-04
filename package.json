@@ -2,39 +2,33 @@
   "name": "dev-cv",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
-    "parcel:dev": "parcel src/index.html -p 8080 --open --no-cache",
-    "dev": "npm-run-all clear parcel:dev",
-    "parcel:build": "parcel build src/index.html --public-url ./ --no-cache --no-scope-hoist",
-    "deamon": "nodemon src/server/index.js",
-    "clear": "rimraf dist .parcel-cache",
+    "dev": "wrangler dev --remote",
+    "deploy": "wrangler deploy",
+    "vite:build": "vite build",
+    "deamon": "nodemon src/server/server.js",
+    "clear": "rimraf .wrangler public/assets",
     "replacehash": "node src/scripts/addHashToBuild.js",
-    "build": "npm-run-all clear parcel:build replacehash start",
-    "start": "node src/server/index.js"
+    "build": "npm-run-all clear vite:build replacehash",
+    "server": "node src/server/server.jsx"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/cli": "^7.14.8",
-    "@babel/core": "^7.14.8",
-    "@babel/preset-env": "^7.14.9",
-    "@babel/preset-react": "^7.14.5",
-    "@babel/register": "^7.14.5",
-    "core-js": "^3.16.1",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "googleapis": "^84.0.0",
-    "nodemailer": "^6.6.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "regenerator-runtime": "^0.13.9"
+    "hono": "^4.4.2",
+    "mimetext": "^3.0.24",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@parcel/transformer-image": "^2.0.0-rc.0",
-    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "@cloudflare/kv-asset-handler": "^0.3.2",
+    "@vitejs/plugin-react-swc": "^3.7.0",
     "npm-run-all": "^4.1.5",
-    "parcel": "^2.0.0-beta.2",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "sass": "^1.77.4",
+    "vite": "^5.2.12",
+    "wrangler": "^3.59.0"
   }
 }

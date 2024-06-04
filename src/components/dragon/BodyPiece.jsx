@@ -12,9 +12,8 @@ const BodyPiece = ({ image, width, layer, pos, pivotPos, back=false, children })
         position: 'absolute',
         top: pos.top,
         left: pos.left,
-        height: 'inherit',
         width: width,
-        height: width
+        height: width ? width : 'inherit'
     }
 
     return (
