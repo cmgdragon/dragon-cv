@@ -1,5 +1,5 @@
 #:schema node_modules/wrangler/config-schema.json
-name = "cmgdragon-dev"
+name = "cmgdragon-cv"
 main = "src/server/index.jsx"
 compatibility_date = "2024-05-29"
 node_compat = true
