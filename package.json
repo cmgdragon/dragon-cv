@@ -1,5 +1,5 @@
 {
-  "name": "dev-cv",
+  "name": "cmgdragon-cv",
   "version": "1.0.0",
   "description": "",
   "type": "module",
@@ -7,11 +7,9 @@
     "dev": "wrangler dev --remote",
     "deploy": "wrangler deploy",
     "vite:build": "vite build",
-    "deamon": "nodemon src/server/server.js",
     "clear": "rimraf .wrangler public/assets",
     "replacehash": "node src/scripts/addHashToBuild.js",
-    "build": "npm-run-all clear vite:build replacehash",
-    "server": "node src/server/server.jsx"
+    "build": "npm-run-all clear vite:build replacehash"
   },
   "keywords": [],
   "author": "",

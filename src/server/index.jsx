@@ -1,4 +1,5 @@
 import { Hono } from 'hono'
+import { cors } from 'hono/cors'
 import {
     MethodNotAllowedError,
     NotFoundError,
@@ -6,18 +7,20 @@ import {
     serveSinglePageApp,
   } from "@cloudflare/kv-asset-handler"
 
-import { renderToString } from 'react-dom/server'
-import { serveStatic } from 'hono/cloudflare-workers'
 import { SSRRender } from '../index-server'
 import assetManifest from "__STATIC_CONTENT_MANIFEST";
 import { cache } from "hono/cache";
 import { sendEmail } from './workers/sendEmail'
-//import Html from './html'
-
 
 const app = new Hono()
 
 app
+
+  .use("*", cors({
+    origin: ['https://cmgdragon-cv.the-dragon-domains.workers.dev', 'https://cmgdragon.dev'],
+    allowHeaders: ['GET', 'POST', 'OPTIONS']
+  }))
+
   .get(
     "*",
     cache({
@@ -28,7 +31,10 @@ app
 
   .post('/sendemail', sendEmail)
 
-  .get("/", async (c) => c.newResponse(await SSRRender()))
+  .get("/", async (c) => {
+    c.header('Content-Type', 'text/html')
+    return c.newResponse(await SSRRender())
+  })
   .notFound((c) =>
     c.json(
       {
@@ -50,6 +56,7 @@ app
 
   .get("/*", async (c) => {
     try {
+
       return await getAssetFromKV(
         {
           request: c.req.raw,
@@ -66,7 +73,7 @@ app
             bypassCache: true,
           },
         }
-      );
+      )
     } catch (e) {
       if (e instanceof NotFoundError) {
         throw new Error(e.message);
@@ -77,27 +84,5 @@ app
       }
     }
   })
-
-
-  //----------------------
-
-/*
-app.get("/public/*", async (ctx) => {
-    return await ctx.env.ASSETS.fetch(ctx.req.raw);
-});
-
-/*app.get('/', (c) => {
-    const rendered = renderToString(<Html />)
-    console.log(rendered)
-    c.header('Content-Type', 'text/html')
-
-    c.status(200)
-
-    return c.html(`<!DOCTYPE html>${rendered}`)
-
-})
-
-app.get('/*', serveStatic({ root: './public' }))
-*/
 
 export default app
